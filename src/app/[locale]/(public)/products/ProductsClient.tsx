@@ -3,21 +3,22 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { PageBreadcrumb } from "@/components/ui/page-breadcrumb";
 import { useTranslation } from "@/i18n/client";
 import { resolveLocalizedString } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/animate/ScrollReveal";
 import { PageTransition, Section } from "@/components/animate/PageTransition";
 import type { Locale } from "@/types/content";
 import type { Product } from "@/types/api";
-import { mockProducts } from "@/data/mock/products";
 
 interface ProductsClientProps {
   locale: Locale;
+  initialProducts: Product[];
 }
 
-export function ProductsClient({ locale }: ProductsClientProps) {
+export function ProductsClient({ locale, initialProducts }: ProductsClientProps) {
   const { t } = useTranslation("products");
-  const [products] = useState<Product[]>(mockProducts);
+  const [products] = useState<Product[]>(initialProducts);
   const [filter, setFilter] = useState<"all" | "featured">("all");
 
   const filteredProducts =
@@ -42,6 +43,12 @@ export function ProductsClient({ locale }: ProductsClientProps) {
         <div className="relative z-10 container mx-auto px-8 lg:px-16">
           <ScrollReveal>
             <div className="max-w-4xl">
+              <PageBreadcrumb
+                items={[
+                  { label: locale === "vi" ? "Trang Chủ" : "Home", href: "/" },
+                  { label: locale === "vi" ? "Sản Phẩm" : "Products" },
+                ]}
+              />
               <p className="text-emerald-400 text-lg font-semibold mb-4 tracking-wide">
                 {t("hero.eyebrow")}
               </p>
@@ -57,7 +64,7 @@ export function ProductsClient({ locale }: ProductsClientProps) {
       </section></Section>
 
       {/* Filter Tabs */}
-      <section className="bg-slate-900/95 border-b border-white/10 backdrop-blur-xl">
+      <section className="bg-slate-950/95 border-b border-white/10 backdrop-blur-xl shadow-sm">
         <div className="container mx-auto px-8 lg:px-16 py-6">
           <ScrollReveal direction="fade">
             <div className="flex gap-3">
@@ -66,7 +73,7 @@ export function ProductsClient({ locale }: ProductsClientProps) {
                 className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   filter === "all"
                     ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30"
-                    : "bg-white/5 text-white/80 hover:bg-white/10 border border-white/10"
+                    : "bg-white/5 text-white/90 hover:bg-white/10 border border-white/10"
                 }`}
               >
                 {t("filters.all")}
@@ -76,7 +83,7 @@ export function ProductsClient({ locale }: ProductsClientProps) {
                 className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   filter === "featured"
                     ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30"
-                    : "bg-white/5 text-white/80 hover:bg-white/10 border border-white/10"
+                    : "bg-white/5 text-white/90 hover:bg-white/10 border border-white/10"
                 }`}
               >
                 {t("filters.featured")}
@@ -108,7 +115,7 @@ export function ProductsClient({ locale }: ProductsClientProps) {
                       href={`/${locale === "en" ? "en/" : ""}products/${resolveLocalizedString(product.slug_i18n, locale)}`}
                       className="group block h-full"
                     >
-                      <div className="bg-white/5 rounded-3xl border-2 border-white/10 hover:border-emerald-400/40 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/20 h-full flex flex-col">
+                      <div className="bg-white/5 rounded-3xl border-2 border-white/10 hover:border-emerald-400/50 overflow-hidden transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/20 h-full flex flex-col">
                         {/* Image */}
                         {primaryImage && (
                           <div className="relative h-56 overflow-hidden bg-white/5">
@@ -149,7 +156,7 @@ export function ProductsClient({ locale }: ProductsClientProps) {
                             <div className="space-y-1 text-xs text-white/60">
                               {product.specifications.slice(0, 2).map((spec, i) => (
                                 <div key={i} className="flex items-center gap-2">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                                   <span className="truncate">
                                     {resolveLocalizedString(spec.key_i18n, locale)}:{" "}
                                     {resolveLocalizedString(spec.value_i18n, locale)}
@@ -188,7 +195,7 @@ export function ProductsClient({ locale }: ProductsClientProps) {
             </p>
             <Link
               href={`/${locale === "en" ? "en/" : ""}contact`}
-              className="inline-block px-12 py-4 bg-white text-emerald-600 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition-all duration-300 shadow-2xl hover:shadow-white/30 hover:scale-105"
+              className="inline-block px-12 py-4 bg-white text-emerald-400 rounded-2xl text-xl font-bold hover:bg-emerald-500/20 transition-all duration-300 shadow-2xl hover:shadow-white/30 hover:scale-105"
             >
               {t("cta.button")}
             </Link>

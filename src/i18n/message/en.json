@@ -1,0 +1,486 @@
+{
+  "common": {
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "products": "Products",
+      "projects": "Projects",
+      "blog": "Blog",
+      "about": "About",
+      "contact": "Contact",
+      "getInTouch": "Get in Touch"
+    },
+    "footer": {
+      "description": "Leading provider of sustainable wildlife habitat solutions and conservation services in Vietnam.",
+      "quickLinks": "Quick Links",
+      "contact": "Contact Us",
+      "newsletter": "Newsletter",
+      "newsletterDesc": "Subscribe to get updates on conservation projects and habitat innovations.",
+      "emailPlaceholder": "Enter your email",
+      "subscribe": "Subscribe",
+      "rights": "All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions"
+    }
+  },
+  "home": {
+    "welcome": "Welcome to our application!"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The link you followed may be broken or the page may have been removed.",
+    "ctaHome": "Back to home",
+    "hint": "Check the URL or try searching for something else."
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy | Hasake Zoo & Habitat Solution",
+    "metaDescription": "Learn how Hasake Zoo & Habitat Solution collects, uses, and protects your data when you visit our website or contact us.",
+    "title": "Privacy Policy",
+    "tagline": "We protect your information when you browse our website or contact us about vegetarian/vegan meals, catering, or events.",
+    "updated": "Last updated: Jan 13, 2026",
+    "heroHighlights": [
+      "No data selling",
+      "Clear purpose",
+      "Your control",
+      "Security first"
+    ],
+    "sectionEyebrow": "Privacy at Achi Vegan House",
+    "quickPoints": [
+      {
+        "title": "Clear purpose",
+        "description": "We collect only what we need to respond to you, send quotes, handle catering/orders, and improve your experience.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "No selling data",
+        "description": "We never sell personal data. Sharing, when needed, is limited to trusted providers that help us operate.",
+        "icon": "FileSearch"
+      },
+      {
+        "title": "Your control",
+        "description": "You may request access, corrections, deletion, or withdraw consent at any time.",
+        "icon": "UserCheck"
+      },
+      {
+        "title": "Layered security",
+        "description": "Restricted internal access plus technical and organizational safeguards to reduce risk.",
+        "icon": "LockKeyhole"
+      }
+    ],
+    "sections": [
+      {
+        "id": "scope",
+        "title": "1. Scope & applicability",
+        "summary": "This policy covers information we collect whenever you interact with Achi Vegan House.",
+        "items": [
+          "Applies when you visit our website, submit contact forms, call, email, message us on social channels, or speak with us at the restaurant.",
+          "By using the site or sharing information, you agree to the terms in this policy."
+        ],
+        "icon": "Globe2"
+      },
+      {
+        "id": "data",
+        "title": "2. Information we collect",
+        "items": [
+          "Information you provide: name, email, phone number, inquiry details, order/service information, feedback, or reviews.",
+          "Technical data collected automatically: IP address, browser, device, operating system, entry/exit pages, time on page, and basic interactions.",
+          "Cookies and similar technologies to remember preferences and measure site performance."
+        ],
+        "icon": "Sparkles"
+      },
+      {
+        "id": "use",
+        "title": "3. How we use your information",
+        "items": [
+          "Respond to inquiries, send quotes, and confirm or follow up on orders or catering.",
+          "Improve content speed, reliability, and experience on our website.",
+          "Send important updates (for example: opening hours changes, menu updates, or order follow-ups).",
+          "Detect and prevent fraud or misuse of our systems."
+        ],
+        "icon": "Bell"
+      },
+      {
+        "id": "cookies",
+        "title": "4. Cookies & tracking",
+        "items": [
+          "We use cookies to remember preferences, measure engagement, and optimize site performance.",
+          "You can disable cookies in your browser. Some features may be limited when cookies are turned off."
+        ],
+        "icon": "Cookie"
+      },
+      {
+        "id": "sharing",
+        "title": "5. Sharing your information",
+        "items": [
+          "We do not sell personal data to third parties.",
+          "We may share data with service providers (hosting, analytics, payment, marketing tools) to run and improve the site.",
+          "We may share with partners or contractors related to your order/service when necessary, under confidentiality obligations.",
+          "We comply with lawful requests from authorities when required."
+        ],
+        "icon": "FileSearch"
+      },
+      {
+        "id": "security",
+        "title": "6. Data security",
+        "items": [
+          "We apply technical and organizational measures to prevent unauthorized access, alteration, or disclosure.",
+          "Internal access to personal data is limited based on role and business need.",
+          "While we strive for security, no method of transmission or storage is absolutely secure."
+        ],
+        "icon": "Shield"
+      },
+      {
+        "id": "retention",
+        "title": "7. Data retention",
+        "items": [
+          "We keep data only as long as needed to fulfill the purposes for which it was collected.",
+          "We delete or anonymize data upon request unless a longer retention period is required by law."
+        ],
+        "icon": "CheckCircle2"
+      },
+      {
+        "id": "rights",
+        "title": "8. Your rights",
+        "items": [
+          "Request access to, correction of, or deletion of your personal data.",
+          "Withdraw consent or object to certain processing activities.",
+          "Submit a request via the contact details below; we respond within a reasonable time."
+        ],
+        "icon": "UserCheck"
+      },
+      {
+        "id": "links",
+        "title": "9. Third-party links",
+        "items": [
+          "Our site may link to external websites or services.",
+          "We are not responsible for their content or privacy practices. Please review their policies separately."
+        ],
+        "icon": "Globe2"
+      },
+      {
+        "id": "children",
+        "title": "10. Children's privacy",
+        "items": [
+          "Our site is not intended for children under 13, and we do not knowingly collect data from them.",
+          "If you believe we hold data about a child, please contact us so we can remove it promptly."
+        ],
+        "icon": "ShieldCheck"
+      },
+      {
+        "id": "changes",
+        "title": "11. Changes to this policy",
+        "items": [
+          "We may update this policy and will post the latest version on this page.",
+          "We encourage you to review it periodically. Last updated: Jan 13, 2026."
+        ],
+        "icon": "Bell"
+      }
+    ],
+    "contact": {
+      "eyebrow": "Need help?",
+      "title": "Talk to Achi Vegan House",
+      "description": "If you have questions or want to exercise your privacy rights, please reach us via:",
+      "address": "50 Thuy Khue, Thuy Khue, Tay Ho, Ha Noi, Viet Nam",
+      "phone": "098 531 02 38",
+      "email": "sunnyhoai.vu@gmail.com"
+    },
+    "rightsTitle": "Exercising your rights",
+    "rightsCopy": "We respond within a reasonable timeframe (typically within 1-2 business days) and may verify your identity to protect your data.",
+    "rightsBullets": [
+      "Request a copy of the personal data you shared with us.",
+      "Ask for corrections to inaccurate or incomplete information.",
+      "Request deletion unless we must retain it to meet legal obligations.",
+      "Withdraw consent for non-essential emails or messages."
+    ]
+  },
+  "reservation": {
+    "sectionTitle": "Reservations",
+    "heading": "Book a table your way",
+    "description": "Pick your guest count, dining time, and leave your contact details. We'll confirm as soon as we receive it.",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "John Smith",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "090 123 4567",
+    "emailLabel": "Email (for confirmation)",
+    "emailPlaceholder": "you@example.com",
+    "guestLabel": "Guests",
+    "guestSingular": "guest",
+    "guestPlural": "{count} guests",
+    "dateLabel": "Date",
+    "timeLabel": "Time (24h)",
+    "noteLabel": "Additional notes",
+    "notePlaceholder": "Dietary requests, preferred seating, special occasions...",
+    "submit": "Book table",
+    "submitting": "Sending...",
+    "privacy": "We keep your details private and only use them to confirm your booking.",
+    "successTitle": "Reservation submitted",
+    "successDesc": "We'll contact you to confirm in a few minutes.",
+    "errorTitle": "Request failed",
+    "errorDesc": "Unable to send your request, please try again later.",
+    "contactLabel": "Quick contact",
+    "addressLine": "20 Duong Thanh, Hoan Kiem, Ha Noi",
+    "openingHourLabel": "Opening hours",
+    "emailLabelSecondary": "Email",
+    "arrivalNote": "Booking online secures your table during peak hours. Please arrive 5 minutes early for the best experience.",
+    "validation": {
+      "fullNameMin": "Enter your full name (at least 3 characters).",
+      "fullNameMax": "Name must be 80 characters or fewer.",
+      "fullNamePattern": "Name may include letters, spaces, and ', . or - characters.",
+      "fullNameParts": "Please include both first and last name.",
+      "phone": "Phone number is invalid (10 digits starting with 0 or +84).",
+      "email": "Email is not valid",
+      "guestMin": "At least 1 guest",
+      "guestMax": "For parties over 30, please contact us directly",
+      "dateRequired": "Select a date",
+      "timeRequired": "Select a time",
+      "timeInvalid": "Time is not valid.",
+      "timePast": "Please choose a time in the present or future.",
+      "timeOutsideHours": "Please choose a time between 10:00 and 22:00.",
+      "noteMax": "Notes must be 400 characters or fewer"
+    }
+  },
+  "blog": {
+    "metaTitle": "Blog | Hasake Zoo & Habitat Solution",
+    "metaDescription": "News, stories, and updates from Hasake Zoo & Habitat Solution.",
+    "title": "Blog",
+    "subtitle": "Stories, menu insights, and events from Hasake Zoo & Habitat Solution.",
+    "tagLabel": "Tag:",
+    "emptyTitle": "No posts yet",
+    "emptyBody": "We are preparing new stories. Check back soon.",
+    "noCover": "No cover image",
+    "pageLabel": "Page {page} of {total}",
+    "previous": "Previous",
+    "next": "Next",
+    "latestTitle": "Latest",
+    "empty": "No posts yet.",
+    "backToBlog": "Back to blog",
+    "updatedLabel": "Updated",
+    "byLabel": "By",
+    "viewsLabel": "views",
+    "tocTitle": "On this page"
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "OUR SERVICES",
+      "title": "Wildlife Habitat Solutions",
+      "description": "Comprehensive services for designing, building, and maintaining sustainable habitats for wildlife conservation and zoo management."
+    },
+    "filters": {
+      "all": "All Services"
+    },
+    "loading": "Loading services...",
+    "empty": "No services found",
+    "featured": "Featured",
+    "learnMore": "Learn More",
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Contact our team for a consultation on your wildlife habitat needs.",
+      "button": "Get Started"
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "OUR PORTFOLIO",
+      "title": "Habitat Projects & Success Stories",
+      "description": "Explore our completed and ongoing wildlife habitat projects, from zoo design to conservation initiatives across Southeast Asia."
+    },
+    "filters": {
+      "all": "All Projects",
+      "featured": "Featured Projects"
+    },
+    "status": {
+      "completed": "Completed",
+      "ongoing": "Ongoing",
+      "planned": "Planned"
+    },
+    "loading": "Loading projects...",
+    "empty": "No projects found",
+    "featured": "Featured",
+    "viewProject": "View Project",
+    "cta": {
+      "title": "Let's Build Your Next Project",
+      "description": "Partner with us to create innovative and sustainable wildlife habitats.",
+      "button": "Start a Project"
+    }
+  },
+  "products": {
+    "hero": {
+      "eyebrow": "OUR PRODUCTS",
+      "title": "Habitat Equipment & Solutions",
+      "description": "Professional-grade products and equipment designed for sustainable wildlife habitats, zoo management, and conservation projects."
+    },
+    "filters": {
+      "all": "All Products",
+      "featured": "Featured Products"
+    },
+    "loading": "Loading products...",
+    "empty": "No products found",
+    "featured": "Featured",
+    "new": "New",
+    "viewDetails": "View Details",
+    "cta": {
+      "title": "Need Product Consultation?",
+      "description": "Our experts will help you choose the right equipment for your habitat project.",
+      "button": "Contact Us"
+    }
+  },
+  "contact": {
+    "nameLabel": "Full Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+84 90 123 4567",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Your Company Name",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Vietnam",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "How can we help you?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us more about your inquiry...",
+    "submit": "Send Inquiry",
+    "submitting": "Sending...",
+    "privacy": "We keep your details private and only use them to respond to your inquiry.",
+    "successTitle": "Inquiry submitted",
+    "successDesc": "Thank you! We'll get back to you soon.",
+    "errorTitle": "Request failed",
+    "errorDesc": "Unable to send your inquiry. Please try again later."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "ABOUT US",
+      "title": "To Bring Man & Nature Closer",
+      "description": "Hasake Zoo & Habitat Solutions is an internationally acclaimed company specializing in zoo consultancy, wildlife habitat design, and animal logistics. With over 20 years of combined expertise, we create facilities that inspire conservation and connect people with wildlife."
+    },
+    "stats": {
+      "yearsValue": "20+",
+      "yearsLabel": "Years of Experience",
+      "projectsValue": "100+",
+      "projectsLabel": "Successful Projects",
+      "countriesValue": "6+",
+      "countriesLabel": "Countries Served",
+      "certificationsValue": "4",
+      "certificationsLabel": "Certifications"
+    },
+    "whoWeAre": {
+      "title": "Who We Are",
+      "description1": "Hasake Zoo & Habitat Solutions was established through the merger of Goatrade Wildlife Park Co., Ltd. and HKS Designer and Consultant International Co., Ltd., bringing together over 20 years of combined expertise in animal welfare, conservation, and sustainable zoo development.",
+      "description2": "Our mission is simple yet profound: \"To Bring Man & Nature Closer.\" We believe that well-designed wildlife facilities can play a crucial role in conservation education, species preservation, and fostering a deeper connection between humans and the natural world."
+    },
+    "history": {
+      "title": "Our History",
+      "subtitle": "Two legacy companies united by a shared passion for wildlife conservation.",
+      "goatradeTitle": "The Goatrade Legacy",
+      "goatradeYear": "Founded 2000",
+      "goatradeDesc": "Originally established as Goatrade Farming Co., Ltd., our animal transportation division has been at the forefront of professional wildlife logistics for over two decades. We specialize in the legal and ethical transportation of wildlife, adhering strictly to CITES regulations. Our expertise in designing and manufacturing IATA-standard transport crates has made us a trusted partner for zoos, wildlife parks, and conservation organizations worldwide.",
+      "hksTitle": "The HKS Heritage",
+      "hksYear": "Founded 2001",
+      "hksDesc": "HKS Designer and Consultant International Co., Ltd. was established in Bangkok, Thailand, with a vision to revolutionize zoo design and animal habitat development in Asia. Over the years, HKS has designed and implemented numerous award-winning projects across Thailand, Vietnam, India, Indonesia, Malaysia, and Myanmar."
+    },
+    "expertise": {
+      "title": "Our Expertise",
+      "subtitle": "Comprehensive solutions for wildlife conservation and zoo management.",
+      "zooDesignTitle": "Zoo Design & Master Planning",
+      "zooDesignDesc": "Comprehensive zoo design services from concept development to detailed architectural drawings, prioritizing animal welfare, visitor experience, and operational efficiency.",
+      "transportTitle": "Animal Transportation & Logistics",
+      "transportDesc": "Safe animal transport across continents with IATA-standard crate design, CITES documentation, airline coordination, veterinary support, and door-to-door logistics management.",
+      "welfareTitle": "Animal Welfare & Enrichment",
+      "welfareDesc": "Comprehensive environmental enrichment programs that stimulate natural behaviors and improve animal welfare, based on scientific research and best practices from leading zoos.",
+      "breedingTitle": "Conservation Breeding",
+      "breedingDesc": "Support for developing and managing conservation breeding programs for endangered species, including genetic management consultation and coordination with international programs.",
+      "exchangeTitle": "Animal Exchange Programs",
+      "exchangeDesc": "Facilitating animal exchanges between zoos worldwide, helping institutions manage their collections sustainably while supporting global conservation goals.",
+      "educationTitle": "Educational Programs",
+      "educationDesc": "Educational animal presentations combining entertainment with conservation messaging, reaching millions of visitors with positive impact on conservation awareness."
+    },
+    "approach": {
+      "title": "Our Approach",
+      "scienceTitle": "Science-Based Design",
+      "scienceDesc": "Every project is grounded in scientific research. We study animal behavior, ecology, and welfare science to create habitats that meet both biological and psychological needs.",
+      "sustainTitle": "Sustainability Focus",
+      "sustainDesc": "We integrate sustainable practices into all projects, from water management systems to renewable energy solutions, minimizing environmental impact while maximizing conservation impact.",
+      "culturalTitle": "Cultural Sensitivity",
+      "culturalDesc": "With offices across Asia, we incorporate local culture and traditions into our designs while maintaining international standards.",
+      "collabTitle": "Collaborative Process",
+      "collabDesc": "We work closely with clients, architects, veterinarians, and animal care teams to ensure every project meets its goals through a consultative and transparent approach."
+    },
+    "globalReach": {
+      "title": "Our Global Reach",
+      "subtitle": "Headquartered in Bangkok with regional offices across Asia.",
+      "headquartersLabel": "Headquarters",
+      "headquarters": "Bangkok, Thailand",
+      "officesLabel": "Regional Offices",
+      "office1": "Ho Chi Minh City, Vietnam",
+      "office2": "Hanoi, Vietnam",
+      "office3": "Mumbai, India",
+      "office4": "Kuala Lumpur, Malaysia",
+      "projectsLabel": "Projects Completed In",
+      "thailand": "Thailand: Journey to the Jungle (Khao Kheow), Australian Kingdom (Khon Kaen Zoo), Lion Exhibit",
+      "vietnam": "Vietnam: Tram Chim National Park, FLC Safari Park, Saigon Zoo Bird Show, numerous playground & landscape projects",
+      "india": "India: Walk-through aviaries, reptile exhibits, conservation programs",
+      "indonesia": "Indonesia: Theme parks and wildlife facilities",
+      "myanmar": "Myanmar: Animal facilities and zoo consultation",
+      "malaysia": "Malaysia: Various design and consultation projects"
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "item1": "Over 20 years of combined experience",
+      "item2": "Proven track record with 100+ successful projects",
+      "item3": "International team of experts",
+      "item4": "Comprehensive services (design, logistics, enrichment, training)",
+      "item5": "Strong network across Asia and globally",
+      "item6": "Commitment to sustainability and conservation",
+      "item7": "Full compliance with international regulations (CITES, IATA, WAZA guidelines)"
+    },
+    "values": {
+      "title": "Our Values",
+      "innovationTitle": "Innovation",
+      "innovationDesc": "We constantly seek new and better ways to design wildlife facilities and care for animals.",
+      "integrityTitle": "Integrity",
+      "integrityDesc": "We operate with honesty and transparency in all our dealings.",
+      "collaborationTitle": "Collaboration",
+      "collaborationDesc": "We believe the best results come from working together with clients and partners.",
+      "compassionTitle": "Compassion",
+      "compassionDesc": "We care deeply about animal welfare and environmental conservation.",
+      "excellenceTitle": "Excellence",
+      "excellenceDesc": "We strive for the highest quality in everything we do."
+    },
+    "certifications": {
+      "title": "Certifications & Memberships",
+      "item1": "Member of World Association of Zoos and Aquariums (WAZA)",
+      "item2": "CITES registered company",
+      "item3": "IATA certified for live animal transportation",
+      "item4": "ISO certified for quality management"
+    },
+    "commitment": {
+      "title": "Our Commitment",
+      "welfareTitle": "To Animal Welfare",
+      "welfareDesc": "Animal welfare is our top priority. Every design decision, every transport plan, every enrichment program is developed with the animal's physical and psychological well-being at the forefront.",
+      "conservationTitle": "To Conservation",
+      "conservationDesc": "We believe zoos and wildlife parks have a responsibility to contribute to conservation. We help our clients develop programs that support species preservation, habitat protection, and public education.",
+      "excellenceTitle": "To Excellence",
+      "excellenceDesc": "We set high standards for ourselves and continually strive to improve, staying current with the latest research, technologies, and best practices.",
+      "clientsTitle": "To Our Clients",
+      "clientsDesc": "We are committed to delivering projects on time, within budget, and exceeding expectations. Our success is measured by our clients' satisfaction."
+    },
+    "vision": {
+      "title": "Our Vision for the Future",
+      "description": "We envision a world where every zoo and wildlife park serves as a center for conservation, education, and research. Through innovation, collaboration, and unwavering commitment to animal welfare, we will continue to push the boundaries of what's possible in zoo design and wildlife management."
+    },
+    "contactInfo": {
+      "title": "Contact Us",
+      "address": "78/23, City Sense Village, Soi Watcharapol 2, Tha-Rang, Bangkhen, Bangkok 10230, Thailand",
+      "tel": "+662-3636660-1",
+      "fax": "+662-3636662",
+      "email1": "info@hksconsultants.com",
+      "email2": "info@goatrade.com",
+      "website": "www.hasakezoo.com"
+    },
+    "cta": {
+      "title": "Ready to Partner with Us?",
+      "description": "We welcome inquiries for zoo design, animal transportation, enrichment programs, conservation breeding, educational programs, and facility renovations.",
+      "button": "Get in Touch"
+    }
+  }
+}

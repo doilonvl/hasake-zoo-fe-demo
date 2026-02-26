@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "eyebrow": "OUR PRODUCTS",
+    "title": "Habitat Equipment & Solutions",
+    "description": "Professional-grade products and equipment designed for sustainable wildlife habitats, zoo management, and conservation projects."
+  },
+  "filters": {
+    "all": "All Products",
+    "featured": "Featured Products"
+  },
+  "loading": "Loading products...",
+  "empty": "No products found",
+  "featured": "Featured",
+  "new": "New",
+  "viewDetails": "View Details",
+  "cta": {
+    "title": "Need Product Consultation?",
+    "description": "Our experts will help you choose the right equipment for your habitat project.",
+    "button": "Contact Us"
+  }
+}

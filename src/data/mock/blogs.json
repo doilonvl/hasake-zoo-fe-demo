@@ -1,0 +1,295 @@
+[
+  {
+    "_id": "blog_001",
+    "slug": "clouded-leopard-breeding-program",
+    "slug_i18n": {
+      "vi": "chuong-trinh-nhan-giong-bao-may",
+      "en": "clouded-leopard-breeding-program"
+    },
+    "title_i18n": {
+      "vi": "Chương Trình Nhân Giống Báo Mây",
+      "en": "Clouded Leopard Breeding Program"
+    },
+    "excerpt_i18n": {
+      "vi": "Báo mây từng khá phổ biến trong các vườn thú và khu bảo tồn của chúng ta, nhưng ngày nay chúng đã trở nên hiếm và đang bị đe dọa nghiêm trọng do nạn phá rừng, buôn bán thú cưng và săn trộm.",
+      "en": "The clouded leopards were fairly common in our wildlife parks and sanctuaries but today they are rare and seriously endangered due to deforestation, pet trade and poaching."
+    },
+    "content_i18n": {
+      "vi": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Tình Trạng Báo Mây Hiện Nay" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Báo mây (Neofelis nebulosa) từng khá phổ biến trong các vườn thú và khu bảo tồn hoang dã của chúng ta, nhưng ngày nay chúng đã trở nên hiếm và đang bị đe dọa nghiêm trọng. Sự suy giảm này chủ yếu do:"
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Phá rừng và mất môi trường sống" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Buôn bán thú cưng bất hợp pháp" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Săn trộm để lấy bộ lông có hoa văn đẹp" }] }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Tổng Quan Chương Trình" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Hiện tại, Tổ chức Công viên Động vật học (ZPO) có 27 cá thể báo mây - đây là một quần thể nuôi nhốt tương đối lớn so với các vườn thú khác trong khu vực. Tuy nhiên, tỷ lệ thành công trong việc nhân giống loài mèo này trong điều kiện nuôi nhốt vẫn còn thấp, chủ yếu do sự hiểu biết kém về quản lý nuôi nhốt báo mây."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Nguồn lực tài chính còn hạn chế và chưa có chương trình nhân giống đúng cách cho loài mèo này ở quy mô thích hợp. Chương trình nhân giống được đề xuất sẽ là chương trình đầu tiên thuộc loại này."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Mục Tiêu Của Chương Trình" }]
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thiết lập quy trình nhân giống phù hợp dựa trên nghiên cứu khoa học" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tăng quần thể nuôi nhốt thông qua sinh sản thành công" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Duy trì đa dạng di truyền trong quần thể nuôi nhốt" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Phát triển chuyên môn trong chăm sóc và thú y cho báo mây" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tạo quần thể bền vững cho khả năng tái thả về môi trường tự nhiên trong tương lai" }] }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Tầm Quan Trọng Của Chương Trình" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Nếu chương trình thành công, nó sẽ cung cấp đủ quần thể để cuối cùng có thể tái thả vào rừng của chúng ta. Chương trình này sẽ là con đường chính cho sự hiểu biết sâu hơn về bản thân loài và cung cấp khả năng tốt nhất của loài người để bảo vệ chính mình bằng cách bảo vệ môi trường của mình."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Báo mây là một trong những loài thiết yếu cho sự cân bằng sinh thái của môi trường." }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Các Tổ Chức Tham Gia" }]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Tổ chức Công viên Động vật học Thái Lan" }, { "type": "text", "text": " - Dưới sự bảo trợ của Đức Vua" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Nashville Zoo" }, { "type": "text", "text": " (Hoa Kỳ)" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "John Ball Zoological Gardens" }, { "type": "text", "text": " - Điều phối viên SSP cho Báo mây (Hoa Kỳ)" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "HKS Designer and Consultant International" }, { "type": "text", "text": " (Thái Lan)" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Smithsonian Conservation and Research Center" }, { "type": "text", "text": " (Hoa Kỳ)" }] }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Thời Gian và Kinh Phí" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "marks": [{ "type": "bold" }], "text": "Thời gian thực hiện: " },
+              { "type": "text", "text": "3 năm (có thể gia hạn)" }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "marks": [{ "type": "bold" }], "text": "Tổng kinh phí cần: " },
+              { "type": "text", "text": "20,000,000 Baht Thái Lan (khoảng 550,000 USD)" }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Mọi đóng góp từ các hiệp hội tư nhân hoặc tổ chức đều được chào đón." }]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Kết Luận" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Để đạt được mục tiêu này, ban quản lý đã quyết định tìm kiếm sự hỗ trợ từ các tổ chức, quỹ và hiệp hội địa phương cũng như quốc tế để cùng nhau đóng góp vào sự thành công của chương trình này. Việc nhân giống hoang dã nuôi nhốt cần sự hỗ trợ nghiêm túc từ nhiều tổ chức khác nhau để bảo tồn quần thể hiện có trong điều kiện nuôi nhốt." }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Chương trình này giúp tập hợp các quần thể khác nhau phân tán trên các vườn thú trong khu vực để quần thể nuôi nhốt có thể được nhân giống theo kế hoạch." }]
+          }
+        ]
+      },
+      "en": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Current Status of Clouded Leopards" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "The clouded leopard (Neofelis nebulosa) was once fairly common in our wildlife parks and sanctuaries, but today they are rare and seriously endangered. This decline is primarily due to:" }]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Deforestation and habitat loss" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Illegal pet trade" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Poaching for their beautiful patterned skin" }] }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Program Overview" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Currently, the Zoological Park Organization (ZPO) has 27 clouded leopards - a reasonably large captive population compared to other zoos in the region. However, the success rate of breeding these cats in captivity has been low, mainly due to poor understanding of their captive management requirements." }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Financial resources are limited and there is no proper breeding program planned for this species at an appropriate scale. The proposed breeding program will be the first of its kind." }]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Program Goals" }]
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Establish proper breeding protocols based on scientific research" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Increase captive population through successful reproduction" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Maintain genetic diversity within the captive population" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Develop expertise in clouded leopard husbandry and veterinary care" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Create sustainable population for potential future reintroduction into natural habitats" }] }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Program Importance" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "If the program succeeds, it will provide sufficient population for final reintroduction into our forests. The program will be a key avenue for future understanding of the species itself and provide the best ability of mankind to protect himself by protecting his own environment." }]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The clouded leopard is one of the species which is essential for the eco-balance of the environment." }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Participating Organizations" }]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Zoological Park Organization Thailand" }, { "type": "text", "text": " - Under the Royal Patronage of HM the King" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Nashville Zoo" }, { "type": "text", "text": " (USA)" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "John Ball Zoological Gardens" }, { "type": "text", "text": " - SSP Coordinator for Clouded Leopard (USA)" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "HKS Designer and Consultant International" }, { "type": "text", "text": " (Thailand)" }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Smithsonian Conservation and Research Center" }, { "type": "text", "text": " (USA)" }] }] }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Duration and Funding" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "marks": [{ "type": "bold" }], "text": "Program Duration: " },
+              { "type": "text", "text": "3 years (renewable)" }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "marks": [{ "type": "bold" }], "text": "Total Funding Required: " },
+              { "type": "text", "text": "20,000,000 Thai Baht (approximately $550,000 USD)" }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Any contributions from private associations or institutions are most welcome." }]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "type": "text", "text": "Conclusion" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "To achieve this target, the management has decided to seek assistance from various local and international institutions, foundations and associations to come forward to provide assistance in the success of this program. Ex-situ captive breeding of wildlife needs serious support from various organizations to conserve the existing population in captivity." }]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "The program helps bring together various populations scattered all over regional zoos so that the ex-situ population can be bred on a planned basis." }]
+          }
+        ]
+      }
+    },
+    "coverImage": {
+      "url": "https://res.cloudinary.com/dm0fuut1j/image/upload/v1762932787/hasake/projects/page_029_img_01.jpg",
+      "alt_i18n": {
+        "vi": "Báo mây trong môi trường tự nhiên",
+        "en": "Clouded leopard in natural habitat"
+      }
+    },
+    "tags": ["conservation", "breeding program", "clouded leopard", "wildlife", "endangered species"],
+    "status": "published",
+    "publishedAt": "2024-01-15T00:00:00.000Z",
+    "isFeatured": true,
+    "sortOrder": 1,
+    "seoTitle_i18n": {
+      "vi": "Chương Trình Nhân Giống Báo Mây - Bảo Tồn Loài Nguy Cấp",
+      "en": "Clouded Leopard Breeding Program - Endangered Species Conservation"
+    },
+    "seoDescription_i18n": {
+      "vi": "Tìm hiểu về chương trình nhân giống báo mây tiên phong tại Thái Lan, nhằm bảo tồn loài mèo quý hiếm này khỏi nguy cơ tuyệt chủng.",
+      "en": "Learn about the pioneering clouded leopard breeding program in Thailand, aimed at conserving this rare cat species from extinction."
+    },
+    "authorName": "Hasake Zoo Team",
+    "createdAt": "2024-01-10T00:00:00.000Z",
+    "updatedAt": "2024-01-15T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "nameLabel": "Full Name",
+  "namePlaceholder": "John Doe",
+  "emailLabel": "Email",
+  "emailPlaceholder": "john@example.com",
+  "phoneLabel": "Phone Number",
+  "phonePlaceholder": "+84 90 123 4567",
+  "companyLabel": "Company",
+  "companyPlaceholder": "Your Company Name",
+  "countryLabel": "Country",
+  "countryPlaceholder": "Vietnam",
+  "subjectLabel": "Subject",
+  "subjectPlaceholder": "How can we help you?",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Tell us more about your inquiry...",
+  "submit": "Send Inquiry",
+  "submitting": "Sending...",
+  "privacy": "We keep your details private and only use them to respond to your inquiry.",
+  "successTitle": "Inquiry submitted",
+  "successDesc": "Thank you! We'll get back to you soon.",
+  "errorTitle": "Request failed",
+  "errorDesc": "Unable to send your inquiry. Please try again later."
+}

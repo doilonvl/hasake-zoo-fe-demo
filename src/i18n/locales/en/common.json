@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "getInTouch": "Get in Touch"
+  },
+  "footer": {
+    "description": "Leading provider of sustainable wildlife habitat solutions and conservation services in Vietnam.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe to get updates on conservation projects and habitat innovations.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  }
+}

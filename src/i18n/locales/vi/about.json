@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "eyebrow": "VỀ CHÚNG TÔI",
+    "title": "Đưa Con Người và Thiên Nhiên Gần Nhau Hơn",
+    "description": "Hasake Zoo & Habitat Solutions là công ty uy tín quốc tế chuyên về tư vấn vườn thú, thiết kế môi trường sống hoang dã và hậu cần động vật. Với hơn 20 năm kinh nghiệm tích lũy, chúng tôi tạo ra những cơ sở truyền cảm hứng bảo tồn và kết nối con người với thiên nhiên."
+  },
+  "stats": {
+    "yearsValue": "20+",
+    "yearsLabel": "Năm Kinh Nghiệm",
+    "projectsValue": "100+",
+    "projectsLabel": "Dự Án Thành Công",
+    "countriesValue": "6+",
+    "countriesLabel": "Quốc Gia Phục Vụ",
+    "certificationsValue": "4",
+    "certificationsLabel": "Chứng Nhận"
+  },
+  "whoWeAre": {
+    "title": "Chúng Tôi Là Ai",
+    "description1": "Hasake Zoo & Habitat Solutions được thành lập thông qua sự hợp nhất của Goatrade Wildlife Park Co., Ltd. và HKS Designer and Consultant International Co., Ltd., kết hợp hơn 20 năm kinh nghiệm chuyên môn trong phúc lợi động vật, bảo tồn và phát triển vườn thú bền vững.",
+    "description2": "Sứ mệnh của chúng tôi đơn giản nhưng sâu sắc: \"Đưa Con Người và Thiên Nhiên Gần Nhau Hơn.\" Chúng tôi tin rằng các cơ sở hoang dã được thiết kế tốt có thể đóng vai trò quan trọng trong giáo dục bảo tồn, bảo tồn loài và thúc đẩy kết nối sâu sắc giữa con người và thế giới tự nhiên."
+  },
+  "history": {
+    "title": "Lịch Sử Phát Triển",
+    "subtitle": "Hai công ty kế thừa thống nhất bởi niềm đam mê chung về bảo tồn động vật hoang dã.",
+    "goatradeTitle": "Di Sản Goatrade",
+    "goatradeYear": "Thành lập năm 2000",
+    "goatradeDesc": "Ban đầu được thành lập với tên Goatrade Farming Co., Ltd., bộ phận vận chuyển động vật của chúng tôi đã đi đầu trong lĩnh vực hậu cần động vật hoang dã chuyên nghiệp hơn hai thập kỷ. Chúng tôi chuyên về vận chuyển động vật hoang dã hợp pháp và có đạo đức, tuân thủ nghiêm ngặt quy định CITES. Chuyên môn trong thiết kế và sản xuất lồng vận chuyển tiêu chuẩn IATA đã khiến chúng tôi trở thành đối tác tin cậy cho các vườn thú, công viên hoang dã và tổ chức bảo tồn trên toàn thế giới.",
+    "hksTitle": "Di Sản HKS",
+    "hksYear": "Thành lập năm 2001",
+    "hksDesc": "HKS Designer and Consultant International Co., Ltd. được thành lập tại Bangkok, Thái Lan, với tầm nhìn cách mạng hóa thiết kế vườn thú và phát triển môi trường sống động vật tại châu Á. Qua nhiều năm, HKS đã thiết kế và triển khai nhiều dự án đoạt giải thưởng tại Thái Lan, Việt Nam, Ấn Độ, Indonesia, Malaysia và Myanmar."
+  },
+  "expertise": {
+    "title": "Chuyên Môn Của Chúng Tôi",
+    "subtitle": "Giải pháp toàn diện cho bảo tồn động vật hoang dã và quản lý vườn thú.",
+    "zooDesignTitle": "Thiết Kế & Quy Hoạch Vườn Thú",
+    "zooDesignDesc": "Dịch vụ thiết kế vườn thú toàn diện từ phát triển ý tưởng đến bản vẽ kiến trúc chi tiết, ưu tiên phúc lợi động vật, trải nghiệm du khách và hiệu quả vận hành.",
+    "transportTitle": "Vận Chuyển & Hậu Cần Động Vật",
+    "transportDesc": "Vận chuyển động vật an toàn xuyên lục địa với thiết kế lồng tiêu chuẩn IATA, giấy tờ CITES, phối hợp hàng không, hỗ trợ thú y và quản lý hậu cần tận nơi.",
+    "welfareTitle": "Phúc Lợi & Làm Giàu Môi Trường",
+    "welfareDesc": "Chương trình làm giàu môi trường toàn diện kích thích hành vi tự nhiên và cải thiện phúc lợi động vật, dựa trên nghiên cứu khoa học và thực tiễn tốt nhất từ các vườn thú hàng đầu.",
+    "breedingTitle": "Nhân Giống Bảo Tồn",
+    "breedingDesc": "Hỗ trợ phát triển và quản lý chương trình nhân giống bảo tồn cho các loài nguy cấp, bao gồm tư vấn quản lý di truyền và phối hợp với các chương trình quốc tế.",
+    "exchangeTitle": "Chương Trình Trao Đổi Động Vật",
+    "exchangeDesc": "Hỗ trợ trao đổi động vật giữa các vườn thú trên toàn thế giới, giúp các tổ chức quản lý bộ sưu tập bền vững đồng thời hỗ trợ mục tiêu bảo tồn toàn cầu.",
+    "educationTitle": "Chương Trình Giáo Dục",
+    "educationDesc": "Chương trình trình diễn động vật giáo dục kết hợp giải trí với thông điệp bảo tồn, tiếp cận hàng triệu du khách với tác động tích cực đến nhận thức bảo tồn."
+  },
+  "approach": {
+    "title": "Phương Pháp Của Chúng Tôi",
+    "scienceTitle": "Thiết Kế Dựa Trên Khoa Học",
+    "scienceDesc": "Mọi dự án đều dựa trên nghiên cứu khoa học. Chúng tôi nghiên cứu hành vi động vật, sinh thái học và khoa học phúc lợi để tạo ra môi trường sống đáp ứng cả nhu cầu sinh học và tâm lý.",
+    "sustainTitle": "Tập Trung Bền Vững",
+    "sustainDesc": "Chúng tôi tích hợp các thực hành bền vững vào mọi dự án, từ hệ thống quản lý nước đến giải pháp năng lượng tái tạo, giảm thiểu tác động môi trường đồng thời tối đa hóa tác động bảo tồn.",
+    "culturalTitle": "Nhạy Cảm Văn Hóa",
+    "culturalDesc": "Với văn phòng trên khắp châu Á, chúng tôi kết hợp văn hóa và truyền thống địa phương vào thiết kế trong khi duy trì tiêu chuẩn quốc tế.",
+    "collabTitle": "Quy Trình Hợp Tác",
+    "collabDesc": "Chúng tôi làm việc chặt chẽ với khách hàng, kiến trúc sư, bác sĩ thú y và đội ngũ chăm sóc động vật để đảm bảo mọi dự án đạt mục tiêu thông qua cách tiếp cận tư vấn và minh bạch."
+  },
+  "globalReach": {
+    "title": "Phạm Vi Toàn Cầu",
+    "subtitle": "Trụ sở tại Bangkok với các văn phòng khu vực trên khắp châu Á.",
+    "headquartersLabel": "Trụ Sở Chính",
+    "headquarters": "Bangkok, Thái Lan",
+    "officesLabel": "Văn Phòng Khu Vực",
+    "office1": "TP. Hồ Chí Minh, Việt Nam",
+    "office2": "Hà Nội, Việt Nam",
+    "office3": "Mumbai, Ấn Độ",
+    "office4": "Kuala Lumpur, Malaysia",
+    "projectsLabel": "Quốc Gia Đã Triển Khai Dự Án",
+    "thailand": "Thái Lan: Journey to the Jungle (Khao Kheow), Australian Kingdom (Khon Kaen Zoo), Lion Exhibit",
+    "vietnam": "Việt Nam: VQG Tràm Chim, FLC Safari Park, Biểu Diễn Chim Thảo Cầm Viên Sài Gòn, nhiều dự án sân chơi & cảnh quan",
+    "india": "Ấn Độ: Chuồng chim đi bộ, triển lãm bò sát, chương trình bảo tồn",
+    "indonesia": "Indonesia: Công viên giải trí và cơ sở hoang dã",
+    "myanmar": "Myanmar: Cơ sở động vật và tư vấn vườn thú",
+    "malaysia": "Malaysia: Các dự án thiết kế và tư vấn đa dạng"
+  },
+  "whyChooseUs": {
+    "title": "Tại Sao Chọn Chúng Tôi",
+    "item1": "Hơn 20 năm kinh nghiệm tích lũy",
+    "item2": "Thành tích đã được chứng minh với hơn 100 dự án thành công",
+    "item3": "Đội ngũ chuyên gia quốc tế",
+    "item4": "Dịch vụ toàn diện (thiết kế, hậu cần, làm giàu, đào tạo)",
+    "item5": "Mạng lưới mạnh mẽ trên khắp châu Á và toàn cầu",
+    "item6": "Cam kết bền vững và bảo tồn",
+    "item7": "Tuân thủ đầy đủ các quy định quốc tế (CITES, IATA, hướng dẫn WAZA)"
+  },
+  "values": {
+    "title": "Giá Trị Cốt Lõi",
+    "innovationTitle": "Đổi Mới",
+    "innovationDesc": "Chúng tôi không ngừng tìm kiếm những cách mới và tốt hơn để thiết kế cơ sở hoang dã và chăm sóc động vật.",
+    "integrityTitle": "Chính Trực",
+    "integrityDesc": "Chúng tôi hoạt động với sự trung thực và minh bạch trong mọi giao dịch.",
+    "collaborationTitle": "Hợp Tác",
+    "collaborationDesc": "Chúng tôi tin rằng kết quả tốt nhất đến từ việc hợp tác cùng khách hàng và đối tác.",
+    "compassionTitle": "Nhân Ái",
+    "compassionDesc": "Chúng tôi quan tâm sâu sắc đến phúc lợi động vật và bảo tồn môi trường.",
+    "excellenceTitle": "Xuất Sắc",
+    "excellenceDesc": "Chúng tôi phấn đấu đạt chất lượng cao nhất trong mọi việc."
+  },
+  "certifications": {
+    "title": "Chứng Nhận & Thành Viên",
+    "item1": "Thành viên Hiệp hội Vườn Thú và Thủy Cung Thế Giới (WAZA)",
+    "item2": "Công ty đăng ký CITES",
+    "item3": "Chứng nhận IATA cho vận chuyển động vật sống",
+    "item4": "Chứng nhận ISO về quản lý chất lượng"
+  },
+  "commitment": {
+    "title": "Cam Kết Của Chúng Tôi",
+    "welfareTitle": "Với Phúc Lợi Động Vật",
+    "welfareDesc": "Phúc lợi động vật là ưu tiên hàng đầu. Mọi quyết định thiết kế, mọi kế hoạch vận chuyển, mọi chương trình làm giàu đều được phát triển với sức khỏe thể chất và tâm lý của động vật là trên hết.",
+    "conservationTitle": "Với Bảo Tồn",
+    "conservationDesc": "Chúng tôi tin rằng vườn thú và công viên hoang dã có trách nhiệm đóng góp cho bảo tồn. Chúng tôi giúp khách hàng phát triển chương trình hỗ trợ bảo tồn loài, bảo vệ môi trường sống và giáo dục cộng đồng.",
+    "excellenceTitle": "Với Sự Xuất Sắc",
+    "excellenceDesc": "Chúng tôi đặt tiêu chuẩn cao và không ngừng nỗ lực cải thiện, luôn cập nhật nghiên cứu, công nghệ và thực tiễn tốt nhất mới nhất.",
+    "clientsTitle": "Với Khách Hàng",
+    "clientsDesc": "Chúng tôi cam kết hoàn thành dự án đúng hạn, trong ngân sách và vượt kỳ vọng. Thành công của chúng tôi được đo bằng sự hài lòng của khách hàng."
+  },
+  "vision": {
+    "title": "Tầm Nhìn Tương Lai",
+    "description": "Chúng tôi hình dung một thế giới nơi mọi vườn thú và công viên hoang dã đều là trung tâm bảo tồn, giáo dục và nghiên cứu. Thông qua đổi mới, hợp tác và cam kết không ngừng với phúc lợi động vật, chúng tôi sẽ tiếp tục đẩy xa ranh giới của những điều khả thi trong thiết kế vườn thú và quản lý hoang dã."
+  },
+  "contactInfo": {
+    "title": "Liên Hệ",
+    "address": "78/23, City Sense Village, Soi Watcharapol 2, Tha-Rang, Bangkhen, Bangkok 10230, Thái Lan",
+    "tel": "+662-3636660-1",
+    "fax": "+662-3636662",
+    "email1": "info@hksconsultants.com",
+    "email2": "info@goatrade.com",
+    "website": "www.hasakezoo.com"
+  },
+  "cta": {
+    "title": "Sẵn Sàng Hợp Tác?",
+    "description": "Chúng tôi hoan nghênh các yêu cầu về thiết kế vườn thú, vận chuyển động vật, chương trình làm giàu, nhân giống bảo tồn, chương trình giáo dục và nâng cấp cơ sở.",
+    "button": "Liên Hệ Ngay"
+  }
+}

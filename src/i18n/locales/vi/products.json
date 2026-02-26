@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "eyebrow": "SẢN PHẨM CỦA CHÚNG TÔI",
+    "title": "Thiết Bị & Giải Pháp Môi Trường Sống",
+    "description": "Sản phẩm và thiết bị chuyên nghiệp được thiết kế cho môi trường sống động vật hoang dã bền vững, quản lý vườn thú và các dự án bảo tồn."
+  },
+  "filters": {
+    "all": "Tất Cả Sản Phẩm",
+    "featured": "Sản Phẩm Nổi Bật"
+  },
+  "loading": "Đang tải sản phẩm...",
+  "empty": "Không tìm thấy sản phẩm nào",
+  "featured": "Nổi Bật",
+  "new": "Mới",
+  "viewDetails": "Xem Chi Tiết",
+  "cta": {
+    "title": "Cần Tư Vấn Sản Phẩm?",
+    "description": "Chuyên gia của chúng tôi sẽ giúp bạn chọn thiết bị phù hợp cho dự án môi trường sống.",
+    "button": "Liên Hệ Ngay"
+  }
+}

@@ -13,6 +13,7 @@ import {
   fetchAdminServiceCategoryById,
   createAdminServiceCategory,
   updateAdminServiceCategory,
+  publishAdminServiceCategory,
   deleteAdminServiceCategory,
 } from "@/lib/api/services.admin";
 import { resolveLocalizedString } from "@/lib/i18n";
@@ -81,11 +82,14 @@ function CategoryEditor({
   const [nameEn, setNameEn] = useState("");
   const [slugVi, setSlugVi] = useState("");
   const [slugEn, setSlugEn] = useState("");
+  const [slugViSynced, setSlugViSynced] = useState(true);
+  const [slugEnSynced, setSlugEnSynced] = useState(true);
   const [descVi, setDescVi] = useState("");
   const [descEn, setDescEn] = useState("");
   const [icon, setIcon] = useState("");
   const [sortOrder, setSortOrder] = useState(0);
   const [isFeatured, setIsFeatured] = useState(false);
+  const [status, setStatus] = useState<PublishStatus>("draft");
 
   const hydrate = useCallback((c: ServiceCategory) => {
     setKey(c.key || "");
@@ -93,11 +97,14 @@ function CategoryEditor({
     setNameEn(c.name_i18n?.en || "");
     setSlugVi(c.slug_i18n?.vi || "");
     setSlugEn(c.slug_i18n?.en || "");
+    setSlugViSynced(true);
+    setSlugEnSynced(true);
     setDescVi(c.description_i18n?.vi || "");
     setDescEn(c.description_i18n?.en || "");
     setIcon(c.icon || "");
     setSortOrder(c.sortOrder ?? 0);
     setIsFeatured(!!c.isFeatured);
+    setStatus(c.status || "draft");
   }, []);
 
   useEffect(() => {
@@ -105,21 +112,21 @@ function CategoryEditor({
     let active = true;
     setLoading(true);
     fetchAdminServiceCategoryById(categoryId)
-      .then((res) => active && hydrate(res.data))
+      .then((res) => active && hydrate(res))
       .catch((err) => active && toast.error(getErrorMessage(err)))
       .finally(() => active && setLoading(false));
     return () => { active = false; };
   }, [mode, categoryId, hydrate]);
 
   useEffect(() => {
-    if (slugVi || !nameVi) return;
+    if (!slugViSynced || !nameVi) return;
     setSlugVi(slugify(nameVi));
-  }, [slugVi, nameVi]);
+  }, [nameVi, slugViSynced]);
 
   useEffect(() => {
-    if (slugEn || !nameEn) return;
+    if (!slugEnSynced || !nameEn) return;
     setSlugEn(slugify(nameEn));
-  }, [slugEn, nameEn]);
+  }, [nameEn, slugEnSynced]);
 
   const handleSave = async () => {
     if (!nameVi.trim() && !nameEn.trim()) {
@@ -155,6 +162,17 @@ function CategoryEditor({
     }
   };
 
+  const handlePublish = async () => {
+    if (!categoryId) return;
+    try {
+      const res = await publishAdminServiceCategory(categoryId);
+      hydrate(res);
+      toast.success("Category published");
+    } catch (err) {
+      toast.error(getErrorMessage(err));
+    }
+  };
+
   const handleDelete = async () => {
     if (!categoryId) return;
     if (!confirm("Delete this category?")) return;
@@ -171,14 +189,24 @@ function CategoryEditor({
 
   return (
     <div className="space-y-4">
-      <div className="sticky top-0 z-10 flex items-center justify-end gap-2 border-b bg-white/95 py-2 backdrop-blur">
-        <Button variant="outline" onClick={onCancel}>Cancel</Button>
-        {mode === "edit" && categoryId ? (
-          <Button variant="destructive" onClick={handleDelete}>Delete</Button>
-        ) : null}
-        <Button onClick={handleSave} disabled={saving}>
-          {saving ? "Saving..." : "Save"}
-        </Button>
+      <div className="sticky top-0 z-10 flex items-center justify-between gap-2 border-b bg-white/95 py-2 backdrop-blur">
+        <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${status === "published" ? "bg-emerald-100 text-emerald-800 border-emerald-200" : "bg-slate-100 text-slate-700 border-slate-200"}`}>
+          {status}
+        </span>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" onClick={onCancel}>Cancel</Button>
+          {mode === "edit" && categoryId ? (
+            <>
+              {status !== "published" && (
+                <Button variant="outline" onClick={handlePublish}>Publish</Button>
+              )}
+              <Button variant="destructive" onClick={handleDelete}>Delete</Button>
+            </>
+          ) : null}
+          <Button onClick={handleSave} disabled={saving}>
+            {saving ? "Saving..." : "Save"}
+          </Button>
+        </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -206,11 +234,11 @@ function CategoryEditor({
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="grid gap-1.5">
           <Label>Slug (VI)</Label>
-          <Input value={slugVi} onChange={(e) => setSlugVi(e.target.value)} />
+          <Input value={slugVi} onChange={(e) => { setSlugVi(e.target.value); setSlugViSynced(false); }} />
         </div>
         <div className="grid gap-1.5">
           <Label>Slug (EN)</Label>
-          <Input value={slugEn} onChange={(e) => setSlugEn(e.target.value)} />
+          <Input value={slugEn} onChange={(e) => { setSlugEn(e.target.value); setSlugEnSynced(false); }} />
         </div>
       </div>
 
@@ -262,8 +290,8 @@ export default function AdminCategoriesPage() {
     setError(null);
     fetchAdminServiceCategories({ page, limit: LIMIT, signal: controller.signal })
       .then((res) => {
-        setItems(res.data || []);
-        setTotal(res.pagination?.total || 0);
+        setItems(res.items || []);
+        setTotal(res.total || 0);
       })
       .catch((err) => {
         if ((err as Error).name === "AbortError") return;
@@ -362,8 +390,8 @@ export default function AdminCategoriesPage() {
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[min(96vw,700px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl">
-          <div className="flex items-center justify-between border-b px-5 py-3">
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 max-h-[90vh] w-[min(96vw,700px)] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-white shadow-2xl">
+          <div className="sticky top-0 z-10 flex items-center justify-between rounded-t-2xl border-b bg-white px-5 py-3">
             <Dialog.Title className="text-lg font-semibold text-neutral-900">
               {editorMode === "create" ? "New category" : "Edit category"}
             </Dialog.Title>
@@ -371,7 +399,7 @@ export default function AdminCategoriesPage() {
               <Button variant="outline" size="sm">Close</Button>
             </Dialog.Close>
           </div>
-          <div className="max-h-[85vh] overflow-y-auto px-5 py-4">
+          <div className="px-5 py-4">
             <CategoryEditor
               mode={editorMode}
               categoryId={activeCatId}

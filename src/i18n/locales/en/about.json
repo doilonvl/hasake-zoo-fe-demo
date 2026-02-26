@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "eyebrow": "ABOUT US",
+    "title": "To Bring Man & Nature Closer",
+    "description": "Hasake Zoo & Habitat Solutions is an internationally acclaimed company specializing in zoo consultancy, wildlife habitat design, and animal logistics. With over 20 years of combined expertise, we create facilities that inspire conservation and connect people with wildlife."
+  },
+  "stats": {
+    "yearsValue": "20+",
+    "yearsLabel": "Years of Experience",
+    "projectsValue": "100+",
+    "projectsLabel": "Successful Projects",
+    "countriesValue": "6+",
+    "countriesLabel": "Countries Served",
+    "certificationsValue": "4",
+    "certificationsLabel": "Certifications"
+  },
+  "whoWeAre": {
+    "title": "Who We Are",
+    "description1": "Hasake Zoo & Habitat Solutions was established through the merger of Goatrade Wildlife Park Co., Ltd. and HKS Designer and Consultant International Co., Ltd., bringing together over 20 years of combined expertise in animal welfare, conservation, and sustainable zoo development.",
+    "description2": "Our mission is simple yet profound: \"To Bring Man & Nature Closer.\" We believe that well-designed wildlife facilities can play a crucial role in conservation education, species preservation, and fostering a deeper connection between humans and the natural world."
+  },
+  "history": {
+    "title": "Our History",
+    "subtitle": "Two legacy companies united by a shared passion for wildlife conservation.",
+    "goatradeTitle": "The Goatrade Legacy",
+    "goatradeYear": "Founded 2000",
+    "goatradeDesc": "Originally established as Goatrade Farming Co., Ltd., our animal transportation division has been at the forefront of professional wildlife logistics for over two decades. We specialize in the legal and ethical transportation of wildlife, adhering strictly to CITES regulations. Our expertise in designing and manufacturing IATA-standard transport crates has made us a trusted partner for zoos, wildlife parks, and conservation organizations worldwide.",
+    "hksTitle": "The HKS Heritage",
+    "hksYear": "Founded 2001",
+    "hksDesc": "HKS Designer and Consultant International Co., Ltd. was established in Bangkok, Thailand, with a vision to revolutionize zoo design and animal habitat development in Asia. Over the years, HKS has designed and implemented numerous award-winning projects across Thailand, Vietnam, India, Indonesia, Malaysia, and Myanmar."
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "subtitle": "Comprehensive solutions for wildlife conservation and zoo management.",
+    "zooDesignTitle": "Zoo Design & Master Planning",
+    "zooDesignDesc": "Comprehensive zoo design services from concept development to detailed architectural drawings, prioritizing animal welfare, visitor experience, and operational efficiency.",
+    "transportTitle": "Animal Transportation & Logistics",
+    "transportDesc": "Safe animal transport across continents with IATA-standard crate design, CITES documentation, airline coordination, veterinary support, and door-to-door logistics management.",
+    "welfareTitle": "Animal Welfare & Enrichment",
+    "welfareDesc": "Comprehensive environmental enrichment programs that stimulate natural behaviors and improve animal welfare, based on scientific research and best practices from leading zoos.",
+    "breedingTitle": "Conservation Breeding",
+    "breedingDesc": "Support for developing and managing conservation breeding programs for endangered species, including genetic management consultation and coordination with international programs.",
+    "exchangeTitle": "Animal Exchange Programs",
+    "exchangeDesc": "Facilitating animal exchanges between zoos worldwide, helping institutions manage their collections sustainably while supporting global conservation goals.",
+    "educationTitle": "Educational Programs",
+    "educationDesc": "Educational animal presentations combining entertainment with conservation messaging, reaching millions of visitors with positive impact on conservation awareness."
+  },
+  "approach": {
+    "title": "Our Approach",
+    "scienceTitle": "Science-Based Design",
+    "scienceDesc": "Every project is grounded in scientific research. We study animal behavior, ecology, and welfare science to create habitats that meet both biological and psychological needs.",
+    "sustainTitle": "Sustainability Focus",
+    "sustainDesc": "We integrate sustainable practices into all projects, from water management systems to renewable energy solutions, minimizing environmental impact while maximizing conservation impact.",
+    "culturalTitle": "Cultural Sensitivity",
+    "culturalDesc": "With offices across Asia, we incorporate local culture and traditions into our designs while maintaining international standards.",
+    "collabTitle": "Collaborative Process",
+    "collabDesc": "We work closely with clients, architects, veterinarians, and animal care teams to ensure every project meets its goals through a consultative and transparent approach."
+  },
+  "globalReach": {
+    "title": "Our Global Reach",
+    "subtitle": "Headquartered in Bangkok with regional offices across Asia.",
+    "headquartersLabel": "Headquarters",
+    "headquarters": "Bangkok, Thailand",
+    "officesLabel": "Regional Offices",
+    "office1": "Ho Chi Minh City, Vietnam",
+    "office2": "Hanoi, Vietnam",
+    "office3": "Mumbai, India",
+    "office4": "Kuala Lumpur, Malaysia",
+    "projectsLabel": "Projects Completed In",
+    "thailand": "Thailand: Journey to the Jungle (Khao Kheow), Australian Kingdom (Khon Kaen Zoo), Lion Exhibit",
+    "vietnam": "Vietnam: Tram Chim National Park, FLC Safari Park, Saigon Zoo Bird Show, numerous playground & landscape projects",
+    "india": "India: Walk-through aviaries, reptile exhibits, conservation programs",
+    "indonesia": "Indonesia: Theme parks and wildlife facilities",
+    "myanmar": "Myanmar: Animal facilities and zoo consultation",
+    "malaysia": "Malaysia: Various design and consultation projects"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "item1": "Over 20 years of combined experience",
+    "item2": "Proven track record with 100+ successful projects",
+    "item3": "International team of experts",
+    "item4": "Comprehensive services (design, logistics, enrichment, training)",
+    "item5": "Strong network across Asia and globally",
+    "item6": "Commitment to sustainability and conservation",
+    "item7": "Full compliance with international regulations (CITES, IATA, WAZA guidelines)"
+  },
+  "values": {
+    "title": "Our Values",
+    "innovationTitle": "Innovation",
+    "innovationDesc": "We constantly seek new and better ways to design wildlife facilities and care for animals.",
+    "integrityTitle": "Integrity",
+    "integrityDesc": "We operate with honesty and transparency in all our dealings.",
+    "collaborationTitle": "Collaboration",
+    "collaborationDesc": "We believe the best results come from working together with clients and partners.",
+    "compassionTitle": "Compassion",
+    "compassionDesc": "We care deeply about animal welfare and environmental conservation.",
+    "excellenceTitle": "Excellence",
+    "excellenceDesc": "We strive for the highest quality in everything we do."
+  },
+  "certifications": {
+    "title": "Certifications & Memberships",
+    "item1": "Member of World Association of Zoos and Aquariums (WAZA)",
+    "item2": "CITES registered company",
+    "item3": "IATA certified for live animal transportation",
+    "item4": "ISO certified for quality management"
+  },
+  "commitment": {
+    "title": "Our Commitment",
+    "welfareTitle": "To Animal Welfare",
+    "welfareDesc": "Animal welfare is our top priority. Every design decision, every transport plan, every enrichment program is developed with the animal's physical and psychological well-being at the forefront.",
+    "conservationTitle": "To Conservation",
+    "conservationDesc": "We believe zoos and wildlife parks have a responsibility to contribute to conservation. We help our clients develop programs that support species preservation, habitat protection, and public education.",
+    "excellenceTitle": "To Excellence",
+    "excellenceDesc": "We set high standards for ourselves and continually strive to improve, staying current with the latest research, technologies, and best practices.",
+    "clientsTitle": "To Our Clients",
+    "clientsDesc": "We are committed to delivering projects on time, within budget, and exceeding expectations. Our success is measured by our clients' satisfaction."
+  },
+  "vision": {
+    "title": "Our Vision for the Future",
+    "description": "We envision a world where every zoo and wildlife park serves as a center for conservation, education, and research. Through innovation, collaboration, and unwavering commitment to animal welfare, we will continue to push the boundaries of what's possible in zoo design and wildlife management."
+  },
+  "contactInfo": {
+    "title": "Contact Us",
+    "address": "78/23, City Sense Village, Soi Watcharapol 2, Tha-Rang, Bangkhen, Bangkok 10230, Thailand",
+    "tel": "+662-3636660-1",
+    "fax": "+662-3636662",
+    "email1": "info@hksconsultants.com",
+    "email2": "info@goatrade.com",
+    "website": "www.hasakezoo.com"
+  },
+  "cta": {
+    "title": "Ready to Partner with Us?",
+    "description": "We welcome inquiries for zoo design, animal transportation, enrichment programs, conservation breeding, educational programs, and facility renovations.",
+    "button": "Get in Touch"
+  }
+}

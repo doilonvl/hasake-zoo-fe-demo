@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { getLocale } from "@/i18n/server";
 import type { Locale } from "@/types/content";
+import type { Product } from "@/types/api";
 import { getSiteUrl } from "@/lib/env";
+import { fetchPublicProducts } from "@/lib/api/products.public";
 import { ProductsClient } from "./ProductsClient";
 
 export const revalidate = 300;
@@ -28,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const canonical = `${BASE_URL}${prefix}/products`;
 
   return {
-    title: meta.title,
+    title: { absolute: meta.title },
     description: meta.description,
     alternates: {
       canonical,
@@ -49,5 +51,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProductsPage() {
   const locale = (await getLocale()) as Locale;
 
-  return <ProductsClient locale={locale} />;
+  let products: Product[] = [];
+  try {
+    const res = await fetchPublicProducts({ locale, limit: 50 });
+    products = res.data ?? [];
+  } catch {
+    // API unavailable – render empty list
+  }
+
+  return <ProductsClient locale={locale} initialProducts={products} />;
 }

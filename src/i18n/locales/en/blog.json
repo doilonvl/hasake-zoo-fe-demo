@@ -1,0 +1,20 @@
+{
+  "metaTitle": "Blog | Hasake Zoo & Habitat Solution",
+  "metaDescription": "News, stories, and updates from Hasake Zoo & Habitat Solution.",
+  "title": "Blog",
+  "subtitle": "Stories, menu insights, and events from Hasake Zoo & Habitat Solution.",
+  "tagLabel": "Tag:",
+  "emptyTitle": "No posts yet",
+  "emptyBody": "We are preparing new stories. Check back soon.",
+  "noCover": "No cover image",
+  "pageLabel": "Page {page} of {total}",
+  "previous": "Previous",
+  "next": "Next",
+  "latestTitle": "Latest",
+  "empty": "No posts yet.",
+  "backToBlog": "Back to blog",
+  "updatedLabel": "Updated",
+  "byLabel": "By",
+  "viewsLabel": "views",
+  "tocTitle": "On this page"
+}

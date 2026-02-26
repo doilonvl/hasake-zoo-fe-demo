@@ -1,0 +1,23 @@
+{
+  "nameLabel": "Họ và Tên",
+  "namePlaceholder": "Nguyễn Văn A",
+  "emailLabel": "Email",
+  "emailPlaceholder": "email@example.com",
+  "phoneLabel": "Số Điện Thoại",
+  "phonePlaceholder": "090 123 4567",
+  "companyLabel": "Công Ty",
+  "companyPlaceholder": "Tên công ty của bạn",
+  "countryLabel": "Quốc Gia",
+  "countryPlaceholder": "Việt Nam",
+  "subjectLabel": "Tiêu Đề",
+  "subjectPlaceholder": "Chúng tôi có thể giúp gì cho bạn?",
+  "messageLabel": "Nội Dung",
+  "messagePlaceholder": "Cho chúng tôi biết thêm về yêu cầu của bạn...",
+  "submit": "Gửi Yêu Cầu",
+  "submitting": "Đang gửi...",
+  "privacy": "Chúng tôi bảo mật thông tin của bạn và chỉ sử dụng để phản hồi yêu cầu.",
+  "successTitle": "Đã gửi yêu cầu",
+  "successDesc": "Cảm ơn bạn! Chúng tôi sẽ phản hồi sớm nhất.",
+  "errorTitle": "Gửi không thành công",
+  "errorDesc": "Không thể gửi yêu cầu của bạn. Vui lòng thử lại sau."
+}

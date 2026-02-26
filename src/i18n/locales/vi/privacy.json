@@ -1,0 +1,156 @@
+{
+  "metaTitle": "Chính sách Bảo mật | Hasake Zoo & Habitat Solution",
+  "metaDescription": "Tìm hiểu cách Hasake Zoo & Habitat Solution thu thập, sử dụng và bảo vệ dữ liệu của bạn khi bạn truy cập website hoặc liên hệ với chúng tôi.",
+  "title": "Chính sách Bảo mật",
+  "tagline": "Chúng tôi bảo vệ thông tin của bạn khi bạn duyệt website hoặc liên hệ về bữa ăn chay, tiệc hoặc sự kiện.",
+  "updated": "Cập nhật lần cuối: 13/01/2026",
+  "heroHighlights": ["Không bán dữ liệu", "Mục đích rõ ràng", "Bạn kiểm soát", "Ưu tiên bảo mật"],
+  "sectionEyebrow": "Quyền riêng tư tại Hasake Zoo & Habitat Solution",
+  "quickPoints": [
+    {
+      "title": "Mục đích rõ ràng",
+      "description": "Chúng tôi chỉ thu thập những gì cần thiết để phản hồi, gửi báo giá, xử lý đơn hàng/tiệc và cải thiện trải nghiệm của bạn.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "title": "Không bán dữ liệu",
+      "description": "Chúng tôi không bao giờ bán dữ liệu cá nhân. Chia sẻ, khi cần thiết, chỉ giới hạn ở các nhà cung cấp tin cậy hỗ trợ vận hành.",
+      "icon": "FileSearch"
+    },
+    {
+      "title": "Bạn kiểm soát",
+      "description": "Bạn có thể yêu cầu truy cập, chỉnh sửa, xóa dữ liệu hoặc rút lại sự đồng ý bất kỳ lúc nào.",
+      "icon": "UserCheck"
+    },
+    {
+      "title": "Bảo mật nhiều lớp",
+      "description": "Truy cập nội bộ bị hạn chế cùng các biện pháp bảo vệ kỹ thuật và tổ chức để giảm thiểu rủi ro.",
+      "icon": "LockKeyhole"
+    }
+  ],
+  "sections": [
+    {
+      "id": "scope",
+      "title": "1. Phạm vi & áp dụng",
+      "summary": "Chính sách này bao gồm thông tin chúng tôi thu thập bất cứ khi nào bạn tương tác với Achi Vegan House.",
+      "items": [
+        "Áp dụng khi bạn truy cập trang web, gửi biểu mẫu liên hệ, gọi điện, email, nhắn tin trên mạng xã hội hoặc trao đổi trực tiếp tại nhà hàng.",
+        "Bằng cách sử dụng trang web hoặc chia sẻ thông tin, bạn đồng ý với các điều khoản trong chính sách này."
+      ],
+      "icon": "Globe2"
+    },
+    {
+      "id": "data",
+      "title": "2. Thông tin chúng tôi thu thập",
+      "items": [
+        "Thông tin bạn cung cấp: tên, email, số điện thoại, chi tiết yêu cầu, thông tin đặt hàng/dịch vụ, phản hồi hoặc đánh giá.",
+        "Dữ liệu kỹ thuật thu thập tự động: địa chỉ IP, trình duyệt, thiết bị, hệ điều hành, trang vào/ra, thời gian trên trang và các tương tác cơ bản.",
+        "Cookie và các công nghệ tương tự để ghi nhớ tùy chọn và đo lường hiệu suất trang web."
+      ],
+      "icon": "Sparkles"
+    },
+    {
+      "id": "use",
+      "title": "3. Cách chúng tôi sử dụng thông tin",
+      "items": [
+        "Phản hồi các yêu cầu, gửi báo giá, xác nhận hoặc theo dõi đơn hàng và tiệc chay.",
+        "Cải thiện tốc độ, độ tin cậy và trải nghiệm nội dung trên trang web của chúng tôi.",
+        "Gửi các cập nhật quan trọng (ví dụ: thay đổi giờ mở cửa, cập nhật thực đơn hoặc theo dõi đơn hàng).",
+        "Phát hiện và ngăn chặn gian lận hoặc lạm dụng hệ thống."
+      ],
+      "icon": "Bell"
+    },
+    {
+      "id": "cookies",
+      "title": "4. Cookie & theo dõi",
+      "items": [
+        "Chúng tôi sử dụng cookie để ghi nhớ các tùy chọn, đo lường tương tác và tối ưu hóa hiệu suất trang web.",
+        "Bạn có thể tắt cookie trong trình duyệt của mình. Một số tính năng có thể bị hạn chế khi cookie bị tắt."
+      ],
+      "icon": "Cookie"
+    },
+    {
+      "id": "sharing",
+      "title": "5. Chia sẻ thông tin",
+      "items": [
+        "Chúng tôi không bán dữ liệu cá nhân cho bên thứ ba.",
+        "Chúng tôi có thể chia sẻ dữ liệu với các nhà cung cấp dịch vụ (lưu trữ, phân tích, thanh toán, công cụ tiếp thị) để vận hành và cải thiện trang web.",
+        "Chúng tôi có thể chia sẻ với các đối tác hoặc nhà thầu liên quan đến đơn hàng/dịch vụ của bạn khi cần thiết, với cam kết bảo mật.",
+        "Chúng tôi tuân thủ các yêu cầu hợp pháp từ cơ quan chức năng khi được yêu cầu."
+      ],
+      "icon": "FileSearch"
+    },
+    {
+      "id": "security",
+      "title": "6. Bảo mật dữ liệu",
+      "items": [
+        "Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức để ngăn chặn truy cập trái phép, thay đổi hoặc tiết lộ thông tin.",
+        "Quyền truy cập nội bộ vào dữ liệu cá nhân được giới hạn dựa trên vai trò và nhu cầu công việc.",
+        "Mặc dù chúng tôi nỗ lực bảo mật, không có phương thức truyền tải hoặc lưu trữ nào là an toàn tuyệt đối."
+      ],
+      "icon": "Shield"
+    },
+    {
+      "id": "retention",
+      "title": "7. Lưu trữ dữ liệu",
+      "items": [
+        "Chúng tôi chỉ lưu giữ dữ liệu trong thời gian cần thiết để thực hiện các mục đích thu thập.",
+        "Chúng tôi sẽ xóa hoặc ẩn danh dữ liệu theo yêu cầu trừ khi luật pháp yêu cầu thời gian lưu trữ lâu hơn."
+      ],
+      "icon": "CheckCircle2"
+    },
+    {
+      "id": "rights",
+      "title": "8. Quyền của bạn",
+      "items": [
+        "Yêu cầu truy cập, chỉnh sửa hoặc xóa dữ liệu cá nhân của bạn.",
+        "Rút lại sự đồng ý hoặc phản đối một số hoạt động xử lý dữ liệu.",
+        "Gửi yêu cầu qua thông tin liên hệ bên dưới; chúng tôi sẽ phản hồi trong thời gian hợp lý."
+      ],
+      "icon": "UserCheck"
+    },
+    {
+      "id": "links",
+      "title": "9. Liên kết bên thứ ba",
+      "items": [
+        "Trang web của chúng tôi có thể liên kết đến các trang web hoặc dịch vụ bên ngoài.",
+        "Chúng tôi không chịu trách nhiệm về nội dung hoặc thực tiễn bảo mật của họ. Vui lòng xem lại chính sách của họ một cách riêng biệt."
+      ],
+      "icon": "Globe2"
+    },
+    {
+      "id": "children",
+      "title": "10. Quyền riêng tư của trẻ em",
+      "items": [
+        "Trang web của chúng tôi không dành cho trẻ em dưới 13 tuổi và chúng tôi không cố ý thu thập dữ liệu từ trẻ em.",
+        "Nếu bạn tin rằng chúng tôi đang giữ dữ liệu về trẻ em, vui lòng liên hệ để chúng tôi xóa ngay lập tức."
+      ],
+      "icon": "ShieldCheck"
+    },
+    {
+      "id": "changes",
+      "title": "11. Thay đổi chính sách",
+      "items": [
+        "Chúng tôi có thể cập nhật chính sách này và sẽ đăng phiên bản mới nhất trên trang này.",
+        "Chúng tôi khuyến khích bạn xem lại định kỳ. Cập nhật lần cuối: 13/01/2026."
+      ],
+      "icon": "Bell"
+    }
+  ],
+  "contact": {
+    "eyebrow": "Cần trợ giúp?",
+    "title": "Trò chuyện với Achi Vegan House",
+    "description": "Nếu bạn có câu hỏi hoặc muốn thực thi quyền riêng tư của mình, vui lòng liên hệ qua:",
+    "address": "50 Thụy Khuê, Tây Hồ, Hà Nội, Việt Nam",
+    "phone": "098 531 02 38",
+    "email": "sunnyhoai.vu@gmail.com"
+  },
+  "rightsTitle": "Thực thi quyền của bạn",
+  "rightsCopy": "Chúng tôi phản hồi trong thời gian hợp lý (thường trong 1-2 ngày làm việc) và có thể xác minh danh tính để bảo vệ dữ liệu của bạn.",
+  "rightsBullets": [
+    "Yêu cầu bản sao dữ liệu cá nhân bạn đã chia sẻ với chúng tôi.",
+    "Yêu cầu chỉnh sửa thông tin không chính xác hoặc chưa đầy đủ.",
+    "Yêu cầu xóa dữ liệu trừ khi chúng tôi phải lưu giữ theo nghĩa vụ pháp lý.",
+    "Rút lại sự đồng ý nhận email hoặc tin nhắn không thiết yếu."
+  ]
+}

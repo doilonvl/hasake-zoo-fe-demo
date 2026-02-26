@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "eyebrow": "DỊCH VỤ CỦA CHÚNG TÔI",
+    "title": "Giải Pháp Môi Trường Sống Động Vật Hoang Dã",
+    "description": "Dịch vụ toàn diện cho việc thiết kế, xây dựng và bảo trì môi trường sống bền vững cho bảo tồn động vật hoang dã và quản lý vườn thú."
+  },
+  "filters": {
+    "all": "Tất Cả Dịch Vụ"
+  },
+  "loading": "Đang tải dịch vụ...",
+  "empty": "Không tìm thấy dịch vụ nào",
+  "featured": "Nổi Bật",
+  "learnMore": "Tìm Hiểu Thêm",
+  "cta": {
+    "title": "Sẵn Sàng Bắt Đầu Dự Án?",
+    "description": "Liên hệ với đội ngũ chuyên gia để được tư vấn về nhu cầu môi trường sống động vật hoang dã của bạn.",
+    "button": "Bắt Đầu Ngay"
+  }
+}

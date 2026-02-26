@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "eyebrow": "OUR SERVICES",
+    "title": "Wildlife Habitat Solutions",
+    "description": "Comprehensive services for designing, building, and maintaining sustainable habitats for wildlife conservation and zoo management."
+  },
+  "filters": {
+    "all": "All Services"
+  },
+  "loading": "Loading services...",
+  "empty": "No services found",
+  "featured": "Featured",
+  "learnMore": "Learn More",
+  "cta": {
+    "title": "Ready to Start Your Project?",
+    "description": "Contact our team for a consultation on your wildlife habitat needs.",
+    "button": "Get Started"
+  }
+}

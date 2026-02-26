@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "eyebrow": "DANH MỤC DỰ ÁN",
+    "title": "Dự Án Môi Trường Sống & Câu Chuyện Thành Công",
+    "description": "Khám phá các dự án môi trường sống động vật hoang dã đã hoàn thành và đang triển khai, từ thiết kế vườn thú đến các sáng kiến bảo tồn khắp Đông Nam Á."
+  },
+  "filters": {
+    "all": "Tất Cả Dự Án",
+    "featured": "Dự Án Nổi Bật"
+  },
+  "status": {
+    "completed": "Hoàn Thành",
+    "ongoing": "Đang Triển Khai",
+    "planned": "Đang Lên Kế Hoạch"
+  },
+  "loading": "Đang tải dự án...",
+  "empty": "Không tìm thấy dự án nào",
+  "featured": "Nổi Bật",
+  "viewProject": "Xem Dự Án",
+  "cta": {
+    "title": "Hãy Cùng Xây Dựng Dự Án Tiếp Theo",
+    "description": "Hợp tác với chúng tôi để tạo ra môi trường sống động vật hoang dã sáng tạo và bền vững.",
+    "button": "Bắt Đầu Dự Án"
+  }
+}

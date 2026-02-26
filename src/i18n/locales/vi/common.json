@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "services": "Dịch Vụ",
+    "products": "Sản Phẩm",
+    "projects": "Dự Án",
+    "blog": "Blog",
+    "about": "Về Chúng Tôi",
+    "contact": "Liên Hệ",
+    "getInTouch": "Liên Hệ Ngay"
+  },
+  "footer": {
+    "description": "Đơn vị hàng đầu cung cấp giải pháp môi trường sống bền vững cho động vật hoang dã và dịch vụ bảo tồn tại Việt Nam.",
+    "quickLinks": "Liên Kết Nhanh",
+    "contact": "Liên Hệ",
+    "newsletter": "Bản Tin",
+    "newsletterDesc": "Đăng ký để nhận thông tin cập nhật về các dự án bảo tồn và đổi mới môi trường sống.",
+    "emailPlaceholder": "Nhập email của bạn",
+    "subscribe": "Đăng Ký",
+    "rights": "Bản quyền thuộc về chúng tôi.",
+    "privacy": "Chính Sách Bảo Mật",
+    "terms": "Điều Khoản & Điều Kiện"
+  }
+}

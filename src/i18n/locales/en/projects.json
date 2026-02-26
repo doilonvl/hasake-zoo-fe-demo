@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "eyebrow": "OUR PORTFOLIO",
+    "title": "Habitat Projects & Success Stories",
+    "description": "Explore our completed and ongoing wildlife habitat projects, from zoo design to conservation initiatives across Southeast Asia."
+  },
+  "filters": {
+    "all": "All Projects",
+    "featured": "Featured Projects"
+  },
+  "status": {
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "planned": "Planned"
+  },
+  "loading": "Loading projects...",
+  "empty": "No projects found",
+  "featured": "Featured",
+  "viewProject": "View Project",
+  "cta": {
+    "title": "Let's Build Your Next Project",
+    "description": "Partner with us to create innovative and sustainable wildlife habitats.",
+    "button": "Start a Project"
+  }
+}

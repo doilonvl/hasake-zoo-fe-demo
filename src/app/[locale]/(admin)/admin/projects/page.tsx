@@ -82,8 +82,8 @@ export default function AdminProjectsPage() {
       signal: controller.signal,
     })
       .then((data) => {
-        setItems(data.data || []);
-        setTotal(data.pagination?.total || 0);
+        setItems(data.items || []);
+        setTotal(data.total || 0);
       })
       .catch((err) => {
         if ((err as Error).name === "AbortError") return;
@@ -104,6 +104,7 @@ export default function AdminProjectsPage() {
         category: item.category || "-",
         statusKey: (item.status || "draft") as PublishStatus,
         updatedAt: formatDate(item.updatedAt || item.createdAt, locale),
+        completionDate: formatDate(item.completionDate, locale),
       })),
     [items, locale]
   );
@@ -159,12 +160,13 @@ export default function AdminProjectsPage() {
                 <TableHead>Location</TableHead>
                 <TableHead>Category</TableHead>
                 <TableHead>Status</TableHead>
+                <TableHead>Completion</TableHead>
                 <TableHead>Updated</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {rows.map(({ item, title, location, category, statusKey, updatedAt }) => (
+              {rows.map(({ item, title, location, category, statusKey, completionDate, updatedAt }) => (
                 <TableRow key={item._id}>
                   <TableCell className="max-w-[280px] truncate font-medium">{title}</TableCell>
                   <TableCell className="max-w-[160px] truncate text-xs text-muted-foreground">{location}</TableCell>
@@ -174,6 +176,7 @@ export default function AdminProjectsPage() {
                       {STATUS_LABELS[statusKey]}
                     </span>
                   </TableCell>
+                  <TableCell className="text-xs text-muted-foreground">{completionDate || "-"}</TableCell>
                   <TableCell className="text-xs text-muted-foreground">{updatedAt || "-"}</TableCell>
                   <TableCell className="text-right">
                     <Button size="sm" variant="outline" onClick={() => { setEditorMode("edit"); setActiveProjectId(item._id); setEditorOpen(true); }}>Edit</Button>
@@ -199,14 +202,14 @@ export default function AdminProjectsPage() {
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[min(96vw,1200px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl">
-          <div className="flex items-center justify-between border-b px-5 py-3">
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 max-h-[90vh] w-[min(96vw,1200px)] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-white shadow-2xl">
+          <div className="sticky top-0 z-10 flex items-center justify-between rounded-t-2xl border-b bg-white px-5 py-3">
             <Dialog.Title className="text-lg font-semibold text-neutral-900">
               {editorMode === "create" ? "New project" : "Edit project"}
             </Dialog.Title>
             <Dialog.Close asChild><Button variant="outline" size="sm">Close</Button></Dialog.Close>
           </div>
-          <div className="max-h-[85vh] overflow-y-auto px-5 py-4">
+          <div className="px-5 py-4">
             <ProjectEditor mode={editorMode} projectId={activeProjectId} embedded onCreated={() => setRefreshSeed((v) => v + 1)} onCancel={() => setEditorOpen(false)} />
           </div>
         </Dialog.Content>

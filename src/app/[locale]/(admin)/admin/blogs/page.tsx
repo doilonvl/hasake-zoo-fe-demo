@@ -110,7 +110,7 @@ export default function AdminBlogsPage() {
     () =>
       items.map((item) => {
         const title = resolveI18nValue(item.title_i18n, locale, "Untitled");
-        const slug = item.slug || resolveI18nValue(item.slug_i18n, locale, "-");
+        const slug = resolveI18nValue(item.slug_i18n, locale, "") || item.slug || "-";
         const updatedAt = formatDate(
           item.updatedAt || item.publishedAt || item.createdAt,
           locale
@@ -286,8 +286,8 @@ export default function AdminBlogsPage() {
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[min(96vw,1200px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl">
-          <div className="flex items-center justify-between border-b px-5 py-3">
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 max-h-[90vh] w-[min(96vw,1200px)] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-white shadow-2xl">
+          <div className="sticky top-0 z-10 flex items-center justify-between rounded-t-2xl border-b bg-white px-5 py-3">
             <Dialog.Title className="text-lg font-semibold text-neutral-900">
               {editorMode === "create" ? "New blog" : "Edit blog"}
             </Dialog.Title>
@@ -297,7 +297,7 @@ export default function AdminBlogsPage() {
               </Button>
             </Dialog.Close>
           </div>
-          <div className="max-h-[85vh] overflow-y-auto px-5 py-4">
+          <div className="px-5 py-4">
             <BlogEditor
               mode={editorMode}
               blogId={activeBlogId}

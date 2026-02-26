@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
-import type { Project, PublishStatus } from "@/types/api";
+import type { Project, PublishStatus, GalleryImage } from "@/types/api";
 import type { AdminApiError } from "@/lib/api/adminFetch";
 import {
   fetchAdminProjectById,
@@ -55,6 +55,8 @@ export default function ProjectEditor({
   const params = useParams();
   void params;
 
+  const isHydratingRef = useRef(false);
+
   const [activeMode, setActiveMode] = useState(mode);
   const [activeId, setActiveId] = useState(projectId || "");
   const [loading, setLoading] = useState(mode === "edit");
@@ -64,6 +66,8 @@ export default function ProjectEditor({
   const [titleEn, setTitleEn] = useState("");
   const [slugVi, setSlugVi] = useState("");
   const [slugEn, setSlugEn] = useState("");
+  const [slugViSynced, setSlugViSynced] = useState(true);
+  const [slugEnSynced, setSlugEnSynced] = useState(true);
   const [excerptVi, setExcerptVi] = useState("");
   const [excerptEn, setExcerptEn] = useState("");
 
@@ -78,6 +82,9 @@ export default function ProjectEditor({
   const [coverPublicId, setCoverPublicId] = useState("");
   const [coverUploading, setCoverUploading] = useState(false);
 
+  const [gallery, setGallery] = useState<GalleryImage[]>([]);
+  const [galleryUploading, setGalleryUploading] = useState(false);
+
   const [isFeatured, setIsFeatured] = useState(false);
   const [sortOrder, setSortOrder] = useState(0);
   const [status, setStatus] = useState<PublishStatus>("draft");
@@ -87,8 +94,8 @@ export default function ProjectEditor({
   const [seoDescVi, setSeoDescVi] = useState("");
   const [seoDescEn, setSeoDescEn] = useState("");
 
-  useEffect(() => { if (slugVi || !titleVi) return; setSlugVi(slugify(titleVi)); }, [slugVi, titleVi]);
-  useEffect(() => { if (slugEn || !titleEn) return; setSlugEn(slugify(titleEn)); }, [slugEn, titleEn]);
+  useEffect(() => { if (isHydratingRef.current || !slugViSynced || !titleVi) return; setSlugVi(slugify(titleVi)); }, [titleVi, slugViSynced]);
+  useEffect(() => { if (isHydratingRef.current || !slugEnSynced || !titleEn) return; setSlugEn(slugify(titleEn)); }, [titleEn, slugEnSynced]);
 
   const hydrate = useCallback((p: Project) => {
     setTitleVi(p.title_i18n?.vi || "");
@@ -101,10 +108,21 @@ export default function ProjectEditor({
     setClientLogo(p.client?.logo || "");
     setLocationVi(p.location_i18n?.vi || "");
     setLocationEn(p.location_i18n?.en || "");
-    setCompletionDate(p.completionDate || "");
+    // Normalize to YYYY-MM-DD so <input type="date"> displays correctly
+    setCompletionDate(
+      p.completionDate ? p.completionDate.substring(0, 10) : ""
+    );
     setCategory(p.category || "");
     setCoverUrl(p.coverImage?.url || "");
     setCoverPublicId(p.coverImage?.publicId || "");
+    setGallery(
+      (p.gallery || []).map((g, i) => ({
+        url: g.url,
+        publicId: g.publicId,
+        caption_i18n: g.caption_i18n,
+        sortOrder: g.sortOrder ?? i,
+      }))
+    );
     setIsFeatured(!!p.isFeatured);
     setSortOrder(p.sortOrder ?? 0);
     setStatus(p.status || "draft");
@@ -119,7 +137,7 @@ export default function ProjectEditor({
     let active = true;
     setLoading(true);
     fetchAdminProjectById(activeId)
-      .then((res) => active && hydrate(res.data))
+      .then((project) => active && hydrate(project))
       .catch((err) => active && toast.error(getErrorMessage(err)))
       .finally(() => active && setLoading(false));
     return () => { active = false; };
@@ -147,6 +165,12 @@ export default function ProjectEditor({
     if (coverUrl.trim()) {
       payload.coverImage = { url: coverUrl.trim(), publicId: coverPublicId.trim() || undefined };
     }
+    payload.gallery = gallery.map((g, i) => ({
+      url: g.url,
+      publicId: g.publicId || undefined,
+      caption_i18n: g.caption_i18n,
+      sortOrder: g.sortOrder ?? i,
+    }));
     if (seoTitleVi.trim() || seoTitleEn.trim()) {
       payload.seoTitle_i18n = { vi: seoTitleVi.trim(), en: seoTitleEn.trim() };
     }
@@ -158,20 +182,20 @@ export default function ProjectEditor({
 
   const handleSave = async () => {
     if (!titleVi.trim() && !titleEn.trim()) { toast.error("Title is required."); return; }
-    if (coverUploading) { toast.error("Wait for image upload."); return; }
+    if (coverUploading || galleryUploading) { toast.error("Wait for image upload."); return; }
     setSaving(true);
     try {
       const payload = buildPayload();
       if (activeMode === "create" && !activeId) {
-        const res = await createAdminProject(payload);
+        const project = await createAdminProject(payload);
         toast.success("Project created");
-        setActiveId(res.data._id);
+        setActiveId(project._id);
         setActiveMode("edit");
-        hydrate(res.data);
+        hydrate(project);
         onCreated?.();
       } else if (activeId) {
-        const res = await updateAdminProject(activeId, payload);
-        hydrate(res.data);
+        const project = await updateAdminProject(activeId, payload);
+        hydrate(project);
         toast.success("Project updated");
       }
     } catch (err) { toast.error(getErrorMessage(err)); }
@@ -180,7 +204,7 @@ export default function ProjectEditor({
 
   const handlePublish = async () => {
     if (!activeId) return;
-    try { const res = await publishAdminProject(activeId); hydrate(res.data); toast.success("Project published"); }
+    try { const project = await publishAdminProject(activeId); hydrate(project); toast.success("Project published"); }
     catch (err) { toast.error(getErrorMessage(err)); }
   };
 
@@ -198,6 +222,49 @@ export default function ProjectEditor({
     finally { setCoverUploading(false); }
   };
 
+  const handleGalleryUpload = async (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    setGalleryUploading(true);
+    try {
+      for (const file of Array.from(files)) {
+        if (!file.type.startsWith("image/")) continue;
+        const res = await uploadProjectImage(file);
+        setGallery((prev) => [
+          ...prev,
+          { url: res.url, publicId: res.publicId || "", sortOrder: prev.length },
+        ]);
+      }
+    } catch (err) {
+      toast.error(getErrorMessage(err));
+    } finally {
+      setGalleryUploading(false);
+    }
+  };
+
+  const removeGalleryItem = (index: number) => {
+    setGallery((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const updateGalleryCaption = (index: number, lang: "vi" | "en", value: string) => {
+    setGallery((prev) =>
+      prev.map((g, i) =>
+        i === index
+          ? { ...g, caption_i18n: { ...g.caption_i18n, [lang]: value } }
+          : g
+      )
+    );
+  };
+
+  const moveGalleryItem = (index: number, direction: -1 | 1) => {
+    setGallery((prev) => {
+      const next = [...prev];
+      const target = index + direction;
+      if (target < 0 || target >= next.length) return prev;
+      [next[index], next[target]] = [next[target], next[index]];
+      return next.map((g, i) => ({ ...g, sortOrder: i }));
+    });
+  };
+
   if (loading) return <Card className="p-6">Loading...</Card>;
 
   const actionButtons = (
@@ -209,7 +276,7 @@ export default function ProjectEditor({
           <Button variant="destructive" onClick={handleDelete}>Delete</Button>
         </>
       ) : null}
-      <Button onClick={handleSave} disabled={saving || coverUploading}>{saving ? "Saving..." : "Save"}</Button>
+      <Button onClick={handleSave} disabled={saving || coverUploading || galleryUploading}>{saving ? "Saving..." : "Save"}</Button>
     </>
   );
 
@@ -286,6 +353,68 @@ export default function ProjectEditor({
                 <Label>Category</Label>
                 <Input value={category} onChange={(e) => setCategory(e.target.value)} placeholder="habitat, renovation..." />
               </div>
+            </div>
+          </div>
+
+          <Separator />
+
+          <div className="grid gap-3">
+            <div className="flex items-center justify-between">
+              <Label className="text-base font-semibold">Gallery</Label>
+              <span className="text-xs text-muted-foreground">{gallery.length} image(s)</span>
+            </div>
+
+            {gallery.length > 0 && (
+              <div className="space-y-3">
+                {gallery.map((item, idx) => (
+                  <div key={`${item.url}-${idx}`} className="flex gap-3 rounded-lg border p-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.url} alt="" className="h-20 w-20 shrink-0 rounded-md border object-cover" />
+                    <div className="grid flex-1 gap-2">
+                      <div className="grid gap-1">
+                        <Label className="text-xs">Caption (VI)</Label>
+                        <Input
+                          value={item.caption_i18n?.vi || ""}
+                          onChange={(e) => updateGalleryCaption(idx, "vi", e.target.value)}
+                          placeholder="Caption Vietnamese"
+                          className="h-8 text-xs"
+                        />
+                      </div>
+                      <div className="grid gap-1">
+                        <Label className="text-xs">Caption (EN)</Label>
+                        <Input
+                          value={item.caption_i18n?.en || ""}
+                          onChange={(e) => updateGalleryCaption(idx, "en", e.target.value)}
+                          placeholder="Caption English"
+                          className="h-8 text-xs"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex shrink-0 flex-col items-center gap-1">
+                      <Button variant="outline" size="sm" className="h-7 w-7 p-0" onClick={() => moveGalleryItem(idx, -1)} disabled={idx === 0} title="Move up">
+                        &#x25B2;
+                      </Button>
+                      <Button variant="outline" size="sm" className="h-7 w-7 p-0" onClick={() => moveGalleryItem(idx, 1)} disabled={idx === gallery.length - 1} title="Move down">
+                        &#x25BC;
+                      </Button>
+                      <Button variant="destructive" size="sm" className="h-7 w-7 p-0" onClick={() => removeGalleryItem(idx)} title="Remove">
+                        &times;
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="grid gap-2">
+              <Label className="text-sm">Add images</Label>
+              <Input
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={(e) => handleGalleryUpload(e.target.files)}
+              />
+              {galleryUploading && <p className="text-xs text-muted-foreground">Uploading...</p>}
             </div>
           </div>
         </div>
