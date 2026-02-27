@@ -31,7 +31,8 @@ export function ServiceDetailClient({
           categoryId: service.categoryId,
           limit: 10,
         });
-        const items: Service[] = response.data ?? (response as Record<string, unknown>).items as Service[] ?? [];
+        const items: Service[] =
+          (response as unknown as { items?: Service[] })?.items ?? [];
         const filtered = items.filter((s) => s._id !== service._id).slice(0, 3);
         setRelatedServices(filtered);
       } catch {
@@ -45,9 +46,15 @@ export function ServiceDetailClient({
   }, [service._id, service.categoryId]);
 
   const name = resolveLocalizedString(service.name_i18n, locale);
-  const lexicalContent = (service.content_i18n as Record<string, unknown> | null)?.[locale] ?? null;
+  const lexicalContent =
+    (service.content_i18n as Record<string, unknown> | null)?.[locale] ?? null;
   const highlights = service.highlights_i18n?.[locale] || [];
-  const faqs = (service as Record<string, any>).faqs_i18n?.[locale] || [];
+  const faqs =
+    (
+      service as unknown as {
+        faqs_i18n?: Record<string, { question: string; answer: string }[]>;
+      }
+    ).faqs_i18n?.[locale] || [];
 
   return (
     <div className="bg-slate-950">
@@ -59,10 +66,8 @@ export function ServiceDetailClient({
               <Image
                 src={service.coverImage.url}
                 alt={
-                  resolveLocalizedString(
-                    service.coverImage.alt_i18n,
-                    locale
-                  ) || name
+                  resolveLocalizedString(service.coverImage.alt_i18n, locale) ||
+                  name
                 }
                 fill
                 className="object-cover opacity-30"
@@ -116,7 +121,11 @@ export function ServiceDetailClient({
               <ScrollReveal>
                 <div className="text-white/90 prose prose-invert prose-lg max-w-none">
                   <LexicalContentRenderer
-                    doc={lexicalContent as Parameters<typeof LexicalContentRenderer>[0]["doc"]}
+                    doc={
+                      lexicalContent as Parameters<
+                        typeof LexicalContentRenderer
+                      >[0]["doc"]
+                    }
                     locale={locale}
                   />
                 </div>
@@ -169,18 +178,20 @@ export function ServiceDetailClient({
             </ScrollReveal>
 
             <div className="max-w-4xl mx-auto space-y-6">
-              {faqs.map((faq: { question: string; answer: string }, idx: number) => (
-                <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
-                  <div className="bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-8 hover:border-emerald-400/50 transition-all duration-300">
-                    <h3 className="text-white text-xl font-bold mb-4">
-                      {faq.question}
-                    </h3>
-                    <p className="text-white/70 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
+              {faqs.map(
+                (faq: { question: string; answer: string }, idx: number) => (
+                  <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
+                    <div className="bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-8 hover:border-emerald-400/50 transition-all duration-300">
+                      <h3 className="text-white text-xl font-bold mb-4">
+                        {faq.question}
+                      </h3>
+                      <p className="text-white/70 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </ScrollReveal>
+                ),
+              )}
             </div>
           </div>
         </section>
@@ -198,7 +209,11 @@ export function ServiceDetailClient({
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {relatedServices.map((relatedService, idx) => (
-                <ScrollReveal key={relatedService._id} direction="up" delay={idx * 0.1}>
+                <ScrollReveal
+                  key={relatedService._id}
+                  direction="up"
+                  delay={idx * 0.1}
+                >
                   <Link
                     href={`/${locale === "en" ? "en/" : ""}services/${resolveLocalizedString(relatedService.slug_i18n, locale)}`}
                     className="group block"
@@ -211,11 +226,11 @@ export function ServiceDetailClient({
                             alt={
                               resolveLocalizedString(
                                 relatedService.coverImage.alt_i18n,
-                                locale
+                                locale,
                               ) ||
                               resolveLocalizedString(
                                 relatedService.name_i18n,
-                                locale
+                                locale,
                               )
                             }
                             fill
@@ -228,7 +243,7 @@ export function ServiceDetailClient({
                         <h3 className="text-white text-xl font-bold group-hover:text-emerald-400 transition-colors">
                           {resolveLocalizedString(
                             relatedService.name_i18n,
-                            locale
+                            locale,
                           )}
                         </h3>
 
@@ -236,7 +251,7 @@ export function ServiceDetailClient({
                           <p className="text-white/70 mt-3 line-clamp-2">
                             {resolveLocalizedString(
                               relatedService.excerpt_i18n,
-                              locale
+                              locale,
                             )}
                           </p>
                         )}

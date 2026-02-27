@@ -19,7 +19,7 @@
       "emailPlaceholder": "Nhập email của bạn",
       "subscribe": "Đăng Ký",
       "rights": "Bản quyền thuộc về chúng tôi.",
-      "privacy": "Chính Sách Bảo Mật",
+      "privacy": "Chính Sách & Bảo Mật",
       "terms": "Điều Khoản & Điều Kiện"
     }
   },
@@ -33,9 +33,9 @@
     "hint": "Vui lòng kiểm tra lại đường dẫn hoặc thử tìm kiếm nội dung khác."
   },
   "privacy": {
-    "metaTitle": "Chính sách Bảo mật | Hasake Zoo & Habitat Solution",
+    "metaTitle": "Chính sách & Bảo mật | Hasake Zoo & Habitat Solution",
     "metaDescription": "Tìm hiểu cách Hasake Zoo & Habitat Solution thu thập, sử dụng và bảo vệ dữ liệu của bạn khi bạn truy cập website hoặc liên hệ với chúng tôi.",
-    "title": "Chính sách Bảo mật",
+    "title": "Chính sách & Bảo mật",
     "tagline": "Chúng tôi bảo vệ thông tin của bạn khi bạn duyệt website hoặc liên hệ về bữa ăn chay, tiệc hoặc sự kiện.",
     "updated": "Cập nhật lần cuối: 13/01/2026",
     "heroHighlights": [

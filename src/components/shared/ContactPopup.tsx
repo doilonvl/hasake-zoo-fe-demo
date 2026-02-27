@@ -80,7 +80,9 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -172,7 +174,9 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                       {locale === "vi" ? "Liên Hệ Nhanh" : "Quick Contact"}
                     </h2>
                     <p className="text-white/60 text-xs">
-                      {locale === "vi" ? "Chúng tôi sẽ phản hồi trong 24h" : "We'll respond within 24h"}
+                      {locale === "vi"
+                        ? "Chúng tôi sẽ phản hồi trong 24h"
+                        : "We'll respond within 24h"}
                     </p>
                   </div>
                 </div>
@@ -181,8 +185,18 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                   className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
                   aria-label="Close"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>
@@ -193,8 +207,12 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                   {/* Row 1: Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label htmlFor="popup-name" className="text-white/80 text-sm">
-                        {t("nameLabel")} <span className="text-emerald-400">*</span>
+                      <Label
+                        htmlFor="popup-name"
+                        className="text-white/80 text-sm"
+                      >
+                        {t("nameLabel")}{" "}
+                        <span className="text-emerald-400">*</span>
                       </Label>
                       <Input
                         id="popup-name"
@@ -207,8 +225,12 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <Label htmlFor="popup-email" className="text-white/80 text-sm">
-                        {t("emailLabel")} <span className="text-emerald-400">*</span>
+                      <Label
+                        htmlFor="popup-email"
+                        className="text-white/80 text-sm"
+                      >
+                        {t("emailLabel")}{" "}
+                        <span className="text-emerald-400">*</span>
                       </Label>
                       <Input
                         id="popup-email"
@@ -226,7 +248,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                   {/* Row 2: Phone & Company */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label htmlFor="popup-phone" className="text-white/80 text-sm">
+                      <Label
+                        htmlFor="popup-phone"
+                        className="text-white/80 text-sm"
+                      >
                         {t("phoneLabel")}
                       </Label>
                       <Input
@@ -240,7 +265,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <Label htmlFor="popup-company" className="text-white/80 text-sm">
+                      <Label
+                        htmlFor="popup-company"
+                        className="text-white/80 text-sm"
+                      >
                         {t("companyLabel")}
                       </Label>
                       <Input
@@ -257,8 +285,12 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                   {/* Row 3: Country & Subject */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <Label htmlFor="popup-country" className="text-white/80 text-sm">
-                        {t("countryLabel")} <span className="text-emerald-400">*</span>
+                      <Label
+                        htmlFor="popup-country"
+                        className="text-white/80 text-sm"
+                      >
+                        {t("countryLabel")}{" "}
+                        <span className="text-emerald-400">*</span>
                       </Label>
                       <select
                         id="popup-country"
@@ -269,15 +301,23 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         className="w-full h-10 px-3 rounded-md bg-white/5 border border-white/20 text-white focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-colors text-sm"
                       >
                         {COUNTRIES.map((country) => (
-                          <option key={country.code} value={country.code} className="bg-white text-white">
+                          <option
+                            key={country.code}
+                            value={country.code}
+                            className="bg-white text-white"
+                          >
                             {locale === "vi" ? country.vi : country.en}
                           </option>
                         ))}
                       </select>
                     </div>
                     <div className="space-y-1.5">
-                      <Label htmlFor="popup-subject" className="text-white/80 text-sm">
-                        {t("subjectLabel")} <span className="text-emerald-400">*</span>
+                      <Label
+                        htmlFor="popup-subject"
+                        className="text-white/80 text-sm"
+                      >
+                        {t("subjectLabel")}{" "}
+                        <span className="text-emerald-400">*</span>
                       </Label>
                       <Input
                         id="popup-subject"
@@ -293,8 +333,12 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <Label htmlFor="popup-message" className="text-white/80 text-sm">
-                      {t("messageLabel")} <span className="text-emerald-400">*</span>
+                    <Label
+                      htmlFor="popup-message"
+                      className="text-white/80 text-sm"
+                    >
+                      {t("messageLabel")}{" "}
+                      <span className="text-emerald-400">*</span>
                     </Label>
                     <Textarea
                       id="popup-message"
@@ -320,16 +364,41 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">
-                          <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                          <svg
+                            className="w-4 h-4 animate-spin"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                            />
                           </svg>
                           {t("submitting")}
                         </span>
                       ) : (
                         <span className="flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                            />
                           </svg>
                           {t("submit")}
                         </span>

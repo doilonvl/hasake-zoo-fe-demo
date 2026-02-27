@@ -74,6 +74,8 @@ export async function generateMetadata({
 /* ── i18n text map ── */
 const TEXT = {
   vi: {
+    hasake: "Hasake",
+    habitatSolutions: "Giải Pháp Môi Trường Sống",
     heroHeading1: "Wildlife Conservation",
     heroHeading2: "Starts Here",
     heroDesc:
@@ -92,11 +94,13 @@ const TEXT = {
     statsSpecies: "Loài Được Bảo Tồn",
     projectsEyebrow: "DỰ ÁN GẦN ĐÂY",
     projectsTitle: "Câu Chuyện Thành Công",
-    projectsDesc: "Khám phá các dự án vận chuyển và bảo tồn động vật đã và đang triển khai.",
+    projectsDesc:
+      "Khám phá các dự án vận chuyển và bảo tồn động vật đã và đang triển khai.",
     viewProject: "Xem Dự Án",
     blogEyebrow: "BLOG & TIN TỨC",
     blogTitle: "Bài Viết Mới Nhất",
-    blogDesc: "Cập nhật xu hướng ngành, kiến thức bảo tồn và các câu chuyện truyền cảm hứng.",
+    blogDesc:
+      "Cập nhật xu hướng ngành, kiến thức bảo tồn và các câu chuyện truyền cảm hứng.",
     readMore: "Đọc Thêm",
     ctaTitle: "Sẵn Sàng Bắt Đầu?",
     ctaDesc:
@@ -111,6 +115,8 @@ const TEXT = {
     minRead: "phút đọc",
   },
   en: {
+    hasake: "Hasake",
+    habitatSolutions: "Habitat Solutions",
     heroHeading1: "Wildlife Conservation",
     heroHeading2: "Starts Here",
     heroDesc:
@@ -129,11 +135,13 @@ const TEXT = {
     statsSpecies: "Species Conserved",
     projectsEyebrow: "RECENT PROJECTS",
     projectsTitle: "Success Stories",
-    projectsDesc: "Explore our completed and ongoing animal transport and conservation projects.",
+    projectsDesc:
+      "Explore our completed and ongoing animal transport and conservation projects.",
     viewProject: "View Project",
     blogEyebrow: "BLOG & NEWS",
     blogTitle: "Latest Articles",
-    blogDesc: "Stay updated with industry trends, conservation knowledge, and inspiring stories.",
+    blogDesc:
+      "Stay updated with industry trends, conservation knowledge, and inspiring stories.",
     readMore: "Read More",
     ctaTitle: "Ready to Start?",
     ctaDesc:
@@ -160,8 +168,12 @@ export default async function HomePage() {
 
   try {
     const [servicesRes, projectsRes, blogsRes] = await Promise.all([
-      fetchPublicServices({ locale, isFeatured: true, limit: 4 }).catch(() => null),
-      fetchPublicProjects({ locale, isFeatured: true, limit: 3 }).catch(() => null),
+      fetchPublicServices({ locale, isFeatured: true, limit: 4 }).catch(
+        () => null,
+      ),
+      fetchPublicProjects({ locale, isFeatured: true, limit: 3 }).catch(
+        () => null,
+      ),
       fetchPublicBlogs({ locale, limit: 3 }).catch(() => null),
     ]);
     featuredServices = servicesRes?.items ?? [];
@@ -202,8 +214,8 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
 
-      {/* ── Hero Tunnel ── */}
-      <HeroTunnel title="Hasake" subtitle="Habitat Solutions">
+      {/* ── Hero Tunnel Component ── */}
+      <HeroTunnel title={t.hasake} subtitle={t.habitatSolutions}>
         <div className="container mx-auto px-8 lg:px-16">
           <h2 className="text-white text-5xl lg:text-8xl font-bold leading-tight max-w-4xl drop-shadow-2xl">
             {t.heroHeading1}
@@ -226,7 +238,11 @@ export default async function HomePage() {
             </Link>
             <button className="group flex items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 rounded-full border-2 border-white/40 backdrop-blur-sm hover:border-white hover:bg-white/15 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 group-hover:bg-white/25 transition-colors duration-300 flex items-center justify-center">
-                <svg className="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5 lg:w-6 lg:h-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>

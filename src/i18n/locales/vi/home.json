@@ -1,3 +1,14 @@
 {
-  "welcome": "Chào mừng bạn đến với ứng dụng của chúng tôi!"
+  "welcome": "Chào mừng bạn đến với ứng dụng của chúng tôi!",
+  "featured": "Nổi Bật",
+  "hasake": "Hasake",
+  "habitatSolutions": "Giải Pháp Môi Trường Sống",
+  "scrollToExplore": "Cuộn để khám phá thế giới hoang dã",
+  "projectDefault": "Dự Án",
+  "officeTitle": "Văn Phòng",
+  "officeAddress": "50 Thụy Khuê, Tây Hồ, Hà Nội, Việt Nam",
+  "emailTitle": "Email",
+  "phoneTitle": "Điện Thoại",
+  "heroTitle": "Bảo Tồn Động Vật Hoang Dã Bắt Đầu Tại Đây",
+  "heroDesc": "Khám phá các giải pháp môi trường sống đẳng cấp thế giới cho bảo tồn động vật hoang dã. Hãy cùng chúng tôi tạo ra môi trường bền vững cho các loài nguy cấp."
 }

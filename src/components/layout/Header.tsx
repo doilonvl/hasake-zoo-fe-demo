@@ -51,9 +51,7 @@ const LAYERS: HabitatLayer[] = [
     icon: "🦁",
     nameVi: "Giải Pháp",
     nameEn: "Solutions",
-    items: [
-      { href: "/services", labelKey: "nav.services" },
-    ],
+    items: [{ href: "/services", labelKey: "nav.services" }],
     colors: {
       bg: "rgba(16, 185, 129, 0.06)",
       bgHover: "rgba(16, 185, 129, 0.18)",
@@ -125,12 +123,12 @@ export function Header({ locale: _locale }: HeaderProps) {
       if (href === "/") return pathname === "/";
       return pathname.startsWith(href);
     },
-    [pathname]
+    [pathname],
   );
 
   // Which layer owns the current page?
   const activeLayerId = LAYERS.find((l) =>
-    l.items.some((i) => isActive(i.href))
+    l.items.some((i) => isActive(i.href)),
   )?.id;
 
   return (
@@ -183,7 +181,8 @@ export function Header({ locale: _locale }: HeaderProps) {
                 </h1>
                 {!displayScrolled && (
                   <p className="text-emerald-400 text-[11px] font-light tracking-wide">
-                    Habitat Solutions
+                    {/* {t("header.subtitle")} */}
+                    Habitat solutions
                   </p>
                 )}
               </div>
@@ -320,10 +319,7 @@ export function Header({ locale: _locale }: HeaderProps) {
               className="relative z-10 hidden lg:block overflow-hidden"
             >
               <div className="container mx-auto px-6 lg:px-12">
-                <div
-                  className="flex flex-col"
-                  style={{ perspective: "600px" }}
-                >
+                <div className="flex flex-col" style={{ perspective: "600px" }}>
                   {LAYERS.map((layer, idx) => {
                     const isHovered = hoveredLayer === layer.id;
                     const isLayerActive = activeLayerId === layer.id;

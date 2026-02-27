@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import type { Locale } from "@/types/content";
-import type { Blog } from "@/types/blog";
+import type { Blog, BlogTag } from "@/types/blog";
 import { resolveI18nValue, formatDate } from "@/lib/blogs";
 import BlogListMotion from "@/components/blog/BlogListMotion";
 import { PageBreadcrumb } from "@/components/ui/page-breadcrumb";
@@ -15,10 +15,10 @@ interface BlogListClientProps {
 }
 
 export function BlogListClient({ locale, blogs }: BlogListClientProps) {
-  const [selectedTag, setSelectedTag] = useState<string>("all");
+  const [selectedTag, setSelectedTag] = useState<BlogTag | "all">("all");
 
   const allTags = useMemo(() => {
-    const tagSet = new Set<string>();
+    const tagSet = new Set<BlogTag>();
     blogs.forEach((b) => b.tags?.forEach((t) => tagSet.add(t)));
     return Array.from(tagSet).sort();
   }, [blogs]);
@@ -127,6 +127,7 @@ export function BlogListClient({ locale, blogs }: BlogListClientProps) {
                           alt={resolveTitle(featuredBlog)}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                       ) : (
                         <div className="h-full w-full bg-slate-800" />
@@ -249,6 +250,7 @@ export function BlogListClient({ locale, blogs }: BlogListClientProps) {
                               alt={resolveTitle(blog)}
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-700"
+                              sizes="(max-width: 768px) 100vw, 50vw"
                             />
                           ) : (
                             <div className="h-full w-full bg-slate-800" />
@@ -358,6 +360,7 @@ export function BlogListClient({ locale, blogs }: BlogListClientProps) {
                                 alt={resolveTitle(blog)}
                                 fill
                                 className="object-cover"
+                                sizes="64px"
                               />
                             ) : (
                               <div className="h-full w-full bg-slate-800 rounded-xl" />
@@ -426,6 +429,7 @@ export function BlogListClient({ locale, blogs }: BlogListClientProps) {
                           alt={resolveTitle(blog)}
                           fill
                           className="object-cover"
+                          sizes="260px"
                         />
                       ) : (
                         <div className="h-full w-full bg-slate-800" />

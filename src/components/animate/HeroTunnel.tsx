@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,6 +34,7 @@ export function HeroTunnel({
   subtitle = "Habitat Solutions",
   children,
 }: HeroTunnelProps) {
+  const { t } = useTranslation();
   const spacerRef = useRef<HTMLDivElement>(null);
   const tunnelRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -72,11 +74,7 @@ export function HeroTunnel({
     // Animation 3: Deep cinematic pan — move the entire 200vh world
     // UP by 100vh so we travel from treetops down to the jungle floor
     // where the hero content text is anchored
-    tl.to(
-      bg,
-      { y: "-100vh", ease: "power1.inOut", duration: 1 },
-      0,
-    );
+    tl.to(bg, { y: "-100vh", ease: "power1.inOut", duration: 1 }, 0);
 
     // Animation 4: Light rays pulse during opening
     tl.fromTo(
@@ -192,26 +190,73 @@ export function HeroTunnel({
               <linearGradient id="canopyGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="rgb(5,20,10)" />
                 <stop offset="70%" stopColor="rgb(5,20,10)" />
-                <stop offset="100%" stopColor="rgb(8,30,15)" stopOpacity="0.85" />
+                <stop
+                  offset="100%"
+                  stopColor="rgb(8,30,15)"
+                  stopOpacity="0.85"
+                />
               </linearGradient>
               <linearGradient id="vineGlow" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="rgb(5,20,10)" />
-                <stop offset="80%" stopColor="rgb(15,40,20)" stopOpacity="0.7" />
-                <stop offset="100%" stopColor="rgb(40,100,60)" stopOpacity="0.15" />
+                <stop
+                  offset="80%"
+                  stopColor="rgb(15,40,20)"
+                  stopOpacity="0.7"
+                />
+                <stop
+                  offset="100%"
+                  stopColor="rgb(40,100,60)"
+                  stopOpacity="0.15"
+                />
               </linearGradient>
             </defs>
             {/* Main canopy mass */}
-            <path d="M0,0 H1440 V200 Q1400,280 1300,250 Q1200,220 1100,300 Q1050,340 950,290 Q880,250 800,310 Q740,360 680,300 Q620,250 560,320 Q500,370 420,290 Q360,230 280,300 Q200,360 140,280 Q80,220 0,260 Z" fill="url(#canopyGrad)" />
+            <path
+              d="M0,0 H1440 V200 Q1400,280 1300,250 Q1200,220 1100,300 Q1050,340 950,290 Q880,250 800,310 Q740,360 680,300 Q620,250 560,320 Q500,370 420,290 Q360,230 280,300 Q200,360 140,280 Q80,220 0,260 Z"
+              fill="url(#canopyGrad)"
+            />
             {/* Hanging vines */}
-            <path d="M200,200 Q210,320 190,380 Q180,400 200,420 Q220,400 210,380 Q190,320 220,200 Z" fill="url(#vineGlow)" opacity="0.8" />
-            <path d="M450,250 Q460,350 440,400 Q430,430 450,450 Q470,430 460,400 Q440,350 470,250 Z" fill="url(#vineGlow)" opacity="0.7" />
-            <path d="M900,220 Q910,330 890,380 Q880,410 900,430 Q920,410 910,380 Q890,330 920,220 Z" fill="url(#vineGlow)" opacity="0.8" />
-            <path d="M1150,240 Q1160,340 1140,390 Q1130,420 1150,440 Q1170,420 1160,390 Q1140,340 1170,240 Z" fill="url(#vineGlow)" opacity="0.7" />
-            <path d="M650,180 Q660,300 640,360 Q630,390 650,410 Q670,390 660,360 Q640,300 670,180 Z" fill="url(#vineGlow)" opacity="0.6" />
+            <path
+              d="M200,200 Q210,320 190,380 Q180,400 200,420 Q220,400 210,380 Q190,320 220,200 Z"
+              fill="url(#vineGlow)"
+              opacity="0.8"
+            />
+            <path
+              d="M450,250 Q460,350 440,400 Q430,430 450,450 Q470,430 460,400 Q440,350 470,250 Z"
+              fill="url(#vineGlow)"
+              opacity="0.7"
+            />
+            <path
+              d="M900,220 Q910,330 890,380 Q880,410 900,430 Q920,410 910,380 Q890,330 920,220 Z"
+              fill="url(#vineGlow)"
+              opacity="0.8"
+            />
+            <path
+              d="M1150,240 Q1160,340 1140,390 Q1130,420 1150,440 Q1170,420 1160,390 Q1140,340 1170,240 Z"
+              fill="url(#vineGlow)"
+              opacity="0.7"
+            />
+            <path
+              d="M650,180 Q660,300 640,360 Q630,390 650,410 Q670,390 660,360 Q640,300 670,180 Z"
+              fill="url(#vineGlow)"
+              opacity="0.6"
+            />
             {/* Extra foliage depth — layered leaf shapes */}
-            <path d="M100,260 Q130,300 160,270 Q190,240 220,280 Q180,310 140,290 Z" fill="rgb(8,30,15)" opacity="0.5" />
-            <path d="M750,310 Q780,340 820,310 Q850,280 880,320 Q840,350 790,330 Z" fill="rgb(8,30,15)" opacity="0.45" />
-            <path d="M1200,250 Q1230,290 1260,260 Q1290,230 1320,270 Q1280,300 1240,280 Z" fill="rgb(8,30,15)" opacity="0.4" />
+            <path
+              d="M100,260 Q130,300 160,270 Q190,240 220,280 Q180,310 140,290 Z"
+              fill="rgb(8,30,15)"
+              opacity="0.5"
+            />
+            <path
+              d="M750,310 Q780,340 820,310 Q850,280 880,320 Q840,350 790,330 Z"
+              fill="rgb(8,30,15)"
+              opacity="0.45"
+            />
+            <path
+              d="M1200,250 Q1230,290 1260,260 Q1290,230 1320,270 Q1280,300 1240,280 Z"
+              fill="rgb(8,30,15)"
+              opacity="0.4"
+            />
           </svg>
 
           {/* Bottom cave floor — enhanced with stalactite depth */}
@@ -224,20 +269,59 @@ export function HeroTunnel({
               <linearGradient id="floorGrad" x1="0" y1="1" x2="0" y2="0">
                 <stop offset="0%" stopColor="rgb(5,20,10)" />
                 <stop offset="60%" stopColor="rgb(5,20,10)" />
-                <stop offset="100%" stopColor="rgb(10,35,18)" stopOpacity="0.8" />
+                <stop
+                  offset="100%"
+                  stopColor="rgb(10,35,18)"
+                  stopOpacity="0.8"
+                />
               </linearGradient>
             </defs>
-            <path d="M0,400 H1440 V180 Q1380,140 1300,200 Q1220,260 1140,180 Q1080,120 980,200 Q920,260 840,180 Q780,120 700,200 Q640,260 560,180 Q500,120 420,200 Q360,260 280,180 Q200,100 120,200 Q60,260 0,180 Z" fill="url(#floorGrad)" />
+            <path
+              d="M0,400 H1440 V180 Q1380,140 1300,200 Q1220,260 1140,180 Q1080,120 980,200 Q920,260 840,180 Q780,120 700,200 Q640,260 560,180 Q500,120 420,200 Q360,260 280,180 Q200,100 120,200 Q60,260 0,180 Z"
+              fill="url(#floorGrad)"
+            />
             {/* Stalagmites with subtle glow tips */}
-            <path d="M300,400 L315,270 L330,400 Z" fill="rgb(5,20,10)" opacity="0.9" />
-            <path d="M315,275 L317,270 L319,275 Z" fill="rgb(40,120,70)" opacity="0.12" />
-            <path d="M700,400 L715,290 L730,400 Z" fill="rgb(5,20,10)" opacity="0.9" />
-            <path d="M715,295 L717,290 L719,295 Z" fill="rgb(40,120,70)" opacity="0.12" />
-            <path d="M1100,400 L1115,300 L1130,400 Z" fill="rgb(5,20,10)" opacity="0.9" />
-            <path d="M1115,305 L1117,300 L1119,305 Z" fill="rgb(40,120,70)" opacity="0.12" />
+            <path
+              d="M300,400 L315,270 L330,400 Z"
+              fill="rgb(5,20,10)"
+              opacity="0.9"
+            />
+            <path
+              d="M315,275 L317,270 L319,275 Z"
+              fill="rgb(40,120,70)"
+              opacity="0.12"
+            />
+            <path
+              d="M700,400 L715,290 L730,400 Z"
+              fill="rgb(5,20,10)"
+              opacity="0.9"
+            />
+            <path
+              d="M715,295 L717,290 L719,295 Z"
+              fill="rgb(40,120,70)"
+              opacity="0.12"
+            />
+            <path
+              d="M1100,400 L1115,300 L1130,400 Z"
+              fill="rgb(5,20,10)"
+              opacity="0.9"
+            />
+            <path
+              d="M1115,305 L1117,300 L1119,305 Z"
+              fill="rgb(40,120,70)"
+              opacity="0.12"
+            />
             {/* Extra ground rocks */}
-            <path d="M500,400 L510,340 L520,400 Z" fill="rgb(5,20,10)" opacity="0.7" />
-            <path d="M900,400 L908,350 L916,400 Z" fill="rgb(5,20,10)" opacity="0.7" />
+            <path
+              d="M500,400 L510,340 L520,400 Z"
+              fill="rgb(5,20,10)"
+              opacity="0.7"
+            />
+            <path
+              d="M900,400 L908,350 L916,400 Z"
+              fill="rgb(5,20,10)"
+              opacity="0.7"
+            />
           </svg>
 
           {/* Left wall — enhanced with moss texture */}
@@ -250,14 +334,33 @@ export function HeroTunnel({
               <linearGradient id="wallLeftGrad" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="rgb(5,20,10)" />
                 <stop offset="70%" stopColor="rgb(5,20,10)" />
-                <stop offset="100%" stopColor="rgb(12,40,22)" stopOpacity="0.7" />
+                <stop
+                  offset="100%"
+                  stopColor="rgb(12,40,22)"
+                  stopOpacity="0.7"
+                />
               </linearGradient>
             </defs>
-            <path d="M0,0 H200 Q250,100 220,200 Q180,320 230,420 Q280,500 200,580 Q150,650 220,740 Q260,800 200,900 H0 Z" fill="url(#wallLeftGrad)" />
+            <path
+              d="M0,0 H200 Q250,100 220,200 Q180,320 230,420 Q280,500 200,580 Q150,650 220,740 Q260,800 200,900 H0 Z"
+              fill="url(#wallLeftGrad)"
+            />
             {/* Moss highlights */}
-            <path d="M195,300 Q210,310 200,330 Q190,310 195,300 Z" fill="rgb(30,80,45)" opacity="0.15" />
-            <path d="M210,500 Q225,510 215,530 Q205,510 210,500 Z" fill="rgb(30,80,45)" opacity="0.12" />
-            <path d="M185,700 Q200,710 190,730 Q180,710 185,700 Z" fill="rgb(30,80,45)" opacity="0.1" />
+            <path
+              d="M195,300 Q210,310 200,330 Q190,310 195,300 Z"
+              fill="rgb(30,80,45)"
+              opacity="0.15"
+            />
+            <path
+              d="M210,500 Q225,510 215,530 Q205,510 210,500 Z"
+              fill="rgb(30,80,45)"
+              opacity="0.12"
+            />
+            <path
+              d="M185,700 Q200,710 190,730 Q180,710 185,700 Z"
+              fill="rgb(30,80,45)"
+              opacity="0.1"
+            />
           </svg>
 
           {/* Right wall — enhanced with moss texture */}
@@ -270,14 +373,33 @@ export function HeroTunnel({
               <linearGradient id="wallRightGrad" x1="1" y1="0" x2="0" y2="0">
                 <stop offset="0%" stopColor="rgb(5,20,10)" />
                 <stop offset="70%" stopColor="rgb(5,20,10)" />
-                <stop offset="100%" stopColor="rgb(12,40,22)" stopOpacity="0.7" />
+                <stop
+                  offset="100%"
+                  stopColor="rgb(12,40,22)"
+                  stopOpacity="0.7"
+                />
               </linearGradient>
             </defs>
-            <path d="M400,0 H200 Q150,100 180,200 Q220,320 170,420 Q120,500 200,580 Q250,650 180,740 Q140,800 200,900 H400 Z" fill="url(#wallRightGrad)" />
+            <path
+              d="M400,0 H200 Q150,100 180,200 Q220,320 170,420 Q120,500 200,580 Q250,650 180,740 Q140,800 200,900 H400 Z"
+              fill="url(#wallRightGrad)"
+            />
             {/* Moss highlights */}
-            <path d="M205,250 Q190,260 200,280 Q210,260 205,250 Z" fill="rgb(30,80,45)" opacity="0.15" />
-            <path d="M190,450 Q175,460 185,480 Q195,460 190,450 Z" fill="rgb(30,80,45)" opacity="0.12" />
-            <path d="M215,650 Q200,660 210,680 Q220,660 215,650 Z" fill="rgb(30,80,45)" opacity="0.1" />
+            <path
+              d="M205,250 Q190,260 200,280 Q210,260 205,250 Z"
+              fill="rgb(30,80,45)"
+              opacity="0.15"
+            />
+            <path
+              d="M190,450 Q175,460 185,480 Q195,460 190,450 Z"
+              fill="rgb(30,80,45)"
+              opacity="0.12"
+            />
+            <path
+              d="M215,650 Q200,660 210,680 Q220,660 215,650 Z"
+              fill="rgb(30,80,45)"
+              opacity="0.1"
+            />
           </svg>
 
           {/* Inner edge glow — soft emerald light leaking through the tunnel opening */}
@@ -390,15 +512,19 @@ export function HeroTunnel({
             return (
               <g key={i} transform={`rotate(${angle} 500 500)`}>
                 <line
-                  x1="500" y1="500"
-                  x2="500" y2="50"
+                  x1="500"
+                  y1="500"
+                  x2="500"
+                  y2="50"
                   stroke="rgba(180,255,220,0.12)"
                   strokeWidth={w}
                   opacity={op}
                 />
                 <line
-                  x1="500" y1="500"
-                  x2="500" y2="50"
+                  x1="500"
+                  y1="500"
+                  x2="500"
+                  y2="50"
                   stroke="rgba(255,255,255,0.06)"
                   strokeWidth={w * 3}
                   opacity={op * 0.4}
@@ -473,33 +599,36 @@ export function HeroTunnel({
         className="fixed inset-0 w-full h-full flex items-center justify-center"
         style={{ zIndex: 20, pointerEvents: "none" }}
       >
-        <div
-          ref={contentRef}
-          style={{ willChange: "transform, opacity" }}
-        >
+        <div ref={contentRef} style={{ willChange: "transform, opacity" }}>
           <div className="text-center">
             <h1 className="text-8xl lg:text-[10rem] font-bold text-white tracking-tighter leading-none drop-shadow-2xl">
               {title}
             </h1>
             <div className="flex items-center justify-center gap-4 mt-4">
-              <div className="w-16 h-px bg-emerald-300 shadow-[0_0_6px_rgba(110,231,183,0.4)]" />
+              <div className="w-20 h-[2px] bg-gradient-to-r from-transparent to-white/80 shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
               <p
-                className="text-emerald-300 text-xl lg:text-2xl font-light tracking-[0.3em] uppercase"
-                style={{ textShadow: "0 0 12px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)" }}
+                className="text-white text-xl lg:text-3xl font-medium tracking-[0.3em] uppercase"
+                style={{
+                  textShadow:
+                    "0 0 20px rgba(0,0,0,1), 0 0 40px rgba(0,0,0,0.8), 0 2px 12px rgba(0,0,0,0.9)",
+                }}
               >
                 {subtitle}
               </p>
-              <div className="w-16 h-px bg-emerald-300 shadow-[0_0_6px_rgba(110,231,183,0.4)]" />
+              <div className="w-20 h-[2px] bg-gradient-to-l from-transparent to-white/80 shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
             </div>
             <p
-              className="mt-8 text-white/70 text-lg lg:text-xl max-w-md mx-auto"
-              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
+              className="mt-8 text-white text-lg lg:text-xl max-w-md mx-auto font-light"
+              style={{
+                textShadow:
+                  "0 0 16px rgba(0,0,0,1), 0 2px 12px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.7)",
+              }}
             >
-              Scroll to explore the wild
+              {t("home:scrollToExplore")}
             </p>
             <div className="mt-10 flex flex-col items-center gap-2 animate-bounce">
               <svg
-                className="w-6 h-6 text-white/40"
+                className="w-7 h-7 text-white/80 drop-shadow-lg"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

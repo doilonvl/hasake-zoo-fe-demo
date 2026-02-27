@@ -15,11 +15,23 @@ export function Footer({ locale }: FooterProps) {
 
   const quickLinks = [
     { href: `/${locale === "en" ? "en" : ""}`, label: t("nav.home") },
-    { href: `/${locale === "en" ? "en/" : ""}services`, label: t("nav.services") },
-    { href: `/${locale === "en" ? "en/" : ""}products`, label: t("nav.products") },
-    { href: `/${locale === "en" ? "en/" : ""}projects`, label: t("nav.projects") },
+    {
+      href: `/${locale === "en" ? "en/" : ""}services`,
+      label: t("nav.services"),
+    },
+    {
+      href: `/${locale === "en" ? "en/" : ""}products`,
+      label: t("nav.products"),
+    },
+    {
+      href: `/${locale === "en" ? "en/" : ""}projects`,
+      label: t("nav.projects"),
+    },
     { href: `/${locale === "en" ? "en/" : ""}about`, label: t("nav.about") },
-    { href: `/${locale === "en" ? "en/" : ""}contact`, label: t("nav.contact") },
+    {
+      href: `/${locale === "en" ? "en/" : ""}contact`,
+      label: t("nav.contact"),
+    },
   ];
 
   const socialLinks = [
@@ -58,13 +70,17 @@ export function Footer({ locale }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link href={`/${locale === "en" ? "en" : ""}`} className="flex items-center gap-3 group">
+            <Link
+              href={`/${locale === "en" ? "en" : ""}`}
+              className="flex items-center gap-3 group"
+            >
               <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-xl">
                 <Image
                   src="/favicon.png"
                   alt="Hasake Zoo Logo"
                   fill
                   className="object-cover"
+                  sizes="56px"
                 />
               </div>
               <div>
@@ -72,7 +88,10 @@ export function Footer({ locale }: FooterProps) {
                 <p className="text-emerald-400 text-sm">Habitat Solutions</p>
               </div>
             </Link>
-            <p className="text-white/70 leading-relaxed" suppressHydrationWarning>
+            <p
+              className="text-white/70 leading-relaxed"
+              suppressHydrationWarning
+            >
               {t("footer.description")}
             </p>
             <div className="flex gap-3">
@@ -93,7 +112,10 @@ export function Footer({ locale }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6" suppressHydrationWarning>
+            <h4
+              className="text-white text-lg font-bold mb-6"
+              suppressHydrationWarning
+            >
               {t("footer.quickLinks")}
             </h4>
             <nav className="flex flex-col gap-3">
@@ -125,7 +147,10 @@ export function Footer({ locale }: FooterProps) {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6" suppressHydrationWarning>
+            <h4
+              className="text-white text-lg font-bold mb-6"
+              suppressHydrationWarning
+            >
               {t("footer.contact")}
             </h4>
             <div className="space-y-4">
@@ -202,7 +227,10 @@ export function Footer({ locale }: FooterProps) {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-white text-lg font-bold mb-6" suppressHydrationWarning>
+            <h4
+              className="text-white text-lg font-bold mb-6"
+              suppressHydrationWarning
+            >
               {t("footer.newsletter")}
             </h4>
             <p className="text-white/70 mb-4" suppressHydrationWarning>
@@ -229,8 +257,12 @@ export function Footer({ locale }: FooterProps) {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/60 text-sm text-center md:text-left" suppressHydrationWarning>
-              © {currentYear} Hasake Zoo & Habitat Solution. {t("footer.rights")}
+            <p
+              className="text-white/60 text-sm text-center md:text-left"
+              suppressHydrationWarning
+            >
+              © {currentYear} Hasake Zoo & Habitat Solution.{" "}
+              {t("footer.rights")}
             </p>
             <div className="flex gap-6">
               <Link
@@ -240,13 +272,13 @@ export function Footer({ locale }: FooterProps) {
               >
                 {t("footer.privacy")}
               </Link>
-              <Link
+              {/* <Link
                 href="/terms"
                 className="text-white/60 hover:text-emerald-400 text-sm transition-colors"
                 suppressHydrationWarning
               >
                 {t("footer.terms")}
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

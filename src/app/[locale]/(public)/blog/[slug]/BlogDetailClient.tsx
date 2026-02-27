@@ -14,7 +14,7 @@ import BlogLocaleBridge from "@/components/blog/BlogLocaleBridge";
 import { BlogContentZoom } from "@/components/blog/BlogContentZoom";
 import { resolveLocalizedString } from "@/lib/i18n";
 import { PageBreadcrumb } from "@/components/ui/page-breadcrumb";
-
+ 
 interface BlogDetailClientProps {
   locale: Locale;
   slug: string;

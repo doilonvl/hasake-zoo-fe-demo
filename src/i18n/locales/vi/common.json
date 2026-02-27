@@ -18,7 +18,10 @@
     "emailPlaceholder": "Nhập email của bạn",
     "subscribe": "Đăng Ký",
     "rights": "Bản quyền thuộc về chúng tôi.",
-    "privacy": "Chính Sách Bảo Mật",
+    "privacy": "Chính Sách & Bảo Mật",
     "terms": "Điều Khoản & Điều Kiện"
+  },
+  "header": {
+    "subtitle": "Giải Pháp Môi Trường Sống"
   }
 }

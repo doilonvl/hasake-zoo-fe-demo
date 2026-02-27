@@ -1,3 +1,14 @@
 {
-  "welcome": "Welcome to our application!"
+  "welcome": "Welcome to our application!",
+  "featured": "Featured",
+  "hasake": "Hasake",
+  "habitatSolutions": "Habitat Solutions",
+  "scrollToExplore": "Scroll to explore the wild",
+  "projectDefault": "Project",
+  "officeTitle": "Office Location",
+  "officeAddress": "50 Thuy Khue Street, Tay Ho, Hanoi, Vietnam",
+  "emailTitle": "Email Us",
+  "phoneTitle": "Call Us",
+  "heroTitle": "Wildlife Conservation Starts Here",
+  "heroDesc": "Discover world-class habitat solutions for wildlife conservation. Join us in creating sustainable environments for endangered species."
 }
