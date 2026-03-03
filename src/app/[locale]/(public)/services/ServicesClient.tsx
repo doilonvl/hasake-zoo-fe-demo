@@ -26,10 +26,20 @@ export function ServicesClient({
   const [services] = useState<Service[]>(initialServices);
   const [categories] = useState<ServiceCategory[]>(initialCategories);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
 
-  const filteredServices = selectedCategory
-    ? services.filter((s) => s.categoryId === selectedCategory)
-    : services;
+  const filteredServices = useMemo(() => {
+    let list = selectedCategory
+      ? services.filter((s) => s.categoryId === selectedCategory)
+      : services;
+    if (showFeaturedOnly) list = list.filter((s) => s.isFeatured);
+    return list;
+  }, [services, selectedCategory, showFeaturedOnly]);
+
+  const featuredCount = useMemo(
+    () => services.filter((s) => s.isFeatured).length,
+    [services],
+  );
 
   // Build a map of category id → name for display
   const categoryMap = useMemo(() => {
@@ -249,24 +259,53 @@ export function ServicesClient({
               {/* Filter buttons */}
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <button
-                  onClick={() => setSelectedCategory(null)}
+                  onClick={() => { setSelectedCategory(null); setShowFeaturedOnly(false); }}
                   className={`group relative px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-500 ${
-                    selectedCategory === null
+                    selectedCategory === null && !showFeaturedOnly
                       ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xl shadow-emerald-600/40 scale-105"
                       : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10 hover:border-white/20"
                   }`}
                 >
                   <span className="relative z-10">{t("filters.all")}</span>
-                  {selectedCategory === null && (
+                  {selectedCategory === null && !showFeaturedOnly && (
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-xl sm:rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
                   )}
                 </button>
+
+                {featuredCount > 0 && (
+                  <button
+                    onClick={() => { setSelectedCategory(null); setShowFeaturedOnly(!showFeaturedOnly); }}
+                    className={`group relative px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-500 ${
+                      showFeaturedOnly
+                        ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-xl shadow-amber-500/40 scale-105"
+                        : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10 hover:border-white/20"
+                    }`}
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      <span>⭐</span>
+                      {locale === "vi" ? "Nổi Bật" : "Featured"}
+                      <span
+                        className={`text-[10px] px-1.5 py-0.5 rounded-full ${
+                          showFeaturedOnly
+                            ? "bg-white/20 text-white"
+                            : "bg-white/10 text-white/40"
+                        }`}
+                      >
+                        {featuredCount}
+                      </span>
+                    </span>
+                    {showFeaturedOnly && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 rounded-xl sm:rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
+                    )}
+                  </button>
+                )}
+
                 {categories.map((category) => {
                   const count = categoryCounts.get(category._id) ?? 0;
                   return (
                     <button
                       key={category._id}
-                      onClick={() => setSelectedCategory(category._id)}
+                      onClick={() => { setSelectedCategory(category._id); setShowFeaturedOnly(false); }}
                       className={`group relative px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-500 ${
                         selectedCategory === category._id
                           ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xl shadow-emerald-600/40 scale-105"

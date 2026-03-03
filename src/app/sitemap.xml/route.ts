@@ -88,42 +88,37 @@ export async function GET() {
 
   const now = new Date().toISOString();
   const staticUrls: SitemapUrl[] = [
-    {
-      loc: `${base}/`,
-      lastmod: now,
-      changefreq: "weekly",
-      priority: 1.0,
-    },
-    {
-      loc: `${base}/en`,
-      lastmod: now,
-      changefreq: "weekly",
-      priority: 0.9,
-    },
-    {
-      loc: `${base}/chinhsach-baomat`,
-      lastmod: now,
-      changefreq: "yearly",
-      priority: 0.5,
-    },
-    {
-      loc: `${base}/en/privacy-policy`,
-      lastmod: now,
-      changefreq: "yearly",
-      priority: 0.5,
-    },
-    {
-      loc: `${base}/blog`,
-      lastmod: now,
-      changefreq: "weekly",
-      priority: 0.7,
-    },
-    {
-      loc: `${base}/en/blog`,
-      lastmod: now,
-      changefreq: "weekly",
-      priority: 0.7,
-    },
+    // ── Home ──
+    { loc: `${base}/`,       lastmod: now, changefreq: "weekly",  priority: 1.0 },
+    { loc: `${base}/en`,     lastmod: now, changefreq: "weekly",  priority: 0.9 },
+
+    // ── About ──
+    { loc: `${base}/about`,    lastmod: now, changefreq: "monthly", priority: 0.8 },
+    { loc: `${base}/en/about`, lastmod: now, changefreq: "monthly", priority: 0.8 },
+
+    // ── Services ──
+    { loc: `${base}/services`,    lastmod: now, changefreq: "weekly",  priority: 0.9 },
+    { loc: `${base}/en/services`, lastmod: now, changefreq: "weekly",  priority: 0.9 },
+
+    // ── Projects ──
+    { loc: `${base}/projects`,    lastmod: now, changefreq: "weekly",  priority: 0.8 },
+    { loc: `${base}/en/projects`, lastmod: now, changefreq: "weekly",  priority: 0.8 },
+
+    // ── Products ──
+    { loc: `${base}/products`,    lastmod: now, changefreq: "monthly", priority: 0.7 },
+    { loc: `${base}/en/products`, lastmod: now, changefreq: "monthly", priority: 0.7 },
+
+    // ── Blog listing ──
+    { loc: `${base}/blog`,    lastmod: now, changefreq: "weekly", priority: 0.7 },
+    { loc: `${base}/en/blog`, lastmod: now, changefreq: "weekly", priority: 0.7 },
+
+    // ── Contact ──
+    { loc: `${base}/contact`,    lastmod: now, changefreq: "yearly", priority: 0.6 },
+    { loc: `${base}/en/contact`, lastmod: now, changefreq: "yearly", priority: 0.6 },
+
+    // ── Privacy ──
+    { loc: `${base}/privacy`,    lastmod: now, changefreq: "yearly", priority: 0.3 },
+    { loc: `${base}/en/privacy`, lastmod: now, changefreq: "yearly", priority: 0.3 },
   ];
 
   const blogUrls: SitemapUrl[] = [];

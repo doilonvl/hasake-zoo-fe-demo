@@ -8,6 +8,7 @@ import { fetchPublicServices } from "@/lib/api/services.public";
 import { resolveLocalizedString } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/animate/ScrollReveal";
 import LexicalContentRenderer from "@/components/blog/LexicalContentRenderer";
+import { BlogContentZoom } from "@/components/blog/BlogContentZoom";
 import type { Locale } from "@/types/content";
 import type { Service } from "@/types/api";
 
@@ -119,16 +120,18 @@ export function ServiceDetailClient({
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <ScrollReveal>
-                <div className="text-white/90 prose prose-invert prose-lg max-w-none">
-                  <LexicalContentRenderer
-                    doc={
-                      lexicalContent as Parameters<
-                        typeof LexicalContentRenderer
-                      >[0]["doc"]
-                    }
-                    locale={locale}
-                  />
-                </div>
+                <BlogContentZoom>
+                  <div className="text-white/90 prose prose-invert prose-lg max-w-none">
+                    <LexicalContentRenderer
+                      doc={
+                        lexicalContent as Parameters<
+                          typeof LexicalContentRenderer
+                        >[0]["doc"]
+                      }
+                      locale={locale}
+                    />
+                  </div>
+                </BlogContentZoom>
               </ScrollReveal>
             </div>
           </div>

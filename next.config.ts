@@ -5,10 +5,9 @@ const nextConfig: NextConfig = {
     qualities: [75, 85],
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
-      { protocol: "https", hostname: "dropincafe.com.vn" },
+      { protocol: "https", hostname: "www.hasakezoo.com.vn" },
+      { protocol: "https", hostname: "api.hasakezoo.com.vn" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
-      { protocol: "https", hostname: "cdn.example.com" },
-      { protocol: "https", hostname: "example.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },

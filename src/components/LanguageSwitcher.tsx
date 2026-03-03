@@ -71,7 +71,7 @@ export default function LanguageSwitcher({
     Record<string, string | string[]> | undefined
   >(() => {
     const entries = Object.entries(params ?? {}).filter(
-      ([key]) => key !== "locale"
+      ([key]) => key !== "locale",
     );
     if (entries.length === 0) return undefined;
     return entries.reduce<Record<string, string | string[]>>(
@@ -79,7 +79,7 @@ export default function LanguageSwitcher({
         acc[key] = value as string | string[];
         return acc;
       },
-      {}
+      {},
     );
   }, [params]);
 
@@ -101,10 +101,7 @@ export default function LanguageSwitcher({
     if (routeParams) {
       const slugOverride = getSlugOverride(target);
       if (slugOverride && routeParams.slug) {
-        targetPath = targetPath.replace(
-          String(routeParams.slug),
-          slugOverride
-        );
+        targetPath = targetPath.replace(String(routeParams.slug), slugOverride);
       }
     }
 
@@ -129,7 +126,7 @@ export default function LanguageSwitcher({
       localizedPath + (queryString ? `?${queryString}` : "") + (hash || "");
 
     // Use full navigation to reliably trigger the proxy rewrite
-    window.location.href = finalUrl;
+    window.location.assign(finalUrl);
   };
 
   const flagByLocale: Record<Locale, { label: string; flag: string }> = {

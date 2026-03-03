@@ -15,7 +15,6 @@ import {
   LogOut,
   ChevronsLeft,
   ChevronsRight,
-  NotebookText,
   FileText,
   Wrench,
   FolderTree,

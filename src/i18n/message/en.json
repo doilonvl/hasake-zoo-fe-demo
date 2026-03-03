@@ -24,7 +24,8 @@
     }
   },
   "home": {
-    "welcome": "Welcome to our application!"
+    "welcome": "Welcome to our application!",
+    "scrollToExplore": "Scroll to Explore"
   },
   "notFound": {
     "title": "Page not found",
@@ -34,21 +35,21 @@
   },
   "privacy": {
     "metaTitle": "Privacy Policy | Hasake Zoo & Habitat Solution",
-    "metaDescription": "Learn how Hasake Zoo & Habitat Solution collects, uses, and protects your data when you visit our website or contact us.",
+    "metaDescription": "Learn how Hasake Zoo & Habitat Solution collects, uses, and protects your data when you visit our website or contact us about wildlife conservation, habitat design, or animal logistics.",
     "title": "Privacy Policy",
-    "tagline": "We protect your information when you browse our website or contact us about vegetarian/vegan meals, catering, or events.",
-    "updated": "Last updated: Jan 13, 2026",
+    "tagline": "We protect your information when you visit hasakezoo.com.vn or contact us about wildlife conservation services, habitat design, or animal transport and logistics.",
+    "updated": "Last updated: Mar 3, 2026",
     "heroHighlights": [
       "No data selling",
       "Clear purpose",
-      "Your control",
-      "Security first"
+      "Your full control",
+      "Layered security"
     ],
-    "sectionEyebrow": "Privacy at Achi Vegan House",
+    "sectionEyebrow": "Privacy at Hasake Zoo & Habitat Solution",
     "quickPoints": [
       {
         "title": "Clear purpose",
-        "description": "We collect only what we need to respond to you, send quotes, handle catering/orders, and improve your experience.",
+        "description": "We collect only what we need to respond to you, confirm service requests, advise on projects, and improve your experience.",
         "icon": "ShieldCheck"
       },
       {
@@ -57,7 +58,7 @@
         "icon": "FileSearch"
       },
       {
-        "title": "Your control",
+        "title": "Your full control",
         "description": "You may request access, corrections, deletion, or withdraw consent at any time.",
         "icon": "UserCheck"
       },
@@ -71,9 +72,9 @@
       {
         "id": "scope",
         "title": "1. Scope & applicability",
-        "summary": "This policy covers information we collect whenever you interact with Achi Vegan House.",
+        "summary": "This policy covers information we collect whenever you interact with Hasake Zoo & Habitat Solution.",
         "items": [
-          "Applies when you visit our website, submit contact forms, call, email, message us on social channels, or speak with us at the restaurant.",
+          "Applies when you visit hasakezoo.com.vn, submit contact or service inquiry forms, call, email, message us on social channels, or speak with us at our office.",
           "By using the site or sharing information, you agree to the terms in this policy."
         ],
         "icon": "Globe2"
@@ -82,7 +83,7 @@
         "id": "data",
         "title": "2. Information we collect",
         "items": [
-          "Information you provide: name, email, phone number, inquiry details, order/service information, feedback, or reviews.",
+          "Information you provide: name, email, phone number, inquiry details, project or service information, feedback, or reviews.",
           "Technical data collected automatically: IP address, browser, device, operating system, entry/exit pages, time on page, and basic interactions.",
           "Cookies and similar technologies to remember preferences and measure site performance."
         ],
@@ -92,9 +93,9 @@
         "id": "use",
         "title": "3. How we use your information",
         "items": [
-          "Respond to inquiries, send quotes, and confirm or follow up on orders or catering.",
-          "Improve content speed, reliability, and experience on our website.",
-          "Send important updates (for example: opening hours changes, menu updates, or order follow-ups).",
+          "Respond to inquiries, provide consultations, and confirm or follow up on services and conservation projects.",
+          "Improve content, speed, and experience on hasakezoo.com.vn.",
+          "Send important updates (for example: service updates, project news, or inquiry follow-ups).",
           "Detect and prevent fraud or misuse of our systems."
         ],
         "icon": "Bell"
@@ -114,7 +115,7 @@
         "items": [
           "We do not sell personal data to third parties.",
           "We may share data with service providers (hosting, analytics, payment, marketing tools) to run and improve the site.",
-          "We may share with partners or contractors related to your order/service when necessary, under confidentiality obligations.",
+          "We may share with partners or contractors related to your project or service when necessary, under confidentiality obligations.",
           "We comply with lawful requests from authorities when required."
         ],
         "icon": "FileSearch"
@@ -171,18 +172,18 @@
         "title": "11. Changes to this policy",
         "items": [
           "We may update this policy and will post the latest version on this page.",
-          "We encourage you to review it periodically. Last updated: Jan 13, 2026."
+          "We encourage you to review it periodically. Last updated: Mar 3, 2026."
         ],
         "icon": "Bell"
       }
     ],
     "contact": {
       "eyebrow": "Need help?",
-      "title": "Talk to Achi Vegan House",
+      "title": "Contact Hasake Zoo & Habitat Solution",
       "description": "If you have questions or want to exercise your privacy rights, please reach us via:",
-      "address": "50 Thuy Khue, Thuy Khue, Tay Ho, Ha Noi, Viet Nam",
-      "phone": "098 531 02 38",
-      "email": "sunnyhoai.vu@gmail.com"
+      "address": "50 Thuy Khue Street, Tay Ho, Hanoi, Vietnam",
+      "phone": "+84 098 531 0238",
+      "email": "info@hasakezoo.com.vn"
     },
     "rightsTitle": "Exercising your rights",
     "rightsCopy": "We respond within a reasonable timeframe (typically within 1-2 business days) and may verify your identity to protect your data.",

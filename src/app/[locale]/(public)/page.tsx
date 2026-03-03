@@ -14,7 +14,7 @@ import { AnimatedHomeContent } from "@/components/home/AnimatedHomeContent";
 export const revalidate = 300;
 
 const BASE_URL = getSiteUrl();
-const DEFAULT_OG_IMAGE = "https://www.hasakezoo.com/Logo/Home1.jpg";
+const DEFAULT_OG_IMAGE = "https://www.hasakezoo.com.vn/Logo/Home1.jpg";
 
 const HOME_META = {
   vi: {
@@ -76,12 +76,12 @@ const TEXT = {
   vi: {
     hasake: "Hasake",
     habitatSolutions: "Giải Pháp Môi Trường Sống",
-    heroHeading1: "Wildlife Conservation",
-    heroHeading2: "Starts Here",
+    heroHeading1: "Bảo Tồn Động Vật Hoang Dã",
+    heroHeading2: "Bắt Đầu Tại Đây",
     heroDesc:
       "Khám phá các giải pháp môi trường sống đẳng cấp thế giới cho bảo tồn động vật hoang dã. Hãy cùng chúng tôi tạo ra môi trường bền vững cho các loài nguy cấp.",
     exploreBtn: "Khám Phá",
-    watchBtn: "Xem Tour",
+    watchBtn: "Xem Dự Án",
     servicesEyebrow: "DỊCH VỤ NỔI BẬT",
     servicesTitle: "Giải Pháp Chuyên Nghiệp",
     servicesDesc:
@@ -122,7 +122,7 @@ const TEXT = {
     heroDesc:
       "Discover world-class habitat solutions for wildlife conservation. Join us in creating sustainable environments for endangered species and promoting biodiversity.",
     exploreBtn: "Explore Habitats",
-    watchBtn: "Watch Tour",
+    watchBtn: "View Projects",
     servicesEyebrow: "FEATURED SERVICES",
     servicesTitle: "Professional Solutions",
     servicesDesc:
@@ -236,7 +236,10 @@ export default async function HomePage() {
                 {t.exploreBtn}
               </span>
             </Link>
-            <button className="group flex items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 rounded-full border-2 border-white/40 backdrop-blur-sm hover:border-white hover:bg-white/15 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
+            <Link
+              href={`${prefix}/projects`}
+              className="group flex items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 rounded-full border-2 border-white/40 backdrop-blur-sm hover:border-white hover:bg-white/15 hover:scale-105 active:scale-95 transition-all duration-300"
+            >
               <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 group-hover:bg-white/25 transition-colors duration-300 flex items-center justify-center">
                 <svg
                   className="w-5 h-5 lg:w-6 lg:h-6 text-white"
@@ -249,7 +252,7 @@ export default async function HomePage() {
               <span className="text-white/80 text-base lg:text-lg font-light group-hover:text-white transition-colors duration-300">
                 {t.watchBtn}
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </HeroTunnel>
