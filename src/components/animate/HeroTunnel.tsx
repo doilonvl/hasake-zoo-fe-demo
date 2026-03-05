@@ -542,7 +542,7 @@ export function HeroTunnel({
         className="fixed inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 13 }}
       >
-        {Array.from({ length: 20 }, (_, i) => {
+        {Array.from({ length: 10 }, (_, i) => {
           const r = PARTICLE_RANDOMS;
           const b = i * 6;
           const size = 2 + r[b] * 3;

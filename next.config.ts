@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [75, 85],
+    formats: ["image/avif", "image/webp"],
+    qualities: [60, 75],
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
       { protocol: "https", hostname: "www.hasakezoo.com.vn" },

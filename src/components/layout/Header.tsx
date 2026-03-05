@@ -282,7 +282,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                         ? { rotate: 45, width: "100%" }
                         : { rotate: 0, width: "100%" }
                     }
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, type: "tween", ease: "easeInOut" }}
                   />
                   <motion.span
                     className="block h-0.5 bg-white rounded-full"
@@ -291,7 +291,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                         ? { opacity: 0, x: -10 }
                         : { opacity: 1, x: 0 }
                     }
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.2, type: "tween", ease: "easeInOut" }}
                   />
                   <motion.span
                     className="block h-0.5 bg-white rounded-full origin-left"
@@ -300,7 +300,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                         ? { rotate: -45, width: "100%" }
                         : { rotate: 0, width: "80%" }
                     }
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, type: "tween", ease: "easeInOut" }}
                   />
                 </div>
               </button>

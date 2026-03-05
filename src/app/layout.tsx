@@ -49,6 +49,14 @@ export default async function RootLayout({
   const locale = await getLocale();
   return (
     <html lang={locale} suppressHydrationWarning className={playfair.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Providers>{children}</Providers>
         {/* <TawkTo /> */}

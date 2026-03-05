@@ -3,13 +3,21 @@ import { getLocale } from "@/i18n/server";
 import type { Locale } from "@/types/content";
 import { getSiteUrl } from "@/lib/env";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { HeroTunnel } from "@/components/animate/HeroTunnel";
 import { fetchPublicServices } from "@/lib/api/services.public";
 import { fetchPublicProjects } from "@/lib/api/projects.public";
 import { fetchPublicBlogs } from "@/lib/api/blogs.public";
 import type { Service, Project } from "@/types/api";
 import type { Blog } from "@/types/blog";
-import { AnimatedHomeContent } from "@/components/home/AnimatedHomeContent";
+
+const AnimatedHomeContent = dynamic(
+  () =>
+    import("@/components/home/AnimatedHomeContent").then((m) => ({
+      default: m.AnimatedHomeContent,
+    })),
+  { ssr: true },
+);
 
 export const revalidate = 300;
 
