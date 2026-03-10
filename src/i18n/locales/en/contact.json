@@ -19,5 +19,9 @@
   "successTitle": "Inquiry submitted",
   "successDesc": "Thank you! We'll get back to you soon.",
   "errorTitle": "Request failed",
-  "errorDesc": "Unable to send your inquiry. Please try again later."
+  "errorDesc": "Unable to send your inquiry. Please try again later.",
+  "rateLimitTitle": "Too many requests",
+  "rateLimitDesc": "You've sent too many requests. Please try again in a few minutes.",
+  "validationErrorTitle": "Validation failed",
+  "validationErrorDesc": "Please check the highlighted fields and try again."
 }

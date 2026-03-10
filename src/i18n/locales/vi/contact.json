@@ -19,5 +19,9 @@
   "successTitle": "Đã gửi yêu cầu",
   "successDesc": "Cảm ơn bạn! Chúng tôi sẽ phản hồi sớm nhất.",
   "errorTitle": "Gửi không thành công",
-  "errorDesc": "Không thể gửi yêu cầu của bạn. Vui lòng thử lại sau."
+  "errorDesc": "Không thể gửi yêu cầu của bạn. Vui lòng thử lại sau.",
+  "rateLimitTitle": "Quá nhiều yêu cầu",
+  "rateLimitDesc": "Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau ít phút.",
+  "validationErrorTitle": "Dữ liệu không hợp lệ",
+  "validationErrorDesc": "Vui lòng kiểm tra các trường được đánh dấu và thử lại."
 }

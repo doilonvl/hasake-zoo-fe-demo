@@ -18,6 +18,20 @@ const API_BASE_URL = getApiBaseUrl();
 
 // ============ Helper Functions ============
 
+export type ApiFieldError = { field: string; message: string };
+
+export class ApiError extends Error {
+  status: number;
+  errors?: ApiFieldError[];
+
+  constructor(status: number, message: string, errors?: ApiFieldError[]) {
+    super(message);
+    this.name = "ApiError";
+    this.status = status;
+    this.errors = errors;
+  }
+}
+
 async function apiFetch<T>(
   endpoint: string,
   options: RequestInit = {}
@@ -34,10 +48,14 @@ async function apiFetch<T>(
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({
+    const body = await response.json().catch(() => ({
       message: "An error occurred",
     }));
-    throw new Error(error.message || `HTTP ${response.status}`);
+    throw new ApiError(
+      response.status,
+      body.message || `HTTP ${response.status}`,
+      body.errors
+    );
   }
 
   return response.json();

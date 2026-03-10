@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslation } from "@/i18n/client";
 import { contactInquiriesApi } from "@/lib/api/client";
+import { ApiError } from "@/lib/api/client";
 import type {
   CreateContactInquiryDTO,
   InquiryType,
@@ -30,6 +31,7 @@ export function ContactInquiryForm({
 }: ContactInquiryFormProps) {
   const { t } = useTranslation("contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState<CreateContactInquiryDTO>({
     inquiryType,
     relatedId,
@@ -49,14 +51,29 @@ export function ContactInquiryForm({
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setFieldErrors({});
 
     try {
-      await contactInquiriesApi.create(formData);
+      // Include honeypot field in submission
+      const form = e.currentTarget;
+      const honeypot = (form.elements.namedItem("website") as HTMLInputElement)?.value;
+
+      await contactInquiriesApi.create({
+        ...formData,
+        ...(honeypot ? { website: honeypot } : {}),
+      });
       toast.success(t("successTitle"), {
         description: t("successDesc"),
       });
@@ -76,6 +93,29 @@ export function ContactInquiryForm({
         locale,
       });
     } catch (error) {
+      if (error instanceof ApiError) {
+        // Rate limit exceeded
+        if (error.status === 429) {
+          toast.error(t("rateLimitTitle"), {
+            description: t("rateLimitDesc"),
+          });
+          return;
+        }
+
+        // Validation errors — show per-field messages
+        if (error.status === 400 && error.errors?.length) {
+          const mapped: Record<string, string> = {};
+          for (const err of error.errors) {
+            mapped[err.field] = err.message;
+          }
+          setFieldErrors(mapped);
+          toast.error(t("validationErrorTitle"), {
+            description: t("validationErrorDesc"),
+          });
+          return;
+        }
+      }
+
       console.error("Contact inquiry error:", error);
       toast.error(t("errorTitle"), {
         description: t("errorDesc"),
@@ -85,8 +125,24 @@ export function ContactInquiryForm({
     }
   };
 
+  const inputClass = (field: string) =>
+    `bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400${
+      fieldErrors[field] ? " border-red-400" : ""
+    }`;
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot field — hidden from real users, traps bots */}
+      <input
+        type="text"
+        name="website"
+        defaultValue=""
+        aria-hidden="true"
+        tabIndex={-1}
+        autoComplete="off"
+        style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
+      />
+
       {/* Name */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-white" suppressHydrationWarning>
@@ -99,9 +155,12 @@ export function ContactInquiryForm({
           onChange={handleChange}
           placeholder={t("namePlaceholder")}
           required
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+          className={inputClass("name")}
           suppressHydrationWarning
         />
+        {fieldErrors.name && (
+          <p className="text-red-400 text-sm">{fieldErrors.name}</p>
+        )}
       </div>
 
       {/* Email */}
@@ -117,9 +176,12 @@ export function ContactInquiryForm({
           onChange={handleChange}
           placeholder={t("emailPlaceholder")}
           required
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+          className={inputClass("email")}
           suppressHydrationWarning
         />
+        {fieldErrors.email && (
+          <p className="text-red-400 text-sm">{fieldErrors.email}</p>
+        )}
       </div>
 
       {/* Phone */}
@@ -134,9 +196,12 @@ export function ContactInquiryForm({
           value={formData.phone}
           onChange={handleChange}
           placeholder={t("phonePlaceholder")}
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+          className={inputClass("phone")}
           suppressHydrationWarning
         />
+        {fieldErrors.phone && (
+          <p className="text-red-400 text-sm">{fieldErrors.phone}</p>
+        )}
       </div>
 
       {/* Company */}
@@ -150,9 +215,12 @@ export function ContactInquiryForm({
           value={formData.company}
           onChange={handleChange}
           placeholder={t("companyPlaceholder")}
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+          className={inputClass("company")}
           suppressHydrationWarning
         />
+        {fieldErrors.company && (
+          <p className="text-red-400 text-sm">{fieldErrors.company}</p>
+        )}
       </div>
 
       {/* Country */}
@@ -162,14 +230,25 @@ export function ContactInquiryForm({
         </Label>
         <RadixSelect.Root
           value={formData.country}
-          onValueChange={(val) => setFormData((prev) => ({ ...prev, country: val }))}
+          onValueChange={(val) => {
+            setFormData((prev) => ({ ...prev, country: val }));
+            if (fieldErrors.country) {
+              setFieldErrors((prev) => {
+                const next = { ...prev };
+                delete next.country;
+                return next;
+              });
+            }
+          }}
           required
         >
           <RadixSelect.Trigger
             id="country"
-            className="flex w-full h-10 items-center justify-between rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 data-[placeholder]:text-white/50"
+            className={`flex w-full h-10 items-center justify-between rounded-md border bg-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 data-[placeholder]:text-white/50 ${
+              fieldErrors.country ? "border-red-400" : "border-white/20"
+            }`}
           >
-            <RadixSelect.Value placeholder={locale === "en" ? "Select country…" : "Chọn quốc gia…"} />
+            <RadixSelect.Value placeholder={locale === "en" ? "Select country\u2026" : "Ch\u1ECDn qu\u1ED1c gia\u2026"} />
             <RadixSelect.Icon>
               <ChevronDown className="w-4 h-4 text-white/50" />
             </RadixSelect.Icon>
@@ -226,6 +305,9 @@ export function ContactInquiryForm({
             </RadixSelect.Content>
           </RadixSelect.Portal>
         </RadixSelect.Root>
+        {fieldErrors.country && (
+          <p className="text-red-400 text-sm">{fieldErrors.country}</p>
+        )}
       </div>
 
       {/* Subject */}
@@ -240,9 +322,12 @@ export function ContactInquiryForm({
           onChange={handleChange}
           placeholder={t("subjectPlaceholder")}
           required
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+          className={inputClass("subject")}
           suppressHydrationWarning
         />
+        {fieldErrors.subject && (
+          <p className="text-red-400 text-sm">{fieldErrors.subject}</p>
+        )}
       </div>
 
       {/* Message */}
@@ -258,9 +343,12 @@ export function ContactInquiryForm({
           placeholder={t("messagePlaceholder")}
           required
           rows={6}
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400 resize-none"
+          className={`${inputClass("message")} resize-none`}
           suppressHydrationWarning
         />
+        {fieldErrors.message && (
+          <p className="text-red-400 text-sm">{fieldErrors.message}</p>
+        )}
       </div>
 
       {/* Privacy Notice */}

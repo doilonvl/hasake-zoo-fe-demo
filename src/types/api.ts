@@ -67,6 +67,7 @@ export interface CreateContactInquiryDTO {
   subject: string;
   message: string;
   locale: string;
+  website?: string;
 }
 
 // ============ ServiceCategory ============
