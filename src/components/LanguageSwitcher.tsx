@@ -15,7 +15,7 @@ const SUPPORTED_LOCALES: Locale[] = ["vi", "en"];
 
 export default function LanguageSwitcher({
   className,
-  variant = "dark",
+  variant = "light",
 }: {
   className?: string;
   variant?: "light" | "dark";
@@ -142,7 +142,7 @@ export default function LanguageSwitcher({
         className={`flex h-10 cursor-pointer items-center gap-2 rounded-full border px-3.5 text-sm font-semibold uppercase shadow-sm transition ${
           variant === "light"
             ? "border-black/30 bg-white/85 text-black/80 hover:border-black/50 hover:bg-white"
-            : "border-white/25 bg-black/35 text-white hover:border-white/50 hover:bg-black/45"
+            : "border-gray-300 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50"
         }`}
         aria-label="Change language"
       >
@@ -164,7 +164,7 @@ export default function LanguageSwitcher({
           className={`absolute top-full right-0 z-40 mt-2 w-48 overflow-hidden rounded-lg border text-sm shadow-2xl backdrop-blur ${
             variant === "light"
               ? "border-black/15 bg-white/95 text-black"
-              : "border-white/25 bg-black/80 text-white"
+              : "border-gray-200 bg-white text-gray-900"
           }`}
         >
           {SUPPORTED_LOCALES.map((code) => (
@@ -172,8 +172,8 @@ export default function LanguageSwitcher({
               key={code}
               type="button"
               onClick={() => goLocale(code)}
-              className={`flex w-full items-center cursor-pointer justify-between px-3 py-2 text-left transition hover:bg-white/10 ${
-                locale === code ? "bg-white/15" : ""
+              className={`flex w-full items-center cursor-pointer justify-between px-3 py-2 text-left transition hover:bg-gray-100 ${
+                locale === code ? "bg-gray-100" : ""
               }`}
             >
               <span className="flex items-center gap-2">

@@ -126,7 +126,7 @@ export function ContactInquiryForm({
   };
 
   const inputClass = (field: string) =>
-    `bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400${
+    `bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-400${
       fieldErrors[field] ? " border-red-400" : ""
     }`;
 
@@ -145,7 +145,7 @@ export function ContactInquiryForm({
 
       {/* Name */}
       <div className="space-y-2">
-        <Label htmlFor="name" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="name" className="text-gray-900" suppressHydrationWarning>
           {t("nameLabel")} <span className="text-red-400">*</span>
         </Label>
         <Input
@@ -165,7 +165,7 @@ export function ContactInquiryForm({
 
       {/* Email */}
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="email" className="text-gray-900" suppressHydrationWarning>
           {t("emailLabel")} <span className="text-red-400">*</span>
         </Label>
         <Input
@@ -186,7 +186,7 @@ export function ContactInquiryForm({
 
       {/* Phone */}
       <div className="space-y-2">
-        <Label htmlFor="phone" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="phone" className="text-gray-900" suppressHydrationWarning>
           {t("phoneLabel")}
         </Label>
         <Input
@@ -206,7 +206,7 @@ export function ContactInquiryForm({
 
       {/* Company */}
       <div className="space-y-2">
-        <Label htmlFor="company" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="company" className="text-gray-900" suppressHydrationWarning>
           {t("companyLabel")}
         </Label>
         <Input
@@ -225,7 +225,7 @@ export function ContactInquiryForm({
 
       {/* Country */}
       <div className="space-y-2">
-        <Label htmlFor="country" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="country" className="text-gray-900" suppressHydrationWarning>
           {t("countryLabel")} <span className="text-red-400">*</span>
         </Label>
         <RadixSelect.Root
@@ -244,13 +244,13 @@ export function ContactInquiryForm({
         >
           <RadixSelect.Trigger
             id="country"
-            className={`flex w-full h-10 items-center justify-between rounded-md border bg-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 data-[placeholder]:text-white/50 ${
-              fieldErrors.country ? "border-red-400" : "border-white/20"
+            className={`flex w-full h-10 items-center justify-between rounded-md border bg-gray-50 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 data-[placeholder]:text-gray-400 ${
+              fieldErrors.country ? "border-red-400" : "border-gray-300"
             }`}
           >
             <RadixSelect.Value placeholder={locale === "en" ? "Select country\u2026" : "Ch\u1ECDn qu\u1ED1c gia\u2026"} />
             <RadixSelect.Icon>
-              <ChevronDown className="w-4 h-4 text-white/50" />
+              <ChevronDown className="w-4 h-4 text-gray-400" />
             </RadixSelect.Icon>
           </RadixSelect.Trigger>
 
@@ -258,9 +258,9 @@ export function ContactInquiryForm({
             <RadixSelect.Content
               position="popper"
               sideOffset={4}
-              className="z-[200] w-[var(--radix-select-trigger-width)] overflow-hidden rounded-xl border border-white/15 bg-slate-900 shadow-2xl shadow-black/50"
+              className="z-[200] w-[var(--radix-select-trigger-width)] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-2xl"
             >
-              <RadixSelect.ScrollUpButton className="flex items-center justify-center py-1 text-white/40 hover:text-white/70 bg-slate-900">
+              <RadixSelect.ScrollUpButton className="flex items-center justify-center py-1 text-gray-400 hover:text-gray-600 bg-white">
                 <ChevronDown className="w-4 h-4 rotate-180" />
               </RadixSelect.ScrollUpButton>
 
@@ -280,18 +280,18 @@ export function ContactInquiryForm({
                   { label: "Africa & Oceania", options: ["Australia","New Zealand","South Africa","Kenya","Tanzania","Egypt","Morocco"] },
                 ].map((group) => (
                   <RadixSelect.Group key={group.label}>
-                    <RadixSelect.Label className="px-3 py-1.5 text-[10px] font-bold tracking-[0.15em] uppercase text-emerald-400/70">
+                    <RadixSelect.Label className="px-3 py-1.5 text-[10px] font-bold tracking-[0.15em] uppercase text-emerald-600/70">
                       {group.label}
                     </RadixSelect.Label>
                     {group.options.map((country) => (
                       <RadixSelect.Item
                         key={country}
                         value={country}
-                        className="relative flex items-center gap-2 px-3 py-2 text-sm text-white/80 rounded-lg cursor-pointer select-none outline-none hover:bg-white/8 hover:text-white focus:bg-white/8 focus:text-white data-[state=checked]:text-emerald-400 data-[state=checked]:bg-emerald-500/10"
+                        className="relative flex items-center gap-2 px-3 py-2 text-sm text-gray-700 rounded-lg cursor-pointer select-none outline-none hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 data-[state=checked]:text-emerald-600 data-[state=checked]:bg-emerald-50"
                       >
                         <RadixSelect.ItemText>{country}</RadixSelect.ItemText>
                         <RadixSelect.ItemIndicator className="ml-auto">
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
                         </RadixSelect.ItemIndicator>
                       </RadixSelect.Item>
                     ))}
@@ -299,7 +299,7 @@ export function ContactInquiryForm({
                 ))}
               </RadixSelect.Viewport>
 
-              <RadixSelect.ScrollDownButton className="flex items-center justify-center py-1 text-white/40 hover:text-white/70 bg-slate-900">
+              <RadixSelect.ScrollDownButton className="flex items-center justify-center py-1 text-gray-400 hover:text-gray-600 bg-white">
                 <ChevronDown className="w-4 h-4" />
               </RadixSelect.ScrollDownButton>
             </RadixSelect.Content>
@@ -312,7 +312,7 @@ export function ContactInquiryForm({
 
       {/* Subject */}
       <div className="space-y-2">
-        <Label htmlFor="subject" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="subject" className="text-gray-900" suppressHydrationWarning>
           {t("subjectLabel")} <span className="text-red-400">*</span>
         </Label>
         <Input
@@ -332,7 +332,7 @@ export function ContactInquiryForm({
 
       {/* Message */}
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-white" suppressHydrationWarning>
+        <Label htmlFor="message" className="text-gray-900" suppressHydrationWarning>
           {t("messageLabel")} <span className="text-red-400">*</span>
         </Label>
         <Textarea
@@ -352,7 +352,7 @@ export function ContactInquiryForm({
       </div>
 
       {/* Privacy Notice */}
-      <p className="text-white/60 text-sm" suppressHydrationWarning>
+      <p className="text-gray-600 text-sm" suppressHydrationWarning>
         {t("privacy")}
       </p>
 

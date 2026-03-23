@@ -65,7 +65,7 @@ export function Footer({ locale }: FooterProps) {
   ];
 
   return (
-    <footer className="relative z-10 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-white/10">
+    <footer className="relative z-10 bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-8 lg:px-16 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -74,7 +74,7 @@ export function Footer({ locale }: FooterProps) {
               href={`/${locale === "en" ? "en" : ""}`}
               className="flex items-center gap-3 group"
             >
-              <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-xl">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-md">
                 <Image
                   src="/favicon.png"
                   alt="Hasake Zoo Logo"
@@ -84,12 +84,12 @@ export function Footer({ locale }: FooterProps) {
                 />
               </div>
               <div>
-                <h3 className="text-white text-xl font-bold">Hasake Zoo</h3>
-                <p className="text-emerald-400 text-sm">Habitat Solutions</p>
+                <h3 className="text-gray-900 text-xl font-bold">Hasake Zoo</h3>
+                <p className="text-emerald-600 text-sm">Habitat Solutions</p>
               </div>
             </Link>
             <p
-              className="text-white/70 leading-relaxed"
+              className="text-gray-600 leading-relaxed"
               suppressHydrationWarning
             >
               {t("footer.description")}
@@ -101,7 +101,7 @@ export function Footer({ locale }: FooterProps) {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/5 hover:bg-emerald-600 border border-white/10 hover:border-emerald-600 flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
+                  className="w-10 h-10 rounded-xl bg-white hover:bg-emerald-600 border border-gray-200 hover:border-emerald-600 flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -113,7 +113,7 @@ export function Footer({ locale }: FooterProps) {
           {/* Quick Links */}
           <div>
             <h4
-              className="text-white text-lg font-bold mb-6"
+              className="text-gray-900 text-lg font-bold mb-6"
               suppressHydrationWarning
             >
               {t("footer.quickLinks")}
@@ -123,7 +123,7 @@ export function Footer({ locale }: FooterProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white/70 hover:text-emerald-400 transition-colors duration-300 flex items-center gap-2 group"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors duration-300 flex items-center gap-2 group"
                   suppressHydrationWarning
                 >
                   <svg
@@ -148,7 +148,7 @@ export function Footer({ locale }: FooterProps) {
           {/* Contact Info */}
           <div>
             <h4
-              className="text-white text-lg font-bold mb-6"
+              className="text-gray-900 text-lg font-bold mb-6"
               suppressHydrationWarning
             >
               {t("footer.contact")}
@@ -156,7 +156,7 @@ export function Footer({ locale }: FooterProps) {
             <div className="space-y-4">
               <div className="flex gap-3">
                 <svg
-                  className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -174,7 +174,7 @@ export function Footer({ locale }: FooterProps) {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <p className="text-white/70">
+                <p className="text-gray-600">
                   50 Thuy Khue Street, Tay Ho
                   <br />
                   Hanoi, Vietnam
@@ -182,7 +182,7 @@ export function Footer({ locale }: FooterProps) {
               </div>
               <div className="flex gap-3">
                 <svg
-                  className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -196,14 +196,14 @@ export function Footer({ locale }: FooterProps) {
                 </svg>
                 <a
                   href="mailto:info@hasakezoo.com.vn"
-                  className="text-white/70 hover:text-emerald-400 transition-colors"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors"
                 >
                   info@hasakezoo.com.vn
                 </a>
               </div>
               <div className="flex gap-3">
                 <svg
-                  className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -217,7 +217,7 @@ export function Footer({ locale }: FooterProps) {
                 </svg>
                 <a
                   href="tel:+84985310238"
-                  className="text-white/70 hover:text-emerald-400 transition-colors"
+                  className="text-gray-600 hover:text-emerald-600 transition-colors"
                 >
                   +84 098 531 0238
                 </a>
@@ -228,19 +228,19 @@ export function Footer({ locale }: FooterProps) {
           {/* Newsletter */}
           <div>
             <h4
-              className="text-white text-lg font-bold mb-6"
+              className="text-gray-900 text-lg font-bold mb-6"
               suppressHydrationWarning
             >
               {t("footer.newsletter")}
             </h4>
-            <p className="text-white/70 mb-4" suppressHydrationWarning>
+            <p className="text-gray-600 mb-4" suppressHydrationWarning>
               {t("footer.newsletterDesc")}
             </p>
             <form className="space-y-3">
               <input
                 type="email"
                 placeholder={t("footer.emailPlaceholder")}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/50 focus:border-emerald-400 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:outline-none transition-colors"
                 suppressHydrationWarning
               />
               <button
@@ -255,10 +255,10 @@ export function Footer({ locale }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p
-              className="text-white/60 text-sm text-center md:text-left"
+              className="text-gray-500 text-sm text-center md:text-left"
               suppressHydrationWarning
             >
               © {currentYear} Hasake Zoo & Habitat Solution.{" "}
@@ -267,18 +267,11 @@ export function Footer({ locale }: FooterProps) {
             <div className="flex gap-6">
               <Link
                 href="/privacy"
-                className="text-white/60 hover:text-emerald-400 text-sm transition-colors"
+                className="text-gray-500 hover:text-emerald-600 text-sm transition-colors"
                 suppressHydrationWarning
               >
                 {t("footer.privacy")}
               </Link>
-              {/* <Link
-                href="/terms"
-                className="text-white/60 hover:text-emerald-400 text-sm transition-colors"
-                suppressHydrationWarning
-              >
-                {t("footer.terms")}
-              </Link> */}
             </div>
           </div>
         </div>

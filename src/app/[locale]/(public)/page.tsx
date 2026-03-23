@@ -3,21 +3,13 @@ import { getLocale } from "@/i18n/server";
 import type { Locale } from "@/types/content";
 import { getSiteUrl } from "@/lib/env";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { HeroTunnel } from "@/components/animate/HeroTunnel";
+import Image from "next/image";
 import { fetchPublicServices } from "@/lib/api/services.public";
 import { fetchPublicProjects } from "@/lib/api/projects.public";
 import { fetchPublicBlogs } from "@/lib/api/blogs.public";
 import type { Service, Project } from "@/types/api";
 import type { Blog } from "@/types/blog";
-
-const AnimatedHomeContent = dynamic(
-  () =>
-    import("@/components/home/AnimatedHomeContent").then((m) => ({
-      default: m.AnimatedHomeContent,
-    })),
-  { ssr: true },
-);
+import { HomeContent } from "@/components/home/HomeContent";
 
 export const revalidate = 300;
 
@@ -222,60 +214,124 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
 
-      {/* ── Hero Tunnel Component ── */}
-      <HeroTunnel title={t.hasake} subtitle={t.habitatSolutions}>
-        <div className="container mx-auto px-8 lg:px-16">
-          <h2 className="text-white text-5xl lg:text-8xl font-bold leading-tight max-w-4xl drop-shadow-2xl">
-            {t.heroHeading1}
-            <br />
-            <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              {t.heroHeading2}
-            </span>
-          </h2>
-          <p className="text-white/90 text-lg lg:text-2xl font-light mt-6 lg:mt-8 max-w-3xl leading-relaxed drop-shadow-lg">
-            {t.heroDesc}
-          </p>
-          <div className="flex flex-wrap items-center gap-4 lg:gap-6 mt-8 lg:mt-12">
-            <Link
-              href={`${prefix}/services`}
-              className="group px-8 lg:px-12 py-3 lg:py-4 rounded-2xl border-2 border-emerald-400 bg-emerald-500/20 backdrop-blur-sm hover:bg-emerald-500 hover:border-emerald-400/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
-            >
-              <span className="text-white text-lg lg:text-2xl font-medium group-hover:drop-shadow-lg">
-                {t.exploreBtn}
-              </span>
-            </Link>
-            <Link
-              href={`${prefix}/projects`}
-              className="group flex items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 rounded-full border-2 border-white/40 backdrop-blur-sm hover:border-white hover:bg-white/15 hover:scale-105 active:scale-95 transition-all duration-300"
-            >
-              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 group-hover:bg-white/25 transition-colors duration-300 flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 lg:w-6 lg:h-6 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+      {/* ── Hero Section — Immersive with decorative elements ── */}
+      <section className="relative bg-gradient-to-b from-emerald-50 via-white to-white pt-40 pb-24 lg:pt-52 lg:pb-36 overflow-hidden">
+        {/* Decorative background paw prints */}
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          {/* Large faded paw - top right */}
+          <svg className="absolute -top-10 -right-16 w-72 h-72 lg:w-[420px] lg:h-[420px] text-emerald-200/30 rotate-[25deg]" viewBox="0 0 200 200" fill="currentColor">
+            <ellipse cx="100" cy="130" rx="38" ry="50" />
+            <ellipse cx="55" cy="60" rx="18" ry="24" transform="rotate(-15 55 60)" />
+            <ellipse cx="145" cy="60" rx="18" ry="24" transform="rotate(15 145 60)" />
+            <ellipse cx="40" cy="110" rx="14" ry="20" transform="rotate(-30 40 110)" />
+            <ellipse cx="160" cy="110" rx="14" ry="20" transform="rotate(30 160 110)" />
+          </svg>
+          {/* Small paw - left */}
+          <svg className="absolute top-1/3 -left-8 w-40 h-40 lg:w-56 lg:h-56 text-emerald-300/20 -rotate-[20deg]" viewBox="0 0 200 200" fill="currentColor">
+            <ellipse cx="100" cy="130" rx="38" ry="50" />
+            <ellipse cx="55" cy="60" rx="18" ry="24" transform="rotate(-15 55 60)" />
+            <ellipse cx="145" cy="60" rx="18" ry="24" transform="rotate(15 145 60)" />
+            <ellipse cx="40" cy="110" rx="14" ry="20" transform="rotate(-30 40 110)" />
+            <ellipse cx="160" cy="110" rx="14" ry="20" transform="rotate(30 160 110)" />
+          </svg>
+          {/* Leaf decorations - right side */}
+          <svg className="absolute bottom-20 right-12 w-24 h-24 lg:w-36 lg:h-36 text-emerald-400/15 rotate-45" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 5 C20 20, 5 50, 50 95 C95 50, 80 20, 50 5Z" />
+            <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+          </svg>
+          {/* Scattered small dots - mimicking animal trail */}
+          <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-emerald-300/25 rounded-full" />
+          <div className="absolute top-[30%] right-[22%] w-2 h-2 bg-emerald-300/20 rounded-full" />
+          <div className="absolute top-[35%] right-[20%] w-2.5 h-2.5 bg-emerald-300/15 rounded-full" />
+          <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-teal-300/20 rounded-full" />
+          <div className="absolute bottom-[28%] left-[27%] w-2 h-2 bg-teal-300/15 rounded-full" />
+        </div>
+
+        <div className="container mx-auto px-6 sm:px-8 lg:px-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Text content */}
+            <div className="text-center lg:text-left">
+              <p className="text-emerald-600 text-sm font-bold tracking-[0.25em] mb-4 uppercase">
+                {t.hasake} &middot; {t.habitatSolutions}
+              </p>
+              <h2 className="text-gray-900 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
+                {t.heroHeading1}
+                <br />
+                <span className="text-emerald-600">
+                  {t.heroHeading2}
+                </span>
+              </h2>
+              <p className="text-gray-600 text-lg lg:text-xl font-light mt-4 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                {t.heroDesc}
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8 lg:mt-12">
+                <Link
+                  href={`${prefix}/services`}
+                  className="px-8 lg:px-10 py-3 lg:py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-semibold transition-colors duration-300 shadow-lg shadow-emerald-600/20"
                 >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
+                  {t.exploreBtn}
+                </Link>
+                <Link
+                  href={`${prefix}/projects`}
+                  className="px-8 lg:px-10 py-3 lg:py-4 rounded-xl border border-gray-300 text-gray-700 hover:border-emerald-500 hover:text-emerald-600 text-lg font-semibold transition-all duration-300"
+                >
+                  {t.watchBtn}
+                </Link>
               </div>
-              <span className="text-white/80 text-base lg:text-lg font-light group-hover:text-white transition-colors duration-300">
-                {t.watchBtn}
-              </span>
-            </Link>
+            </div>
+
+            {/* Right: Hero image with decorative frame */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md lg:max-w-lg">
+                {/* Decorative blob behind image */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-emerald-200/40 to-teal-200/30 rounded-[2.5rem] rotate-3" />
+                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-emerald-900/10 border-4 border-white">
+                  <Image
+                    src="/Banner/animal-banner.png"
+                    alt="Wildlife habitat solutions"
+                    width={600}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+                {/* Floating stat badge */}
+                <div className="absolute -bottom-4 -left-4 lg:-left-8 bg-white rounded-2xl shadow-lg shadow-gray-200/50 border border-gray-100 px-5 py-3">
+                  <div className="text-emerald-600 text-2xl font-black">20+</div>
+                  <div className="text-gray-500 text-xs font-medium">{t.statsYears}</div>
+                </div>
+                {/* Small paw badge - top left */}
+                <div className="absolute -top-3 -right-3 w-14 h-14 bg-emerald-600 rounded-2xl shadow-lg flex items-center justify-center rotate-12">
+                  <svg className="w-7 h-7 text-white" viewBox="0 0 200 200" fill="currentColor">
+                    <ellipse cx="100" cy="130" rx="38" ry="50" />
+                    <ellipse cx="55" cy="60" rx="18" ry="24" transform="rotate(-15 55 60)" />
+                    <ellipse cx="145" cy="60" rx="18" ry="24" transform="rotate(15 145 60)" />
+                    <ellipse cx="40" cy="110" rx="14" ry="20" transform="rotate(-30 40 110)" />
+                    <ellipse cx="160" cy="110" rx="14" ry="20" transform="rotate(30 160 110)" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </HeroTunnel>
 
-      {/* ── Content layers (scrolls over fixed hero) ── */}
-      <div className="relative bg-[rgb(5,20,10)]" style={{ zIndex: 40 }}>
-        <AnimatedHomeContent
-          locale={locale}
-          prefix={prefix}
-          t={t}
-          featuredServices={featuredServices}
-          featuredProjects={featuredProjects}
-          latestBlogs={latestBlogs}
-        />
-      </div>
+        {/* Wave divider at bottom */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" preserveAspectRatio="none">
+            <path d="M0 40C240 70 480 80 720 60C960 40 1200 10 1440 30V80H0V40Z" fill="white" />
+          </svg>
+        </div>
+      </section>
+
+      {/* ── Content sections ── */}
+      <HomeContent
+        locale={locale}
+        prefix={prefix}
+        t={t}
+        featuredServices={featuredServices}
+        featuredProjects={featuredProjects}
+        latestBlogs={latestBlogs}
+      />
     </>
   );
 }

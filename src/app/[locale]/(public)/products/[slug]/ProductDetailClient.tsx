@@ -38,20 +38,20 @@ export function ProductDetailClient({
   return (
     <>
       {/* Hero Section - keep dark overlay for image readability */}
-      <section className="relative min-h-[50vh] bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 overflow-hidden pt-32 pb-20">
+      <section className="relative min-h-[50vh] bg-gray-50 overflow-hidden pt-32 pb-20">
         <div className="relative z-10 container mx-auto px-8 lg:px-16">
           <ScrollReveal>
             <div className="max-w-4xl">
               {/* Breadcrumb */}
-              <nav className="text-white/60 mb-6 text-sm">
+              <nav className="text-gray-600 mb-6 text-sm">
                 <Link
                   href={`/${locale === "en" ? "en/" : ""}products`}
-                  className="hover:text-emerald-400 transition-colors"
+                  className="hover:text-emerald-600 transition-colors"
                 >
                   {t("hero.eyebrow")}
                 </Link>
                 <span className="mx-2">/</span>
-                <span className="text-white">{name}</span>
+                <span className="text-gray-900">{name}</span>
               </nav>
 
               {product.isFeatured && (
@@ -60,12 +60,12 @@ export function ProductDetailClient({
                 </span>
               )}
 
-              <h1 className="text-white text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-gray-900 text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 {name}
               </h1>
 
               {shortDescription && (
-                <p className="text-white/90 text-xl lg:text-2xl leading-relaxed">
+                <p className="text-gray-700 text-xl lg:text-2xl leading-relaxed">
                   {shortDescription}
                 </p>
               )}
@@ -75,14 +75,14 @@ export function ProductDetailClient({
       </section>
 
       {/* Product Details */}
-      <section className="py-20 bg-white/5">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Image Gallery */}
             <ScrollReveal direction="left">
               <div className="space-y-6">
                 {/* Main Image */}
-                <div className="relative aspect-square rounded-3xl overflow-hidden bg-white/5 border-2 border-white/10">
+                <div className="relative aspect-square rounded-3xl overflow-hidden bg-gray-50 border-2 border-gray-200 shadow-sm">
                   {allImages[selectedImageIndex] && (
                     <Image
                       src={allImages[selectedImageIndex].url}
@@ -106,10 +106,10 @@ export function ProductDetailClient({
                       <button
                         key={idx}
                         onClick={() => setSelectedImageIndex(idx)}
-                        className={`relative aspect-square rounded-xl overflow-hidden bg-white/5 border-2 transition-all duration-300 ${
+                        className={`relative aspect-square rounded-xl overflow-hidden bg-gray-50 border-2 transition-all duration-300 ${
                           selectedImageIndex === idx
                             ? "border-emerald-400 scale-105"
-                            : "border-white/10 hover:border-white/20"
+                            : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
                         <Image
@@ -133,20 +133,20 @@ export function ProductDetailClient({
               <div className="space-y-8">
                 {/* Specifications */}
                 {product.specifications && product.specifications.length > 0 && (
-                  <div className="bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-8">
-                    <h2 className="text-white text-2xl font-bold mb-6">
+                  <div className="bg-white backdrop-blur-xl border-2 border-gray-200 rounded-3xl p-8 shadow-sm">
+                    <h2 className="text-gray-900 text-2xl font-bold mb-6">
                       {locale === "vi" ? "Thong so ky thuat" : "Specifications"}
                     </h2>
                     <div className="space-y-4">
                       {product.specifications.map((spec, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center justify-between py-3 border-b border-white/10 last:border-0"
+                          className="flex items-center justify-between py-3 border-b border-gray-200 last:border-0"
                         >
-                          <span className="text-white/70">
+                          <span className="text-gray-600">
                             {resolveLocalizedString(spec.key_i18n, locale)}
                           </span>
-                          <span className="text-white font-semibold">
+                          <span className="text-gray-900 font-semibold">
                             {resolveLocalizedString(spec.value_i18n, locale)}
                           </span>
                         </div>
@@ -165,7 +165,7 @@ export function ProductDetailClient({
                   </Link>
                   <Link
                     href={`/${locale === "en" ? "en/" : ""}contact`}
-                    className="flex-1 text-center px-8 py-4 bg-white/5 text-white border-2 border-white/10 rounded-2xl font-bold hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                    className="flex-1 text-center px-8 py-4 bg-gray-50 text-gray-900 border-2 border-gray-200 rounded-2xl font-bold hover:bg-gray-100 hover:border-gray-300 transition-all duration-300"
                   >
                     {locale === "vi" ? "Lien he tu van" : "Contact Us"}
                   </Link>
@@ -178,20 +178,20 @@ export function ProductDetailClient({
 
       {/* Description Section */}
       {description && (
-        <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <ScrollReveal>
-                <h2 className="text-white text-4xl font-bold mb-8">
+                <h2 className="text-gray-900 text-4xl font-bold mb-8">
                   {locale === "vi" ? "Mo ta san pham" : "Product Description"}
                 </h2>
                 <div
                   className="prose prose-lg max-w-none
-                    prose-headings:text-white prose-headings:font-bold
-                    prose-p:text-white/80 prose-p:leading-relaxed
-                    prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
-                    prose-strong:text-white prose-strong:font-semibold
-                    prose-ul:text-white/80 prose-li:marker:text-emerald-400"
+                    prose-headings:text-gray-900 prose-headings:font-bold
+                    prose-p:text-gray-700 prose-p:leading-relaxed
+                    prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline
+                    prose-strong:text-gray-900 prose-strong:font-semibold
+                    prose-ul:text-gray-700 prose-li:marker:text-emerald-600"
                   dangerouslySetInnerHTML={{ __html: description }}
                 />
               </ScrollReveal>
@@ -212,7 +212,7 @@ export function ProductDetailClient({
             </p>
             <Link
               href={`/${locale === "en" ? "en/" : ""}contact`}
-              className="inline-block px-12 py-4 bg-white text-emerald-400 rounded-2xl text-xl font-bold hover:bg-emerald-500/20 transition-all duration-300 shadow-2xl hover:shadow-white/30 hover:scale-105"
+              className="inline-block px-12 py-4 bg-white text-emerald-600 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition-all duration-300 shadow-2xl hover:scale-105"
             >
               {t("cta.button")}
             </Link>

@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from "react";
+import type { ReactNode } from "react";
 import type { Locale } from "@/types/content";
 import type { TocItem } from "@/types/blog";
 import { normalizeTocIds } from "@/lib/blogs";
@@ -178,8 +178,8 @@ export default function LexicalContentRenderer({
           level === 1
             ? "mt-8 mb-4 text-3xl font-bold"
             : level === 2
-            ? "mt-10 mb-4 text-2xl font-bold text-emerald-400 border-b border-white/10 pb-2"
-            : "mt-7 mb-3 text-xl font-semibold text-white border-l-2 border-emerald-500/60 pl-3";
+            ? "mt-10 mb-4 text-2xl font-bold text-emerald-600 border-b border-gray-200 pb-2"
+            : "mt-7 mb-3 text-xl font-semibold text-gray-900 border-l-2 border-emerald-500/60 pl-3";
         const text = extractPlainTextFromLexical(node).trim();
         const shouldTrack = level === 2 || level === 3;
         const tocItem = shouldTrack ? resolvedToc[headingIndex] : undefined;
@@ -256,7 +256,7 @@ export default function LexicalContentRenderer({
           element: (
             <blockquote
               key={key}
-              className="my-4 border-l-4 border-white/30 pl-4 text-white/60"
+              className="my-4 border-l-4 border-gray-300 pl-4 text-gray-600"
               style={quoteIndentStyle}
             >
               {result.elements}
@@ -305,7 +305,7 @@ export default function LexicalContentRenderer({
           element: (
             <pre
               key={key}
-              className="my-4 overflow-x-auto rounded-lg bg-slate-950/90 p-4 text-xs text-slate-100"
+              className="my-4 overflow-x-auto rounded-lg bg-gray-100 p-4 text-xs text-gray-800"
             >
               <code>{codeText}</code>
             </pre>
@@ -409,7 +409,7 @@ export default function LexicalContentRenderer({
                 </div>
               </div>
               {captionText ? (
-                <figcaption className="mt-2 text-center text-sm text-slate-400">
+                <figcaption className="mt-2 text-center text-sm text-gray-500">
                   {captionText}
                 </figcaption>
               ) : null}
@@ -460,7 +460,7 @@ export default function LexicalContentRenderer({
         return {
           element: (
             <figure key={key} className="my-6 w-full">
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl border bg-slate-900">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl border bg-gray-100">
                 {videoSource === "direct" ? (
                   <video
                     src={src}
@@ -483,7 +483,7 @@ export default function LexicalContentRenderer({
                 )}
               </div>
               {captionText ? (
-                <figcaption className="mt-2 text-center text-sm text-slate-400">
+                <figcaption className="mt-2 text-center text-sm text-gray-500">
                   {captionText}
                 </figcaption>
               ) : null}

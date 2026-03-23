@@ -34,7 +34,7 @@ export function ProjectDetailClient({
   return (
     <>
       {/* Hero Section - keep dark overlay on image for readability */}
-      <section className="relative min-h-[70vh] bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 overflow-hidden pt-32 pb-20">
+      <section className="relative min-h-[70vh] bg-gray-50 overflow-hidden pt-32 pb-20">
         {project.coverImage && (
           <>
             <div className="absolute inset-0">
@@ -48,7 +48,7 @@ export function ProjectDetailClient({
                 className="object-cover opacity-30"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/70 to-slate-900" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" />
             </div>
           </>
         )}
@@ -57,15 +57,15 @@ export function ProjectDetailClient({
           <ScrollReveal>
             <div className="max-w-4xl">
               {/* Breadcrumb */}
-              <nav className="text-white/60 mb-6 text-sm">
+              <nav className="text-gray-600 mb-6 text-sm">
                 <Link
                   href={`/${locale === "en" ? "en/" : ""}projects`}
-                  className="hover:text-emerald-400 transition-colors"
+                  className="hover:text-emerald-600 transition-colors"
                 >
                   {t("hero.eyebrow")}
                 </Link>
                 <span className="mx-2">/</span>
-                <span className="text-white">{title}</span>
+                <span className="text-gray-900">{title}</span>
               </nav>
 
               {project.isFeatured && (
@@ -74,22 +74,22 @@ export function ProjectDetailClient({
                 </span>
               )}
 
-              <h1 className="text-white text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-gray-900 text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 {title}
               </h1>
 
               {excerpt && (
-                <p className="text-white/90 text-xl lg:text-2xl leading-relaxed mb-8">
+                <p className="text-gray-700 text-xl lg:text-2xl leading-relaxed mb-8">
                   {excerpt}
                 </p>
               )}
 
               {/* Project Meta */}
-              <div className="flex flex-wrap gap-6 text-white/70">
+              <div className="flex flex-wrap gap-6 text-gray-600">
                 {location && (
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-5 h-5 text-emerald-400"
+                      className="w-5 h-5 text-emerald-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -113,7 +113,7 @@ export function ProjectDetailClient({
                 {project.client && (
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-5 h-5 text-emerald-400"
+                      className="w-5 h-5 text-emerald-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -131,7 +131,7 @@ export function ProjectDetailClient({
                 {project.category && (
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-5 h-5 text-emerald-400"
+                      className="w-5 h-5 text-emerald-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -154,12 +154,12 @@ export function ProjectDetailClient({
 
       {/* Gallery Section */}
       {allImages.length > 0 && (
-        <section className="py-20 bg-white/5">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-8 lg:px-16">
             <ScrollReveal>
               <div className="max-w-6xl mx-auto space-y-6">
                 {/* Main Image */}
-                <div className="relative aspect-video rounded-3xl overflow-hidden bg-white/5 border-2 border-white/10">
+                <div className="relative aspect-video rounded-3xl overflow-hidden bg-gray-50 border-2 border-gray-200 shadow-sm">
                   {allImages[selectedImageIndex] && (
                     <Image
                       src={allImages[selectedImageIndex]!.url}
@@ -182,10 +182,10 @@ export function ProjectDetailClient({
                       <button
                         key={idx}
                         onClick={() => setSelectedImageIndex(idx)}
-                        className={`relative aspect-video rounded-xl overflow-hidden bg-white/5 border-2 transition-all duration-300 ${
+                        className={`relative aspect-video rounded-xl overflow-hidden bg-gray-50 border-2 transition-all duration-300 ${
                           selectedImageIndex === idx
                             ? "border-emerald-400 scale-105"
-                            : "border-white/10 hover:border-white/20"
+                            : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
                         <Image
@@ -209,20 +209,20 @@ export function ProjectDetailClient({
 
       {/* Content Section */}
       {content && (
-        <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <ScrollReveal>
                 <div
                   className="prose prose-lg max-w-none
-                    prose-headings:text-white prose-headings:font-bold
+                    prose-headings:text-gray-900 prose-headings:font-bold
                     prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
                     prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                    prose-p:text-white/80 prose-p:leading-relaxed
-                    prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline
-                    prose-strong:text-white prose-strong:font-semibold
-                    prose-ul:text-white/80 prose-li:marker:text-emerald-400
-                    prose-ol:text-white/80"
+                    prose-p:text-gray-700 prose-p:leading-relaxed
+                    prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline
+                    prose-strong:text-gray-900 prose-strong:font-semibold
+                    prose-ul:text-gray-700 prose-li:marker:text-emerald-600
+                    prose-ol:text-gray-700"
                   dangerouslySetInnerHTML={{ __html: content }}
                 />
               </ScrollReveal>
@@ -243,7 +243,7 @@ export function ProjectDetailClient({
             </p>
             <Link
               href={`/${locale === "en" ? "en/" : ""}contact`}
-              className="inline-block px-12 py-4 bg-white text-emerald-400 rounded-2xl text-xl font-bold hover:bg-emerald-500/20 transition-all duration-300 shadow-2xl hover:shadow-white/30 hover:scale-105"
+              className="inline-block px-12 py-4 bg-white text-emerald-600 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition-all duration-300 shadow-2xl hover:scale-105"
             >
               {t("cta.button")}
             </Link>

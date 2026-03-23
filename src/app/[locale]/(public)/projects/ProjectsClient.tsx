@@ -78,7 +78,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
     <PageTransition>
       {/* ── Hero ── */}
       <Section>
-        <section className="relative min-h-[52vh] bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 overflow-hidden pt-32 pb-20">
+        <section className="relative min-h-[52vh] bg-gray-50 overflow-hidden pt-32 pb-20">
           <div className="absolute inset-0">
             <Image
               src="/test-img/plant 1.png"
@@ -86,7 +86,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
               fill
               className="object-cover opacity-15"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" />
           </div>
           <div className="relative z-10 container mx-auto px-8 lg:px-16">
             <ScrollReveal>
@@ -97,13 +97,13 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
                     { label: isEn ? "Projects" : "Dự Án" },
                   ]}
                 />
-                <p className="text-emerald-400 text-lg font-semibold mb-4 tracking-wide">
+                <p className="text-emerald-600 text-lg font-semibold mb-4 tracking-wide">
                   {t("hero.eyebrow")}
                 </p>
-                <h1 className="text-white text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <h1 className="text-gray-900 text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                   {t("hero.title")}
                 </h1>
-                <p className="text-white/80 text-xl lg:text-2xl leading-relaxed">
+                <p className="text-gray-700 text-xl lg:text-2xl leading-relaxed">
                   {t("hero.description")}
                 </p>
               </div>
@@ -113,23 +113,23 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
       </Section>
 
       {/* ── Toolbar (sticky) ── */}
-      <div className="bg-slate-950/96 border-b border-white/8 backdrop-blur-xl">
+      <div className="bg-white border-b border-gray-200 backdrop-blur-xl">
         <div className="container mx-auto px-8 lg:px-16 py-3.5">
           {/* Row 1: search + controls */}
           <div className="flex items-center gap-3">
             {/* Search */}
             <div className="relative w-full max-w-xs">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 pointer-events-none" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
               <input
                 value={search}
                 onChange={(e) => handleSearch(e.target.value)}
                 placeholder={isEn ? "Search projects…" : "Tìm kiếm dự án…"}
-                className="w-full pl-9 pr-8 py-2 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                className="w-full pl-9 pr-8 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-emerald-500/50 transition-colors"
               />
               {search && (
                 <button
                   onClick={() => handleSearch("")}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -139,7 +139,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
             <div className="flex-1" />
 
             {/* Result count */}
-            <span className="text-white/30 text-xs hidden md:block shrink-0">
+            <span className="text-gray-400 text-xs hidden md:block shrink-0">
               {filtered.length > 0 && (
                 <>
                   {(page - 1) * PAGE_SIZE + 1}–
@@ -150,7 +150,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
               {hasActiveFilter && (
                 <button
                   onClick={clearFilters}
-                  className="ml-2 text-emerald-400/70 hover:text-emerald-400 transition-colors underline"
+                  className="ml-2 text-emerald-600/70 hover:text-emerald-600 transition-colors underline"
                 >
                   {isEn ? "clear" : "xóa"}
                 </button>
@@ -163,8 +163,8 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
               title={isEn ? "Featured only" : "Nổi bật"}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium border transition-all duration-200 shrink-0 ${
                 featuredOnly
-                  ? "bg-amber-500/15 border-amber-500/40 text-amber-400"
-                  : "bg-white/5 border-white/10 text-white/40 hover:text-white/70 hover:border-white/20"
+                  ? "bg-amber-500/15 border-amber-500/40 text-amber-600"
+                  : "bg-gray-50 border-gray-200 text-gray-400 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
               <Star className="w-4 h-4" />
@@ -174,14 +174,14 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
             </button>
 
             {/* View mode toggle */}
-            <div className="flex border border-white/10 rounded-xl overflow-hidden shrink-0">
+            <div className="flex border border-gray-200 rounded-xl overflow-hidden shrink-0">
               <button
                 onClick={() => setViewMode("card")}
                 title={isEn ? "Card view" : "Dạng card"}
                 className={`p-2 transition-colors duration-200 ${
                   viewMode === "card"
                     ? "bg-emerald-600 text-white"
-                    : "bg-white/5 text-white/35 hover:text-white/65 hover:bg-white/8"
+                    : "bg-gray-50 text-gray-400 hover:text-gray-600 hover:bg-gray-100"
                 }`}
               >
                 <LayoutGrid className="w-4 h-4" />
@@ -192,7 +192,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
                 className={`p-2 transition-colors duration-200 ${
                   viewMode === "table"
                     ? "bg-emerald-600 text-white"
-                    : "bg-white/5 text-white/35 hover:text-white/65 hover:bg-white/8"
+                    : "bg-gray-50 text-gray-400 hover:text-gray-600 hover:bg-gray-100"
                 }`}
               >
                 <List className="w-4 h-4" />
@@ -208,7 +208,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
                 className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all duration-200 border ${
                   activeCategory === "all"
                     ? "bg-emerald-600 border-emerald-600 text-white"
-                    : "bg-white/[0.04] border-white/10 text-white/45 hover:text-white/75 hover:border-white/20"
+                    : "bg-gray-50 border-gray-200 text-gray-400 hover:text-gray-700 hover:border-gray-300"
                 }`}
               >
                 {isEn ? "All" : "Tất cả"}{" "}
@@ -225,7 +225,7 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
                     className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all duration-200 border ${
                       activeCategory === cat
                         ? "bg-emerald-600 border-emerald-600 text-white"
-                        : "bg-white/[0.04] border-white/10 text-white/45 hover:text-white/75 hover:border-white/20"
+                        : "bg-gray-50 border-gray-200 text-gray-400 hover:text-gray-700 hover:border-gray-300"
                     }`}
                   >
                     {cat}{" "}
@@ -239,22 +239,22 @@ export function ProjectsClient({ locale, initialProjects }: ProjectsClientProps)
       </div>
 
       {/* ── Content ── */}
-      <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-900 to-slate-950 min-h-[50vh]">
+      <section className="py-12 lg:py-16 bg-gray-50 min-h-[50vh]">
         <div className="container mx-auto px-8 lg:px-16">
           {filtered.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-28 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-5">
-                <Search className="w-7 h-7 text-white/20" />
+              <div className="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-200 flex items-center justify-center mb-5 shadow-sm">
+                <Search className="w-7 h-7 text-gray-400" />
               </div>
-              <p className="text-white/50 text-lg font-medium mb-2">
+              <p className="text-gray-400 text-lg font-medium mb-2">
                 {isEn ? "No projects found" : "Không tìm thấy dự án nào"}
               </p>
-              <p className="text-white/30 text-sm mb-6">
+              <p className="text-gray-400 text-sm mb-6">
                 {isEn ? "Try adjusting your filters" : "Thử thay đổi bộ lọc"}
               </p>
               <button
                 onClick={clearFilters}
-                className="px-5 py-2.5 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 text-sm font-medium hover:bg-emerald-600/30 transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-emerald-50 border border-emerald-500/30 text-emerald-600 text-sm font-medium hover:bg-emerald-100 transition-colors"
               >
                 {isEn ? "Clear all filters" : "Xóa tất cả bộ lọc"}
               </button>
@@ -345,7 +345,7 @@ function CardView({
         return (
           <ScrollReveal key={project._id} direction="up" delay={Math.min(idx * 0.06, 0.3)}>
             <Link href={href} className="group block h-full">
-              <div className="relative flex flex-col h-full rounded-[28px] border border-white/8 bg-white/[0.025] hover:border-emerald-500/40 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/8">
+              <div className="relative flex flex-col h-full rounded-[28px] border border-gray-200 bg-white hover:border-emerald-500/40 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/8 shadow-sm">
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden shrink-0">
                   {project.coverImage ? (
@@ -363,7 +363,7 @@ function CardView({
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/40 to-teal-900/40" />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a14]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
                   {/* Badges */}
                   <div className="absolute top-4 left-4 flex gap-2">
@@ -398,18 +398,18 @@ function CardView({
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1 gap-3">
-                  <h3 className="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors duration-300 leading-snug line-clamp-2">
+                  <h3 className="text-gray-900 text-lg font-bold group-hover:text-emerald-600 transition-colors duration-300 leading-snug line-clamp-2">
                     {title}
                   </h3>
 
                   {excerpt && (
-                    <p className="text-white/45 text-sm line-clamp-2 flex-1 leading-relaxed">
+                    <p className="text-gray-400 text-sm line-clamp-2 flex-1 leading-relaxed">
                       {excerpt}
                     </p>
                   )}
 
                   {/* Meta */}
-                  <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-white/40 mt-auto pt-1">
+                  <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-gray-400 mt-auto pt-1">
                     {location && (
                       <span className="flex items-center gap-1.5">
                         <MapPin className="w-3.5 h-3.5 text-emerald-500/60 shrink-0" />
@@ -427,7 +427,7 @@ function CardView({
                     )}
                   </div>
 
-                  <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300 border-t border-white/5 pt-4">
+                  <div className="flex items-center gap-2 text-emerald-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300 border-t border-gray-200 pt-4">
                     <span>{t("viewProject")}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
@@ -458,9 +458,9 @@ function TableView({
   isEn: boolean;
 }) {
   return (
-    <div className="rounded-2xl border border-white/8 overflow-hidden bg-white/[0.02]">
+    <div className="rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-sm">
       {/* Table header */}
-      <div className="grid grid-cols-[2rem_1fr_160px_180px_130px_110px_48px] gap-0 px-5 py-3.5 bg-white/[0.03] border-b border-white/8 text-[11px] font-bold tracking-[0.12em] text-white/35 uppercase">
+      <div className="grid grid-cols-[2rem_1fr_160px_180px_130px_110px_48px] gap-0 px-5 py-3.5 bg-gray-50 border-b border-gray-200 text-[11px] font-bold tracking-[0.12em] text-gray-400 uppercase">
         <div>#</div>
         <div className="pl-4">{isEn ? "Project" : "Dự Án"}</div>
         <div>{isEn ? "Category" : "Danh Mục"}</div>
@@ -471,7 +471,7 @@ function TableView({
       </div>
 
       {/* Table rows */}
-      <div className="divide-y divide-white/[0.05]">
+      <div className="divide-y divide-gray-100">
         {projects.map((project, idx) => {
           const title = resolveLocalizedString(project.title_i18n, locale);
           const location = project.location_i18n
@@ -487,17 +487,17 @@ function TableView({
             <Link
               key={project._id}
               href={href}
-              className="group grid grid-cols-[2rem_1fr_160px_180px_130px_110px_48px] gap-0 px-5 py-4 items-center hover:bg-emerald-500/[0.05] transition-colors duration-200"
+              className="group grid grid-cols-[2rem_1fr_160px_180px_130px_110px_48px] gap-0 px-5 py-4 items-center hover:bg-emerald-50 transition-colors duration-200"
             >
               {/* Index */}
-              <div className="text-white/20 text-xs font-mono tabular-nums">
+              <div className="text-gray-400 text-xs font-mono tabular-nums">
                 {String(idx + 1).padStart(2, "0")}
               </div>
 
               {/* Title + featured */}
               <div className="pl-4 flex items-center gap-3 min-w-0">
                 {project.coverImage && (
-                  <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-white/8">
+                  <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-gray-200">
                     <Image
                       src={project.coverImage.url}
                       alt={title}
@@ -507,11 +507,11 @@ function TableView({
                   </div>
                 )}
                 <div className="min-w-0">
-                  <p className="text-white text-sm font-semibold group-hover:text-emerald-400 transition-colors duration-200 truncate leading-snug">
+                  <p className="text-gray-900 text-sm font-semibold group-hover:text-emerald-600 transition-colors duration-200 truncate leading-snug">
                     {title}
                   </p>
                   {project.isFeatured && (
-                    <span className="inline-flex items-center gap-1 text-[10px] text-amber-400/80 font-medium mt-0.5">
+                    <span className="inline-flex items-center gap-1 text-[10px] text-amber-500 font-medium mt-0.5">
                       <Star className="w-2.5 h-2.5" />
                       Featured
                     </span>
@@ -522,28 +522,28 @@ function TableView({
               {/* Category */}
               <div>
                 {project.category ? (
-                  <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-600/12 border border-emerald-500/20 text-emerald-400/80 text-[11px] font-semibold">
+                  <span className="inline-block px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-500/20 text-emerald-600 text-[11px] font-semibold">
                     {project.category}
                   </span>
                 ) : (
-                  <span className="text-white/20 text-xs">—</span>
+                  <span className="text-gray-400 text-xs">—</span>
                 )}
               </div>
 
               {/* Location */}
-              <div className="text-white/45 text-sm truncate pr-4">
+              <div className="text-gray-400 text-sm truncate pr-4">
                 {location ? (
                   <span className="flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-emerald-500/40 shrink-0" />
                     <span className="truncate">{location}</span>
                   </span>
                 ) : (
-                  <span className="text-white/20">—</span>
+                  <span className="text-gray-400">—</span>
                 )}
               </div>
 
               {/* Date */}
-              <div className="text-white/40 text-sm">
+              <div className="text-gray-400 text-sm">
                 {project.completionDate ? (
                   <span className="flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5 text-emerald-500/40 shrink-0" />
@@ -553,7 +553,7 @@ function TableView({
                     )}
                   </span>
                 ) : (
-                  <span className="text-white/20">—</span>
+                  <span className="text-gray-400">—</span>
                 )}
               </div>
 
@@ -562,13 +562,13 @@ function TableView({
                 <span
                   className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold border ${
                     isCompleted
-                      ? "bg-emerald-500/10 border-emerald-500/25 text-emerald-400"
-                      : "bg-amber-500/10 border-amber-500/25 text-amber-400"
+                      ? "bg-emerald-50 border-emerald-500/25 text-emerald-600"
+                      : "bg-amber-50 border-amber-500/25 text-amber-600"
                   }`}
                 >
                   <div
                     className={`w-1.5 h-1.5 rounded-full ${
-                      isCompleted ? "bg-emerald-400" : "bg-amber-400"
+                      isCompleted ? "bg-emerald-500" : "bg-amber-500"
                     }`}
                   />
                   {isCompleted ? t("status.completed") : t("status.ongoing")}
@@ -577,7 +577,7 @@ function TableView({
 
               {/* Arrow */}
               <div className="flex justify-center">
-                <ArrowRight className="w-4 h-4 text-white/15 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all duration-200" />
+                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all duration-200" />
               </div>
             </Link>
           );
@@ -629,7 +629,7 @@ function Pagination({
       <button
         onClick={() => go(page - 1)}
         disabled={page === 1}
-        className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-white/10 text-white/50 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-400 transition-all duration-200 disabled:opacity-25 disabled:pointer-events-none"
+        className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-gray-200 text-gray-400 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-600 transition-all duration-200 disabled:opacity-25 disabled:pointer-events-none"
       >
         <ChevronLeft className="w-4 h-4" />
         {isEn ? "Prev" : "Trước"}
@@ -639,7 +639,7 @@ function Pagination({
       <div className="flex items-center gap-1.5">
         {pages.map((p, i) =>
           p === "…" ? (
-            <span key={`ellipsis-${i}`} className="px-2 text-white/20 text-sm select-none">
+            <span key={`ellipsis-${i}`} className="px-2 text-gray-400 text-sm select-none">
               …
             </span>
           ) : (
@@ -649,7 +649,7 @@ function Pagination({
               className={`w-9 h-9 rounded-xl text-sm font-semibold border transition-all duration-200 ${
                 page === p
                   ? "bg-emerald-600 border-emerald-600 text-white shadow-lg shadow-emerald-600/25"
-                  : "bg-white/[0.04] border-white/10 text-white/50 hover:border-emerald-500/40 hover:text-emerald-400"
+                  : "bg-gray-50 border-gray-200 text-gray-400 hover:border-emerald-500/40 hover:text-emerald-600"
               }`}
             >
               {p}
@@ -662,7 +662,7 @@ function Pagination({
       <button
         onClick={() => go(page + 1)}
         disabled={page === totalPages}
-        className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-white/10 text-white/50 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-400 transition-all duration-200 disabled:opacity-25 disabled:pointer-events-none"
+        className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-gray-200 text-gray-400 text-sm font-medium hover:border-emerald-500/40 hover:text-emerald-600 transition-all duration-200 disabled:opacity-25 disabled:pointer-events-none"
       >
         {isEn ? "Next" : "Tiếp"}
         <ChevronRight className="w-4 h-4" />

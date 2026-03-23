@@ -1,13 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -21,72 +15,48 @@ export function ScrollReveal({
   children,
   direction = "up",
   delay = 0,
-  duration = 1,
+  duration = 0.8,
   className = "",
 }: ScrollRevealProps) {
-  const elementRef = useRef<HTMLDivElement>(null);
+  const distance = 40;
 
-  useEffect(() => {
-    if (!elementRef.current) return;
+  const initial: Record<string, number> = { opacity: 0 };
+  const animate: Record<string, number> = { opacity: 1 };
 
-    const element = elementRef.current;
-
-    // Initial state based on direction
-    const initialState: any = { opacity: 0 };
-    const animateState: any = { opacity: 1 };
-
-    switch (direction) {
-      case "up":
-        initialState.y = 60;
-        animateState.y = 0;
-        break;
-      case "down":
-        initialState.y = -60;
-        animateState.y = 0;
-        break;
-      case "left":
-        initialState.x = 60;
-        animateState.x = 0;
-        break;
-      case "right":
-        initialState.x = -60;
-        animateState.x = 0;
-        break;
-      case "scale":
-        initialState.scale = 0.8;
-        animateState.scale = 1;
-        break;
-      case "fade":
-        // Only opacity, no movement
-        break;
-    }
-
-    gsap.set(element, initialState);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: element,
-        start: "top 85%",
-        end: "top 20%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    tl.to(element, {
-      ...animateState,
-      duration,
-      delay,
-      ease: "power3.out",
-    });
-
-    return () => {
-      tl.kill();
-    };
-  }, [direction, delay, duration]);
+  switch (direction) {
+    case "up":
+      initial.y = distance;
+      animate.y = 0;
+      break;
+    case "down":
+      initial.y = -distance;
+      animate.y = 0;
+      break;
+    case "left":
+      initial.x = distance;
+      animate.x = 0;
+      break;
+    case "right":
+      initial.x = -distance;
+      animate.x = 0;
+      break;
+    case "scale":
+      initial.scale = 0.85;
+      animate.scale = 1;
+      break;
+    case "fade":
+      break;
+  }
 
   return (
-    <div ref={elementRef} className={className}>
+    <motion.div
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: 0.1, margin: "-10% 0px -10% 0px" }}
+      transition={{ duration, ease: "easeOut", delay }}
+      className={className}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }

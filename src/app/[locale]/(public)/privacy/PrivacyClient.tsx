@@ -76,7 +76,7 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="min-h-screen bg-white">
         {/* ── Hero ── */}
         <Section>
           <section className="relative pt-32 pb-20 overflow-hidden">
@@ -99,13 +99,13 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
                     },
                   ]}
                 />
-                <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                   {t("title")}
                 </h1>
-                <p className="text-xl text-white/70 leading-relaxed mb-6 max-w-3xl">
+                <p className="text-xl text-gray-600 leading-relaxed mb-6 max-w-3xl">
                   {t("tagline")}
                 </p>
-                <p className="text-sm text-white/40 mb-8">{t("updated")}</p>
+                <p className="text-sm text-gray-400 mb-8">{t("updated")}</p>
 
                 {/* Highlight chips */}
                 {Array.isArray(heroHighlights) && (
@@ -113,7 +113,7 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
                     {heroHighlights.map((label, i) => (
                       <span
                         key={i}
-                        className="px-4 py-1.5 rounded-full text-sm font-medium border border-emerald-400/30 bg-emerald-500/10 text-emerald-300"
+                        className="px-4 py-1.5 rounded-full text-sm font-medium border border-emerald-400/30 bg-emerald-50 text-emerald-600"
                       >
                         {label}
                       </span>
@@ -127,9 +127,9 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
 
         {/* ── Quick Points ── */}
         <Section>
-          <section className="py-16 border-y border-white/10">
+          <section className="py-16 border-y border-gray-200">
             <div className="container mx-auto px-8 lg:px-16">
-              <p className="text-emerald-400 text-sm font-semibold tracking-widest uppercase text-center mb-10">
+              <p className="text-emerald-600 text-sm font-semibold tracking-widest uppercase text-center mb-10">
                 {t("sectionEyebrow")}
               </p>
               {Array.isArray(quickPoints) && (
@@ -139,15 +139,15 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
                     return (
                       <div
                         key={i}
-                        className="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/30 transition-all duration-500"
+                        className="bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 transition-all duration-500"
                       >
-                        <div className="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center mb-4">
-                          <Icon className="w-6 h-6 text-emerald-400" />
+                        <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
+                          <Icon className="w-6 h-6 text-emerald-600" />
                         </div>
-                        <h3 className="text-white font-semibold mb-2">
+                        <h3 className="text-gray-900 font-semibold mb-2">
                           {point.title}
                         </h3>
-                        <p className="text-white/60 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed">
                           {point.description}
                         </p>
                       </div>
@@ -170,18 +170,18 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
                     return (
                       <div
                         key={sec.id}
-                        className="bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-400/20 transition-all duration-500"
+                        className="bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/20 transition-all duration-500"
                       >
                         <div className="flex items-start gap-4 mb-4">
-                          <div className="w-10 h-10 rounded-lg bg-emerald-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Icon className="w-5 h-5 text-emerald-400" />
+                          <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Icon className="w-5 h-5 text-emerald-600" />
                           </div>
-                          <h2 className="text-xl font-bold text-white">
+                          <h2 className="text-xl font-bold text-gray-900">
                             {sec.title}
                           </h2>
                         </div>
                         {sec.summary && (
-                          <p className="text-white/60 text-sm mb-4 pl-14 leading-relaxed">
+                          <p className="text-gray-600 text-sm mb-4 pl-14 leading-relaxed">
                             {sec.summary}
                           </p>
                         )}
@@ -189,7 +189,7 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
                           {sec.items.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3">
                               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 mt-2" />
-                              <span className="text-white/70 text-sm leading-relaxed">
+                              <span className="text-gray-600 text-sm leading-relaxed">
                                 {item}
                               </span>
                             </li>
@@ -205,16 +205,16 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
 
         {/* ── Rights Section ── */}
         <Section>
-          <section className="py-16 bg-slate-800/30">
+          <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="max-w-3xl mx-auto">
                 <div className="flex items-center gap-3 mb-4">
-                  <UserCheck className="w-6 h-6 text-emerald-400 flex-shrink-0" />
-                  <h2 className="text-2xl font-bold text-white">
+                  <UserCheck className="w-6 h-6 text-emerald-600 flex-shrink-0" />
+                  <h2 className="text-2xl font-bold text-gray-900">
                     {t("rightsTitle")}
                   </h2>
                 </div>
-                <p className="text-white/60 text-sm leading-relaxed mb-6 pl-9">
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 pl-9">
                   {t("rightsCopy")}
                 </p>
                 {Array.isArray(rightsBullets) && (
@@ -222,7 +222,7 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
                     {rightsBullets.map((bullet, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 mt-2" />
-                        <span className="text-white/70 text-sm leading-relaxed">
+                        <span className="text-gray-600 text-sm leading-relaxed">
                           {bullet}
                         </span>
                       </li>
@@ -239,42 +239,42 @@ export function PrivacyClient({ locale }: PrivacyClientProps) {
           <section className="py-24">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="max-w-3xl mx-auto text-center">
-                <p className="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-4">
+                <p className="text-emerald-600 text-sm font-semibold tracking-widest uppercase mb-4">
                   {contact?.eyebrow}
                 </p>
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   {contact?.title}
                 </h2>
-                <p className="text-white/60 mb-10 leading-relaxed">
+                <p className="text-gray-600 mb-10 leading-relaxed">
                   {contact?.description}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                  <div className="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/30 transition-all duration-500">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/15 flex items-center justify-center mx-auto mb-3">
-                      <MapPin className="w-5 h-5 text-emerald-400" />
+                  <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 transition-all duration-500">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mx-auto mb-3">
+                      <MapPin className="w-5 h-5 text-emerald-600" />
                     </div>
-                    <p className="text-white/70 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {contact?.address}
                     </p>
                   </div>
-                  <div className="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/30 transition-all duration-500">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/15 flex items-center justify-center mx-auto mb-3">
-                      <Phone className="w-5 h-5 text-emerald-400" />
+                  <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 transition-all duration-500">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mx-auto mb-3">
+                      <Phone className="w-5 h-5 text-emerald-600" />
                     </div>
                     <a
                       href={`tel:${contact?.phone?.replace(/\s/g, "")}`}
-                      className="text-white/70 text-sm hover:text-emerald-400 transition-colors"
+                      className="text-gray-600 text-sm hover:text-emerald-600 transition-colors"
                     >
                       {contact?.phone}
                     </a>
                   </div>
-                  <div className="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/30 transition-all duration-500">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/15 flex items-center justify-center mx-auto mb-3">
-                      <Mail className="w-5 h-5 text-emerald-400" />
+                  <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 transition-all duration-500">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mx-auto mb-3">
+                      <Mail className="w-5 h-5 text-emerald-600" />
                     </div>
                     <a
                       href={`mailto:${contact?.email}`}
-                      className="text-white/70 text-sm hover:text-emerald-400 transition-colors break-all"
+                      className="text-gray-600 text-sm hover:text-emerald-600 transition-colors break-all"
                     >
                       {contact?.email}
                     </a>

@@ -41,9 +41,9 @@ const LAYERS: HabitatLayer[] = [
     ],
     colors: {
       bg: "rgba(14, 165, 233, 0.06)",
-      bgHover: "rgba(14, 165, 233, 0.18)",
-      accent: "#38bdf8",
-      glow: "0 0 20px rgba(56, 189, 248, 0.15)",
+      bgHover: "rgba(14, 165, 233, 0.12)",
+      accent: "#0284c7",
+      glow: "0 0 20px rgba(14, 165, 233, 0.1)",
     },
   },
   {
@@ -54,9 +54,9 @@ const LAYERS: HabitatLayer[] = [
     items: [{ href: "/services", labelKey: "nav.services" }],
     colors: {
       bg: "rgba(16, 185, 129, 0.06)",
-      bgHover: "rgba(16, 185, 129, 0.18)",
-      accent: "#34d399",
-      glow: "0 0 20px rgba(52, 211, 153, 0.15)",
+      bgHover: "rgba(16, 185, 129, 0.12)",
+      accent: "#059669",
+      glow: "0 0 20px rgba(16, 185, 129, 0.1)",
     },
   },
   {
@@ -70,9 +70,9 @@ const LAYERS: HabitatLayer[] = [
     ],
     colors: {
       bg: "rgba(245, 158, 11, 0.06)",
-      bgHover: "rgba(245, 158, 11, 0.18)",
-      accent: "#fbbf24",
-      glow: "0 0 20px rgba(251, 191, 36, 0.15)",
+      bgHover: "rgba(245, 158, 11, 0.12)",
+      accent: "#d97706",
+      glow: "0 0 20px rgba(245, 158, 11, 0.1)",
     },
   },
   {
@@ -82,10 +82,10 @@ const LAYERS: HabitatLayer[] = [
     nameEn: "Connect",
     items: [{ href: "/contact", labelKey: "nav.contact" }],
     colors: {
-      bg: "rgba(168, 162, 158, 0.06)",
-      bgHover: "rgba(168, 162, 158, 0.18)",
-      accent: "#a8a29e",
-      glow: "0 0 20px rgba(168, 162, 158, 0.15)",
+      bg: "rgba(107, 114, 128, 0.06)",
+      bgHover: "rgba(107, 114, 128, 0.12)",
+      accent: "#4b5563",
+      glow: "0 0 20px rgba(107, 114, 128, 0.1)",
     },
   },
 ];
@@ -100,7 +100,6 @@ export function Header({ locale: _locale }: HeaderProps) {
   const [hoveredLayer, setHoveredLayer] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // On non-home pages, always show compact header (no expanded layers)
   const isHome = pathname === "/";
   const displayScrolled = scrolled || !isHome;
 
@@ -110,7 +109,6 @@ export function Header({ locale: _locale }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
     return () => {
@@ -126,7 +124,6 @@ export function Header({ locale: _locale }: HeaderProps) {
     [pathname],
   );
 
-  // Which layer owns the current page?
   const activeLayerId = LAYERS.find((l) =>
     l.items.some((i) => isActive(i.href)),
   )?.id;
@@ -136,7 +133,7 @@ export function Header({ locale: _locale }: HeaderProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           displayScrolled
-            ? "shadow-lg shadow-black/5 border-b border-white/10"
+            ? "shadow-sm border-b border-gray-200"
             : ""
         }`}
       >
@@ -144,8 +141,8 @@ export function Header({ locale: _locale }: HeaderProps) {
         <div
           className={`absolute inset-0 transition-all duration-500 ${
             displayScrolled
-              ? "bg-slate-950/92 backdrop-blur-xl"
-              : "bg-gradient-to-b from-slate-950/90 via-slate-950/70 to-transparent backdrop-blur-sm"
+              ? "bg-white/95 backdrop-blur-lg"
+              : "bg-white/80 backdrop-blur-sm"
           }`}
         />
 
@@ -159,7 +156,7 @@ export function Header({ locale: _locale }: HeaderProps) {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group shrink-0">
               <div
-                className={`relative rounded-xl overflow-hidden shadow-xl group-hover:scale-110 transition-all duration-300 ${
+                className={`relative rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-all duration-300 ${
                   displayScrolled ? "w-9 h-9" : "w-11 h-11 lg:w-12 lg:h-12"
                 }`}
               >
@@ -173,15 +170,14 @@ export function Header({ locale: _locale }: HeaderProps) {
               </div>
               <div className="hidden sm:block">
                 <h1
-                  className={`text-white font-bold tracking-tight transition-all duration-300 ${
+                  className={`text-gray-900 font-bold tracking-tight transition-all duration-300 ${
                     displayScrolled ? "text-base" : "text-lg lg:text-xl"
                   }`}
                 >
                   Hasake Zoo
                 </h1>
                 {!displayScrolled && (
-                  <p className="text-emerald-400 text-[11px] font-light tracking-wide">
-                    {/* {t("header.subtitle")} */}
+                  <p className="text-emerald-600 text-[11px] font-light tracking-wide">
                     Habitat solutions
                   </p>
                 )}
@@ -220,8 +216,8 @@ export function Header({ locale: _locale }: HeaderProps) {
                               href={item.href}
                               className={`text-[13px] font-medium transition-colors duration-200 ${
                                 isActive(item.href)
-                                  ? "text-white"
-                                  : "text-white/60 hover:text-white"
+                                  ? "text-gray-900"
+                                  : "text-gray-500 hover:text-gray-900"
                               }`}
                               suppressHydrationWarning
                             >
@@ -229,8 +225,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                             </Link>
                           ))}
                         </div>
-                        {/* Separator dot */}
-                        <span className="text-white/30 text-[10px] absolute -right-0.5 top-1/2 -translate-y-1/2 group-last:hidden">
+                        <span className="text-gray-300 text-[10px] absolute -right-0.5 top-1/2 -translate-y-1/2 group-last:hidden">
                           ·
                         </span>
                       </div>
@@ -271,12 +266,12 @@ export function Header({ locale: _locale }: HeaderProps) {
               {/* Mobile burger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden relative w-10 h-10 flex items-center justify-center text-white hover:bg-white/10 rounded-xl transition-colors"
+                className="lg:hidden relative w-10 h-10 flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-xl transition-colors"
                 aria-label="Toggle menu"
               >
                 <div className="w-5 h-4 flex flex-col justify-between">
                   <motion.span
-                    className="block h-0.5 bg-white rounded-full origin-left"
+                    className="block h-0.5 bg-gray-900 rounded-full origin-left"
                     animate={
                       mobileMenuOpen
                         ? { rotate: 45, width: "100%" }
@@ -285,7 +280,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                     transition={{ duration: 0.3, type: "tween", ease: "easeInOut" }}
                   />
                   <motion.span
-                    className="block h-0.5 bg-white rounded-full"
+                    className="block h-0.5 bg-gray-900 rounded-full"
                     animate={
                       mobileMenuOpen
                         ? { opacity: 0, x: -10 }
@@ -294,7 +289,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                     transition={{ duration: 0.2, type: "tween", ease: "easeInOut" }}
                   />
                   <motion.span
-                    className="block h-0.5 bg-white rounded-full origin-left"
+                    className="block h-0.5 bg-gray-900 rounded-full origin-left"
                     animate={
                       mobileMenuOpen
                         ? { rotate: -45, width: "100%" }
@@ -319,8 +314,8 @@ export function Header({ locale: _locale }: HeaderProps) {
               className="relative z-10 hidden lg:block overflow-hidden"
             >
               <div className="container mx-auto px-6 lg:px-12">
-                <div className="flex flex-col" style={{ perspective: "600px" }}>
-                  {LAYERS.map((layer, idx) => {
+                <div className="flex flex-col">
+                  {LAYERS.map((layer) => {
                     const isHovered = hoveredLayer === layer.id;
                     const isLayerActive = activeLayerId === layer.id;
 
@@ -328,9 +323,6 @@ export function Header({ locale: _locale }: HeaderProps) {
                       <motion.div
                         key={layer.id}
                         className="relative cursor-pointer"
-                        style={{
-                          transformStyle: "preserve-3d",
-                        }}
                         onMouseEnter={() => setHoveredLayer(layer.id)}
                         onMouseLeave={() => setHoveredLayer(null)}
                         animate={{
@@ -340,7 +332,6 @@ export function Header({ locale: _locale }: HeaderProps) {
                             : isLayerActive
                               ? layer.colors.bg
                               : "transparent",
-                          translateZ: isHovered ? 0 : -idx * 6,
                         }}
                         transition={{
                           duration: 0.3,
@@ -366,7 +357,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                           className="absolute top-0 left-4 right-4 h-px transition-opacity duration-300"
                           style={{
                             backgroundColor: layer.colors.accent,
-                            opacity: isHovered ? 0.4 : 0.1,
+                            opacity: isHovered ? 0.3 : 0.08,
                           }}
                         />
 
@@ -386,7 +377,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                               className="text-[10px] font-semibold uppercase tracking-[0.2em] transition-opacity duration-300"
                               style={{
                                 color: layer.colors.accent,
-                                opacity: isHovered ? 1 : 0.7,
+                                opacity: isHovered ? 1 : 0.8,
                               }}
                             >
                               {locale === "en" ? layer.nameEn : layer.nameVi}
@@ -401,8 +392,8 @@ export function Header({ locale: _locale }: HeaderProps) {
                                 href={item.href}
                                 className={`px-3.5 py-1 rounded-lg text-sm font-medium transition-all duration-300 ${
                                   isActive(item.href)
-                                    ? "text-white bg-white/10"
-                                    : "text-white/70 hover:text-white hover:bg-white/10"
+                                    ? "text-gray-900 bg-gray-100"
+                                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                                 }`}
                                 suppressHydrationWarning
                               >
@@ -416,23 +407,9 @@ export function Header({ locale: _locale }: HeaderProps) {
                             className="flex-1 h-px transition-opacity duration-300"
                             style={{
                               backgroundColor: layer.colors.accent,
-                              opacity: isHovered ? 0.25 : 0.06,
+                              opacity: isHovered ? 0.2 : 0.06,
                             }}
                           />
-
-                          {/* Hover glow effect */}
-                          {isHovered && (
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              exit={{ opacity: 0 }}
-                              className="absolute inset-0 pointer-events-none"
-                              style={{
-                                boxShadow: layer.colors.glow,
-                                borderRadius: "4px",
-                              }}
-                            />
-                          )}
                         </div>
                       </motion.div>
                     );
@@ -440,22 +417,8 @@ export function Header({ locale: _locale }: HeaderProps) {
                 </div>
               </div>
 
-              {/* Organic grass/leaf bottom edge */}
-              <svg
-                className="w-full h-3 relative -mb-3"
-                viewBox="0 0 1440 12"
-                preserveAspectRatio="none"
-                fill="none"
-              >
-                <path
-                  d="M0 0C80 0 80 6 160 6C240 6 240 2 320 2C400 2 400 8 480 8C560 8 560 3 640 3C720 3 720 7 800 7C880 7 880 1 960 1C1040 1 1040 5 1120 5C1200 5 1200 2 1280 2C1360 2 1360 4 1440 4V0H0Z"
-                  fill="rgba(15, 23, 42, 0.5)"
-                />
-                <path
-                  d="M0 0C60 0 120 10 180 8C240 6 300 12 360 10C420 8 480 12 540 9C600 6 660 11 720 8C780 5 840 10 900 7C960 4 1020 9 1080 6C1140 3 1200 8 1260 5C1320 2 1380 6 1440 4V0H0Z"
-                  fill="rgba(16, 185, 129, 0.08)"
-                />
-              </svg>
+              {/* Bottom border */}
+              <div className="h-px bg-gray-200" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -476,14 +439,14 @@ export function Header({ locale: _locale }: HeaderProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/98 backdrop-blur-2xl"
+              className="absolute inset-0 bg-white/98 backdrop-blur-2xl"
             />
 
             {/* Close button */}
             <div className="relative z-10 flex justify-end p-4">
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                className="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-colors"
                 aria-label="Close menu"
               >
                 <svg
@@ -551,8 +514,8 @@ export function Header({ locale: _locale }: HeaderProps) {
                         onClick={() => setMobileMenuOpen(false)}
                         className={`text-xl font-semibold py-1.5 transition-colors duration-200 ${
                           isActive(item.href)
-                            ? "text-white"
-                            : "text-white/50 active:text-white"
+                            ? "text-gray-900"
+                            : "text-gray-400 active:text-gray-900"
                         }`}
                         suppressHydrationWarning
                       >
@@ -568,7 +531,7 @@ export function Header({ locale: _locale }: HeaderProps) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="mt-auto pt-6 border-t border-white/10"
+                className="mt-auto pt-6 border-t border-gray-200"
               >
                 <LanguageSwitcher />
               </motion.div>

@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import type { Locale } from "@/types/content";
 import { ContactInquiryForm } from "@/components/shared/contact-inquiry-form";
 import { PageTransition, Section } from "@/components/animate/PageTransition";
 import { PageBreadcrumb } from "@/components/ui/page-breadcrumb";
+import { ScrollReveal } from "@/components/animate/ScrollReveal";
 
 interface ContactClientProps {
   locale: Locale;
@@ -85,10 +87,35 @@ const CONTACT_INFO = [
   },
 ];
 
+const FAQ_ITEMS = [
+  {
+    q: { vi: "Thời gian phản hồi trung bình là bao lâu?", en: "What is the average response time?" },
+    a: { vi: "Chúng tôi cam kết phản hồi trong vòng 24 giờ làm việc cho mọi yêu cầu tư vấn.", en: "We commit to responding within 24 business hours for all consultation requests." },
+  },
+  {
+    q: { vi: "Hasake có cung cấp dịch vụ quốc tế không?", en: "Does Hasake provide international services?" },
+    a: { vi: "Có, chúng tôi đã và đang thực hiện dự án tại 6 quốc gia Đông Nam Á và đối tác toàn cầu.", en: "Yes, we have completed and are currently running projects in 6 Southeast Asian countries with global partners." },
+  },
+  {
+    q: { vi: "Chi phí tư vấn ban đầu như thế nào?", en: "What are the initial consultation costs?" },
+    a: { vi: "Buổi tư vấn ban đầu hoàn toàn miễn phí. Chúng tôi sẽ đánh giá nhu cầu và đề xuất giải pháp phù hợp.", en: "The initial consultation is completely free. We will assess your needs and propose suitable solutions." },
+  },
+  {
+    q: { vi: "Hasake có đội ngũ bác sĩ thú y riêng không?", en: "Does Hasake have its own veterinary team?" },
+    a: { vi: "Có, đội ngũ của chúng tôi bao gồm bác sĩ thú y có chứng chỉ quốc tế và nhiều năm kinh nghiệm.", en: "Yes, our team includes internationally certified veterinarians with years of experience." },
+  },
+  {
+    q: { vi: "Làm thế nào để bắt đầu một dự án với Hasake?", en: "How do I start a project with Hasake?" },
+    a: { vi: "Bạn chỉ cần liên hệ qua form trên hoặc gọi điện. Chúng tôi sẽ sắp xếp buổi tư vấn ban đầu miễn phí.", en: "Simply contact us via the form above or call. We will arrange a free initial consultation." },
+  },
+];
+
 export function ContactClient({ locale }: ContactClientProps) {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <PageTransition>
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <Section><section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/10 to-teal-600/10" />
@@ -105,15 +132,15 @@ export function ContactClient({ locale }: ContactClientProps) {
                 { label: locale === "vi" ? "Liên Hệ" : "Contact" },
               ]}
             />
-            <p className="text-emerald-400 text-lg font-semibold mb-4 tracking-wide">
+            <p className="text-emerald-600 text-lg font-semibold mb-4 tracking-wide">
               {locale === "vi" ? "LIÊN HỆ" : "CONTACT US"}
             </p>
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
               {locale === "vi"
                 ? "Hãy Kết nối với Chúng tôi"
                 : "Let's Connect"}
             </h1>
-            <p className="text-xl text-white/70 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed">
               {locale === "vi"
                 ? "Bạn có câu hỏi hoặc muốn tư vấn về dự án? Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn."
                 : "Have questions or want to discuss a project? Our expert team is ready to help you."}
@@ -129,15 +156,15 @@ export function ContactClient({ locale }: ContactClientProps) {
             {CONTACT_INFO.map((info, idx) => (
               <div
                 key={idx}
-                className="bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/30 hover:bg-white/[0.08] transition-all duration-500"
+                className="bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 hover:bg-gray-100 transition-all duration-500"
               >
-                <div className="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-5">
                   {info.icon}
                 </div>
-                <h3 className="text-white font-bold text-lg mb-2">
+                <h3 className="text-gray-900 font-bold text-lg mb-2">
                   {info.title[locale]}
                 </h3>
-                <p className="text-white/70 text-sm whitespace-pre-line mb-4">
+                <p className="text-gray-600 text-sm whitespace-pre-line mb-4">
                   {typeof info.content === "string"
                     ? info.content
                     : info.content[locale]}
@@ -147,7 +174,7 @@ export function ContactClient({ locale }: ContactClientProps) {
                     href={info.link}
                     target={info.link.startsWith("http") ? "_blank" : undefined}
                     rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors inline-flex items-center gap-1"
+                    className="text-emerald-600 hover:text-emerald-500 text-sm font-medium transition-colors inline-flex items-center gap-1"
                   >
                     {info.linkText[locale]}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,6 +188,60 @@ export function ContactClient({ locale }: ContactClientProps) {
         </div>
       </section></Section>
 
+      {/* Trust Strip */}
+      <Section><section className="py-10">
+        <div className="container mx-auto px-8 lg:px-16">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl px-8 py-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-white/20">
+              {[
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  value: "< 24h",
+                  label: locale === "vi" ? "Thời gian phản hồi" : "Response Time",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  value: "100%",
+                  label: locale === "vi" ? "Cam kết chất lượng" : "Quality Guarantee",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  value: "6+",
+                  label: locale === "vi" ? "Quốc gia phục vụ" : "Countries Served",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  ),
+                  value: "20+",
+                  label: locale === "vi" ? "Năm kinh nghiệm" : "Years Experience",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center text-white px-4">
+                  <div className="mb-3 opacity-80">{item.icon}</div>
+                  <p className="text-3xl font-bold mb-1">{item.value}</p>
+                  <p className="text-sm text-white/80">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section></Section>
+
       {/* Map + Form Section */}
       <Section><section className="py-16">
         <div className="container mx-auto px-8 lg:px-16">
@@ -168,7 +249,7 @@ export function ContactClient({ locale }: ContactClientProps) {
             {/* Map & Additional Info */}
             <div className="space-y-8">
               {/* Embedded Map */}
-              <div className="relative h-[400px] rounded-2xl overflow-hidden border border-white/10">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden border border-gray-200">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6573569529244!2d105.82!3d21.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAzJzAwLjAiTiAxMDXCsDQ5JzEyLjAiRQ!5e0!3m2!1svi!2s!4v1700000000000"
                   width="100%"
@@ -183,8 +264,8 @@ export function ContactClient({ locale }: ContactClientProps) {
               </div>
 
               {/* Social Links */}
-              <div className="bg-white/5 rounded-2xl border border-white/10 p-8">
-                <h3 className="text-white text-xl font-bold mb-6">
+              <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+                <h3 className="text-gray-900 text-xl font-bold mb-6">
                   {locale === "vi" ? "Kết nối với chúng tôi" : "Follow Us"}
                 </h3>
                 <div className="flex gap-4">
@@ -222,7 +303,7 @@ export function ContactClient({ locale }: ContactClientProps) {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-14 h-14 rounded-xl bg-white/5 hover:bg-emerald-600 border border-white/10 hover:border-emerald-600 flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
+                      className="w-14 h-14 rounded-xl bg-gray-50 hover:bg-emerald-600 border border-gray-200 hover:border-emerald-600 flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300"
                       aria-label={social.name}
                     >
                       {social.icon}
@@ -233,17 +314,63 @@ export function ContactClient({ locale }: ContactClientProps) {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white/5 rounded-3xl border border-white/10 backdrop-blur-xl p-10">
-              <h3 className="text-white text-2xl font-bold mb-2">
+            <div className="bg-gray-50 rounded-3xl border border-gray-200 backdrop-blur-xl p-10">
+              <h3 className="text-gray-900 text-2xl font-bold mb-2">
                 {locale === "vi" ? "Gửi Yêu cầu Tư vấn" : "Send an Inquiry"}
               </h3>
-              <p className="text-white/60 mb-8">
+              <p className="text-gray-600 mb-8">
                 {locale === "vi"
                   ? "Điền thông tin bên dưới và chúng tôi sẽ phản hồi trong vòng 24 giờ."
                   : "Fill in the form below and we'll get back to you within 24 hours."}
               </p>
               <ContactInquiryForm inquiryType="general" locale={locale} />
             </div>
+          </div>
+        </div>
+      </section></Section>
+
+      {/* FAQ Section */}
+      <Section><section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-8 lg:px-16">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <p className="text-emerald-600 text-lg font-semibold mb-4 tracking-wide">FAQ</p>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+                {locale === "vi" ? "Câu Hỏi Thường Gặp" : "Frequently Asked Questions"}
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {FAQ_ITEMS.map((item, idx) => (
+              <ScrollReveal key={idx} direction="up" delay={idx * 0.08}>
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  >
+                    <span className="text-gray-900 font-bold text-lg pr-4">
+                      {item.q[locale]}
+                    </span>
+                    <svg
+                      className={`w-5 h-5 text-emerald-600 flex-shrink-0 transition-transform duration-300 ${openFaq === idx ? "rotate-180" : ""}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? "max-h-40 pb-5" : "max-h-0"}`}
+                  >
+                    <p className="px-6 text-gray-600 leading-relaxed">
+                      {item.a[locale]}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section></Section>

@@ -29,7 +29,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
   return (
     <PageTransition>
       {/* Hero Section */}
-      <Section><section className="relative min-h-[60vh] bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 overflow-hidden pt-32 pb-20">
+      <Section><section className="relative min-h-[60vh] bg-gray-50 overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0">
           <Image
             src="/test-img/plant 1.png"
@@ -37,7 +37,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
             fill
             className="object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" />
         </div>
 
         <div className="relative z-10 container mx-auto px-8 lg:px-16">
@@ -49,13 +49,13 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
                   { label: locale === "vi" ? "Sản Phẩm" : "Products" },
                 ]}
               />
-              <p className="text-emerald-400 text-lg font-semibold mb-4 tracking-wide">
+              <p className="text-emerald-600 text-lg font-semibold mb-4 tracking-wide">
                 {t("hero.eyebrow")}
               </p>
-              <h1 className="text-white text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-gray-900 text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 {t("hero.title")}
               </h1>
-              <p className="text-white/80 text-xl lg:text-2xl leading-relaxed">
+              <p className="text-gray-700 text-xl lg:text-2xl leading-relaxed">
                 {t("hero.description")}
               </p>
             </div>
@@ -64,7 +64,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
       </section></Section>
 
       {/* Filter Tabs */}
-      <section className="bg-slate-950/95 border-b border-white/10 backdrop-blur-xl shadow-sm">
+      <section className="bg-white border-b border-gray-200 backdrop-blur-xl shadow-sm">
         <div className="container mx-auto px-8 lg:px-16 py-6">
           <ScrollReveal direction="fade">
             <div className="flex gap-3">
@@ -73,7 +73,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
                 className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   filter === "all"
                     ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30"
-                    : "bg-white/5 text-white/90 hover:bg-white/10 border border-white/10"
+                    : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200"
                 }`}
               >
                 {t("filters.all")}
@@ -83,7 +83,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
                 className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   filter === "featured"
                     ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30"
-                    : "bg-white/5 text-white/90 hover:bg-white/10 border border-white/10"
+                    : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200"
                 }`}
               >
                 {t("filters.featured")}
@@ -94,11 +94,11 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-8 lg:px-16">
           {filteredProducts.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-white/60 text-xl">{t("empty")}</p>
+              <p className="text-gray-600 text-xl">{t("empty")}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -115,10 +115,10 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
                       href={`/${locale === "en" ? "en/" : ""}products/${resolveLocalizedString(product.slug_i18n, locale)}`}
                       className="group block h-full"
                     >
-                      <div className="bg-white/5 rounded-3xl border-2 border-white/10 hover:border-emerald-400/50 overflow-hidden transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/20 h-full flex flex-col">
+                      <div className="bg-white rounded-3xl border-2 border-gray-200 hover:border-emerald-400/50 overflow-hidden transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/20 h-full flex flex-col shadow-sm">
                         {/* Image */}
                         {primaryImage && (
-                          <div className="relative h-56 overflow-hidden bg-white/5">
+                          <div className="relative h-56 overflow-hidden bg-gray-50">
                             <Image
                               src={primaryImage.url}
                               alt={
@@ -141,19 +141,19 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
 
                         {/* Content */}
                         <div className="p-6 space-y-4 flex-1 flex flex-col">
-                          <h3 className="text-white text-xl font-bold group-hover:text-emerald-400 transition-colors line-clamp-2">
+                          <h3 className="text-gray-900 text-xl font-bold group-hover:text-emerald-600 transition-colors line-clamp-2">
                             {resolveLocalizedString(product.name_i18n, locale)}
                           </h3>
 
                           {product.shortDescription_i18n && (
-                            <p className="text-white/70 text-sm line-clamp-3 flex-1">
+                            <p className="text-gray-600 text-sm line-clamp-3 flex-1">
                               {resolveLocalizedString(product.shortDescription_i18n, locale)}
                             </p>
                           )}
 
                           {/* Specifications Preview */}
                           {product.specifications && product.specifications.length > 0 && (
-                            <div className="space-y-1 text-xs text-white/60">
+                            <div className="space-y-1 text-xs text-gray-600">
                               {product.specifications.slice(0, 2).map((spec, i) => (
                                 <div key={i} className="flex items-center gap-2">
                                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
@@ -168,7 +168,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
 
                           {/* CTA */}
                           <div className="flex items-center justify-between pt-4 mt-auto">
-                            <span className="text-emerald-400 font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                            <span className="text-emerald-600 font-semibold text-sm group-hover:translate-x-2 transition-transform">
                               {t("viewDetails")} →
                             </span>
                           </div>
@@ -183,6 +183,70 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
         </div>
       </section>
 
+      {/* Features Section */}
+      <Section><section className="py-20 bg-white">
+        <div className="container mx-auto px-8 lg:px-16">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-emerald-600 text-lg font-semibold mb-4 tracking-wide">
+                {locale === "vi" ? "TẠI SAO CHỌN CHÚNG TÔI" : "WHY CHOOSE US"}
+              </p>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+                {locale === "vi" ? "Cam Kết Chất Lượng" : "Quality Commitment"}
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+                title: locale === "vi" ? "Chất Lượng Đảm Bảo" : "Quality Assured",
+                desc: locale === "vi"
+                  ? "Tất cả sản phẩm đều đạt tiêu chuẩn quốc tế về an toàn và chất lượng"
+                  : "All products meet international safety and quality standards",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                  </svg>
+                ),
+                title: locale === "vi" ? "Vận Chuyển Toàn Quốc" : "Nationwide Delivery",
+                desc: locale === "vi"
+                  ? "Giao hàng nhanh chóng và an toàn đến mọi tỉnh thành trên cả nước"
+                  : "Fast and safe delivery to all provinces nationwide",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                ),
+                title: locale === "vi" ? "Hỗ Trợ 24/7" : "24/7 Support",
+                desc: locale === "vi"
+                  ? "Đội ngũ tư vấn sẵn sàng hỗ trợ bạn mọi lúc mọi nơi"
+                  : "Our consulting team is ready to support you anytime, anywhere",
+              },
+            ].map((feature, idx) => (
+              <ScrollReveal key={idx} direction="up" delay={idx * 0.15}>
+                <div className="bg-white rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/50 hover:shadow-xl hover:shadow-emerald-600/10 transition-all duration-500 text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mx-auto mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section></Section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">
         <div className="container mx-auto px-8 lg:px-16 text-center">
@@ -195,7 +259,7 @@ export function ProductsClient({ locale, initialProducts }: ProductsClientProps)
             </p>
             <Link
               href={`/${locale === "en" ? "en/" : ""}contact`}
-              className="inline-block px-12 py-4 bg-white text-emerald-400 rounded-2xl text-xl font-bold hover:bg-emerald-500/20 transition-all duration-300 shadow-2xl hover:shadow-white/30 hover:scale-105"
+              className="inline-block px-12 py-4 bg-white text-emerald-600 rounded-2xl text-xl font-bold hover:bg-emerald-50 transition-all duration-300 shadow-2xl hover:scale-105"
             >
               {t("cta.button")}
             </Link>

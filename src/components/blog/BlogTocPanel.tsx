@@ -103,8 +103,8 @@ export default function BlogTocPanel({ items, title }: BlogTocPanelProps) {
             "flex w-full items-start gap-2 rounded-lg px-3 py-2 text-left transition",
             item.level === 3 ? "pl-7 text-[13px]" : "text-sm font-medium",
             activeId === item.id
-              ? "bg-emerald-500/20 text-emerald-400"
-              : "text-white/60 hover:text-white hover:bg-white/5",
+              ? "bg-emerald-50 text-emerald-600"
+              : "text-gray-600 hover:text-gray-900 hover:bg-gray-50",
           ].join(" ")}
         >
           <span className="mt-[2px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500/20" />
@@ -117,20 +117,20 @@ export default function BlogTocPanel({ items, title }: BlogTocPanelProps) {
   return (
     <>
       {/* Inline panel */}
-      <div ref={panelRef} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div ref={panelRef} className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
           className="flex w-full items-center justify-between gap-3"
           aria-expanded={isOpen}
         >
-          <span className="flex items-center gap-2 text-sm font-semibold text-white">
-            <List className="h-4 w-4 text-emerald-400" />
+          <span className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+            <List className="h-4 w-4 text-emerald-600" />
             {title}
           </span>
           <ChevronDown
             className={[
-              "h-4 w-4 text-white/50 transition-transform duration-200",
+              "h-4 w-4 text-gray-400 transition-transform duration-200",
               isOpen ? "rotate-180" : "rotate-0",
             ].join(" ")}
           />
@@ -167,7 +167,7 @@ export default function BlogTocPanel({ items, title }: BlogTocPanelProps) {
               <button
                 type="button"
                 onClick={() => setIsFloatingOpen(true)}
-                className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-slate-900/90 text-emerald-400 shadow-lg backdrop-blur-sm transition hover:scale-105"
+                className="grid h-12 w-12 place-items-center rounded-xl border border-gray-200 bg-white/95 text-emerald-600 shadow-lg backdrop-blur-sm transition hover:scale-105"
                 aria-label={title}
                 aria-expanded={isFloatingOpen}
               >
@@ -187,17 +187,17 @@ export default function BlogTocPanel({ items, title }: BlogTocPanelProps) {
             >
               <div
                 ref={floatingRef}
-                className="rounded-2xl border border-white/10 bg-slate-900/95 p-4 shadow-2xl backdrop-blur-xl"
+                className="rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-2xl backdrop-blur-xl"
               >
                 <div className="flex items-center justify-between gap-2">
-                  <span className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <List className="h-4 w-4 text-emerald-400" />
+                  <span className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+                    <List className="h-4 w-4 text-emerald-600" />
                     {title}
                   </span>
                   <button
                     type="button"
                     onClick={() => setIsFloatingOpen(false)}
-                    className="grid h-7 w-7 place-items-center rounded-full border border-white/10 text-white/50 transition hover:bg-white/10"
+                    className="grid h-7 w-7 place-items-center rounded-full border border-gray-200 text-gray-400 transition hover:bg-gray-100"
                     aria-label="Close"
                   >
                     <X className="h-4 w-4" />

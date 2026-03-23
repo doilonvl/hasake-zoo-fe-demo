@@ -20,7 +20,7 @@ export function PageBreadcrumb({ items, className = "" }: PageBreadcrumbProps) {
         <span key={i} className="flex items-center gap-1">
           {i > 0 && (
             <svg
-              className="w-3 h-3 text-white/25 flex-shrink-0"
+              className="w-3 h-3 text-gray-300 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -36,12 +36,12 @@ export function PageBreadcrumb({ items, className = "" }: PageBreadcrumbProps) {
           {item.href ? (
             <Link
               href={item.href as never}
-              className="text-white/45 hover:text-emerald-400 transition-colors"
+              className="text-gray-500 hover:text-emerald-600 transition-colors"
             >
               {item.label}
             </Link>
           ) : (
-            <span className="text-white/75">{item.label}</span>
+            <span className="text-gray-700">{item.label}</span>
           )}
         </span>
       ))}

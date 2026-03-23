@@ -149,10 +149,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative w-full max-w-xl bg-white/5 rounded-2xl border border-white/10 shadow-2xl shadow-black/10 overflow-hidden"
+              className="relative w-full max-w-xl bg-white rounded-2xl border border-gray-200 shadow-2xl shadow-black/10 overflow-hidden"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/5">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-gray-50">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
                     <svg
@@ -170,10 +170,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                     </svg>
                   </div>
                   <div>
-                    <h2 className="text-white text-lg font-bold">
+                    <h2 className="text-gray-900 text-lg font-bold">
                       {locale === "vi" ? "Liên Hệ Nhanh" : "Quick Contact"}
                     </h2>
-                    <p className="text-white/60 text-xs">
+                    <p className="text-gray-500 text-xs">
                       {locale === "vi"
                         ? "Chúng tôi sẽ phản hồi trong 24h"
                         : "We'll respond within 24h"}
@@ -182,7 +182,7 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                 </div>
                 <button
                   onClick={closePopup}
-                  className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                  className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-200"
                   aria-label="Close"
                 >
                   <svg
@@ -209,10 +209,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                     <div className="space-y-1.5">
                       <Label
                         htmlFor="popup-name"
-                        className="text-white/80 text-sm"
+                        className="text-gray-700 text-sm"
                       >
                         {t("nameLabel")}{" "}
-                        <span className="text-emerald-400">*</span>
+                        <span className="text-emerald-600">*</span>
                       </Label>
                       <Input
                         id="popup-name"
@@ -221,16 +221,16 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         onChange={handleChange}
                         placeholder={t("namePlaceholder")}
                         required
-                        className="h-10 bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+                        className="h-10 bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
                       />
                     </div>
                     <div className="space-y-1.5">
                       <Label
                         htmlFor="popup-email"
-                        className="text-white/80 text-sm"
+                        className="text-gray-700 text-sm"
                       >
                         {t("emailLabel")}{" "}
-                        <span className="text-emerald-400">*</span>
+                        <span className="text-emerald-600">*</span>
                       </Label>
                       <Input
                         id="popup-email"
@@ -240,7 +240,7 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         onChange={handleChange}
                         placeholder={t("emailPlaceholder")}
                         required
-                        className="h-10 bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+                        className="h-10 bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -250,7 +250,7 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                     <div className="space-y-1.5">
                       <Label
                         htmlFor="popup-phone"
-                        className="text-white/80 text-sm"
+                        className="text-gray-700 text-sm"
                       >
                         {t("phoneLabel")}
                       </Label>
@@ -261,13 +261,13 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder={t("phonePlaceholder")}
-                        className="h-10 bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+                        className="h-10 bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
                       />
                     </div>
                     <div className="space-y-1.5">
                       <Label
                         htmlFor="popup-company"
-                        className="text-white/80 text-sm"
+                        className="text-gray-700 text-sm"
                       >
                         {t("companyLabel")}
                       </Label>
@@ -277,7 +277,7 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder={t("companyPlaceholder")}
-                        className="h-10 bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+                        className="h-10 bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -287,10 +287,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                     <div className="space-y-1.5">
                       <Label
                         htmlFor="popup-country"
-                        className="text-white/80 text-sm"
+                        className="text-gray-700 text-sm"
                       >
                         {t("countryLabel")}{" "}
-                        <span className="text-emerald-400">*</span>
+                        <span className="text-emerald-600">*</span>
                       </Label>
                       <select
                         id="popup-country"
@@ -298,13 +298,13 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         value={formData.country}
                         onChange={handleChange}
                         required
-                        className="w-full h-10 px-3 rounded-md bg-white/5 border border-white/20 text-white focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-colors text-sm"
+                        className="w-full h-10 px-3 rounded-md bg-gray-50 border border-gray-300 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 transition-colors text-sm"
                       >
                         {COUNTRIES.map((country) => (
                           <option
                             key={country.code}
                             value={country.code}
-                            className="bg-white text-white"
+                            className="bg-white text-gray-900"
                           >
                             {locale === "vi" ? country.vi : country.en}
                           </option>
@@ -314,10 +314,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                     <div className="space-y-1.5">
                       <Label
                         htmlFor="popup-subject"
-                        className="text-white/80 text-sm"
+                        className="text-gray-700 text-sm"
                       >
                         {t("subjectLabel")}{" "}
-                        <span className="text-emerald-400">*</span>
+                        <span className="text-emerald-600">*</span>
                       </Label>
                       <Input
                         id="popup-subject"
@@ -326,7 +326,7 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                         onChange={handleChange}
                         placeholder={t("subjectPlaceholder")}
                         required
-                        className="h-10 bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400"
+                        className="h-10 bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -335,10 +335,10 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                   <div className="space-y-1.5">
                     <Label
                       htmlFor="popup-message"
-                      className="text-white/80 text-sm"
+                      className="text-gray-700 text-sm"
                     >
                       {t("messageLabel")}{" "}
-                      <span className="text-emerald-400">*</span>
+                      <span className="text-emerald-600">*</span>
                     </Label>
                     <Textarea
                       id="popup-message"
@@ -348,13 +348,13 @@ export function ContactPopupProvider({ children }: ContactPopupProviderProps) {
                       placeholder={t("messagePlaceholder")}
                       required
                       rows={3}
-                      className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-emerald-400 resize-none"
+                      className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 resize-none"
                     />
                   </div>
 
                   {/* Privacy & Submit */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-                    <p className="text-white/50 text-xs max-w-xs">
+                    <p className="text-gray-400 text-xs max-w-xs">
                       {t("privacy")}
                     </p>
                     <Button

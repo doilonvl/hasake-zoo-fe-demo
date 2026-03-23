@@ -58,9 +58,9 @@ export function ServiceDetailClient({
     ).faqs_i18n?.[locale] || [];
 
   return (
-    <div className="bg-slate-950">
-      {/* Hero Section - keep dark overlay on image */}
-      <section className="relative min-h-[70vh] bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 overflow-hidden pt-32 pb-20">
+    <div className="bg-white">
+      {/* Hero Section - keep dark overlay on image for text readability */}
+      <section className="relative min-h-[70vh] bg-gray-50 overflow-hidden pt-32 pb-20">
         {service.coverImage && (
           <>
             <div className="absolute inset-0">
@@ -74,7 +74,7 @@ export function ServiceDetailClient({
                 className="object-cover opacity-30"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/70 to-slate-900" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" />
             </div>
           </>
         )}
@@ -83,15 +83,15 @@ export function ServiceDetailClient({
           <ScrollReveal>
             <div className="max-w-4xl">
               {/* Breadcrumb */}
-              <nav className="text-white/60 mb-6 text-sm">
+              <nav className={`mb-6 text-sm ${service.coverImage ? "text-white/70" : "text-gray-600"}`}>
                 <Link
                   href={`/${locale === "en" ? "en/" : ""}services`}
-                  className="hover:text-emerald-400 transition-colors"
+                  className={`transition-colors ${service.coverImage ? "hover:text-emerald-300" : "hover:text-emerald-600"}`}
                 >
                   {t("hero.eyebrow")}
                 </Link>
                 <span className="mx-2">/</span>
-                <span className="text-white">{name}</span>
+                <span className={service.coverImage ? "text-white" : "text-gray-900"}>{name}</span>
               </nav>
 
               {service.isFeatured && (
@@ -100,12 +100,12 @@ export function ServiceDetailClient({
                 </span>
               )}
 
-              <h1 className="text-white text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className={`text-6xl lg:text-7xl font-bold mb-6 leading-tight ${service.coverImage ? "text-white" : "text-gray-900"}`}>
                 {name}
               </h1>
 
               {service.excerpt_i18n && (
-                <p className="text-white/90 text-xl lg:text-2xl leading-relaxed">
+                <p className={`text-xl lg:text-2xl leading-relaxed ${service.coverImage ? "text-white/90" : "text-gray-700"}`}>
                   {resolveLocalizedString(service.excerpt_i18n, locale)}
                 </p>
               )}
@@ -116,12 +116,12 @@ export function ServiceDetailClient({
 
       {/* Content Section */}
       {lexicalContent && (
-        <section className="py-20 bg-slate-900">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-8 lg:px-16">
             <div className="max-w-4xl mx-auto">
               <ScrollReveal>
                 <BlogContentZoom>
-                  <div className="text-white/90 prose prose-invert prose-lg max-w-none">
+                  <div className="text-gray-700 prose prose-lg max-w-none">
                     <LexicalContentRenderer
                       doc={
                         lexicalContent as Parameters<
@@ -140,10 +140,10 @@ export function ServiceDetailClient({
 
       {/* Highlights Section */}
       {highlights.length > 0 && (
-        <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-8 lg:px-16">
             <ScrollReveal>
-              <h2 className="text-white text-4xl lg:text-5xl font-bold mb-12 text-center">
+              <h2 className="text-gray-900 text-4xl lg:text-5xl font-bold mb-12 text-center">
                 Key Features
               </h2>
             </ScrollReveal>
@@ -151,14 +151,14 @@ export function ServiceDetailClient({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {highlights.map((highlight, idx) => (
                 <ScrollReveal key={idx} direction="up" delay={idx * 0.1}>
-                  <div className="bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-6 hover:border-emerald-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="bg-white shadow-sm border-2 border-gray-200 rounded-2xl p-6 hover:border-emerald-400/50 transition-all duration-300 hover:transform hover:scale-105">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-                        <span className="text-emerald-400 text-2xl font-bold">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center">
+                        <span className="text-emerald-600 text-2xl font-bold">
                           ✓
                         </span>
                       </div>
-                      <p className="text-white/90 leading-relaxed flex-1">
+                      <p className="text-gray-700 leading-relaxed flex-1">
                         {highlight}
                       </p>
                     </div>
@@ -172,10 +172,10 @@ export function ServiceDetailClient({
 
       {/* FAQ Section */}
       {faqs.length > 0 && (
-        <section className="py-20 bg-slate-950">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-8 lg:px-16">
             <ScrollReveal>
-              <h2 className="text-white text-4xl lg:text-5xl font-bold mb-12 text-center">
+              <h2 className="text-gray-900 text-4xl lg:text-5xl font-bold mb-12 text-center">
                 Frequently Asked Questions
               </h2>
             </ScrollReveal>
@@ -184,11 +184,11 @@ export function ServiceDetailClient({
               {faqs.map(
                 (faq: { question: string; answer: string }, idx: number) => (
                   <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
-                    <div className="bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-8 hover:border-emerald-400/50 transition-all duration-300">
-                      <h3 className="text-white text-xl font-bold mb-4">
+                    <div className="bg-white shadow-sm border-2 border-gray-200 rounded-2xl p-8 hover:border-emerald-400/50 transition-all duration-300">
+                      <h3 className="text-gray-900 text-xl font-bold mb-4">
                         {faq.question}
                       </h3>
-                      <p className="text-white/70 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -202,10 +202,10 @@ export function ServiceDetailClient({
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-8 lg:px-16">
             <ScrollReveal>
-              <h2 className="text-white text-4xl lg:text-5xl font-bold mb-12 text-center">
+              <h2 className="text-gray-900 text-4xl lg:text-5xl font-bold mb-12 text-center">
                 Related Services
               </h2>
             </ScrollReveal>
@@ -221,7 +221,7 @@ export function ServiceDetailClient({
                     href={`/${locale === "en" ? "en/" : ""}services/${resolveLocalizedString(relatedService.slug_i18n, locale)}`}
                     className="group block"
                   >
-                    <div className="bg-white/5 rounded-3xl border-2 border-white/10 hover:border-emerald-400/50 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:transform hover:scale-105">
+                    <div className="bg-white rounded-3xl border-2 border-gray-200 hover:border-emerald-400/50 shadow-sm overflow-hidden transition-all duration-500 hover:transform hover:scale-105">
                       {relatedService.coverImage && (
                         <div className="relative h-48 overflow-hidden">
                           <Image
@@ -243,7 +243,7 @@ export function ServiceDetailClient({
                       )}
 
                       <div className="p-6">
-                        <h3 className="text-white text-xl font-bold group-hover:text-emerald-400 transition-colors">
+                        <h3 className="text-gray-900 text-xl font-bold group-hover:text-emerald-600 transition-colors">
                           {resolveLocalizedString(
                             relatedService.name_i18n,
                             locale,
@@ -251,7 +251,7 @@ export function ServiceDetailClient({
                         </h3>
 
                         {relatedService.excerpt_i18n && (
-                          <p className="text-white/70 mt-3 line-clamp-2">
+                          <p className="text-gray-600 mt-3 line-clamp-2">
                             {resolveLocalizedString(
                               relatedService.excerpt_i18n,
                               locale,
@@ -260,7 +260,7 @@ export function ServiceDetailClient({
                         )}
 
                         <div className="flex items-center justify-between pt-4">
-                          <span className="text-emerald-400 font-semibold group-hover:translate-x-2 transition-transform">
+                          <span className="text-emerald-600 font-semibold group-hover:translate-x-2 transition-transform">
                             {t("learnMore")} →
                           </span>
                         </div>

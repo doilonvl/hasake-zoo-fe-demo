@@ -14,7 +14,7 @@ import BlogLocaleBridge from "@/components/blog/BlogLocaleBridge";
 import { BlogContentZoom } from "@/components/blog/BlogContentZoom";
 import { resolveLocalizedString } from "@/lib/i18n";
 import { PageBreadcrumb } from "@/components/ui/page-breadcrumb";
- 
+
 interface BlogDetailClientProps {
   locale: Locale;
   slug: string;
@@ -86,7 +86,7 @@ function AudioPlayer({ locale }: { locale: Locale }) {
   };
 
   return (
-    <div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
+    <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 backdrop-blur-sm">
       <audio ref={audioRef} src={audioUrl} preload="metadata" />
       <div className="flex items-center gap-4">
         <button
@@ -105,24 +105,24 @@ function AudioPlayer({ locale }: { locale: Locale }) {
         </button>
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-white/70 text-sm font-medium truncate">
+            <span className="text-gray-600 text-sm font-medium truncate">
               {locale === "vi" ? "Nghe bài viết" : "Listen to article"}
             </span>
             <div className="flex items-center gap-3">
               <button
                 onClick={cycleSpeed}
-                className="text-emerald-400 text-xs font-bold px-2 py-0.5 rounded bg-emerald-400/10 hover:bg-emerald-400/20 transition-colors"
+                className="text-emerald-600 text-xs font-bold px-2 py-0.5 rounded bg-emerald-400/10 hover:bg-emerald-400/20 transition-colors"
               >
                 {playbackRate}x
               </button>
-              <span className="text-white/50 text-xs">
+              <span className="text-gray-400 text-xs">
                 {fmt(currentTime)} / {duration ? fmt(duration) : "--:--"}
               </span>
             </div>
           </div>
           <div
             onClick={seek}
-            className="w-full h-1.5 bg-white/10 rounded-full cursor-pointer group"
+            className="w-full h-1.5 bg-gray-200 rounded-full cursor-pointer group"
           >
             <div
               className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full relative transition-all"
@@ -169,7 +169,7 @@ export function BlogDetailClient({
   return (
     <BlogDetailMotion>
       <BlogLocaleBridge slug={blog.slug} slugI18n={blog.slug_i18n} />
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="min-h-screen bg-white">
         {/* ── Hero ── */}
         <section className="relative pb-0 overflow-hidden">
           <div className="relative h-[60vh] min-h-[500px]">
@@ -182,7 +182,7 @@ export function BlogDetailClient({
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
               </>
             )}
 
@@ -268,14 +268,14 @@ export function BlogDetailClient({
 
                 {/* Excerpt */}
                 {excerpt && (
-                  <div className="text-white/80 text-xl leading-relaxed mb-8 italic">
+                  <div className="text-gray-700 text-xl leading-relaxed mb-8 italic">
                     {excerpt}
                   </div>
                 )}
 
                 {/* Lexical Content */}
                 <BlogContentZoom>
-                  <div className="text-white/90 prose prose-invert prose-lg max-w-none">
+                  <div className="text-gray-700 prose prose-lg max-w-none">
                     {lexicalContent ? (
                       <LexicalContentRenderer
                         doc={lexicalContent}
@@ -283,7 +283,7 @@ export function BlogDetailClient({
                         locale={locale}
                       />
                     ) : (
-                      <p className="text-white/60">
+                      <p className="text-gray-600">
                         {locale === "vi"
                           ? "Nội dung không khả dụng"
                           : "Content not available"}
@@ -293,10 +293,10 @@ export function BlogDetailClient({
                 </BlogContentZoom>
 
                 {/* Back to Blog */}
-                <div className="mt-16 pt-8 border-t border-white/10">
+                <div className="mt-16 pt-8 border-t border-gray-200">
                   <Link
                     href="/blog"
-                    className="inline-flex items-center gap-3 text-emerald-400 hover:text-emerald-300 font-semibold text-lg transition-colors"
+                    className="inline-flex items-center gap-3 text-emerald-600 hover:text-emerald-500 font-semibold text-lg transition-colors"
                   >
                     <svg
                       className="w-5 h-5"
@@ -321,8 +321,8 @@ export function BlogDetailClient({
               {/* Sidebar — Latest Articles */}
               <aside className="hidden lg:block" data-aside>
                 <div className="sticky top-28 space-y-6">
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400 mb-5">
+                  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 backdrop-blur-sm">
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600 mb-5">
                       {locale === "vi" ? "Mới nhất" : "Latest"}
                     </h3>
                     <div className="space-y-4">
@@ -357,10 +357,10 @@ export function BlogDetailClient({
                               </div>
                             )}
                             <div className="flex-1 min-w-0">
-                              <p className="text-white/90 text-sm font-medium line-clamp-2 group-hover:text-emerald-400 transition-colors">
+                              <p className="text-gray-700 text-sm font-medium line-clamp-2 group-hover:text-emerald-600 transition-colors">
                                 {articleTitle}
                               </p>
-                              <p className="text-white/40 text-xs mt-1">
+                              <p className="text-gray-400 text-xs mt-1">
                                 {articleDate.toLocaleDateString(locale, {
                                   month: "short",
                                   day: "numeric",
@@ -381,10 +381,10 @@ export function BlogDetailClient({
 
         {/* ── Related Articles ── */}
         {relatedBlogs.length > 0 && (
-          <section className="py-16 border-t border-white/5">
+          <section className="py-16 border-t border-gray-200">
             <div className="container mx-auto px-8 lg:px-16">
               <h2
-                className="text-2xl lg:text-3xl font-bold text-white mb-8"
+                className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8"
                 data-article
               >
                 {locale === "vi" ? "Bài viết liên quan" : "Related Articles"}
@@ -408,7 +408,7 @@ export function BlogDetailClient({
                     <Link
                       key={article._id}
                       href={`/blog/${articleSlug}`}
-                      className="group bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-emerald-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-600/10"
+                      className="group bg-white backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 hover:border-emerald-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-600/10"
                       data-latest-card
                     >
                       {articleImage && (
@@ -419,7 +419,7 @@ export function BlogDetailClient({
                             fill
                             className="object-cover group-hover:scale-110 transition-transform duration-700"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                           {articleTags[0] && (
                             <div className="absolute top-4 left-4">
                               <span className="px-3 py-1 bg-emerald-600/90 backdrop-blur-sm text-white text-xs font-bold rounded-full">
@@ -430,15 +430,15 @@ export function BlogDetailClient({
                         </div>
                       )}
                       <div className="p-5 space-y-2">
-                        <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-2">
+                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
                           {articleTitle}
                         </h3>
                         {articleExcerpt && (
-                          <p className="text-white/55 text-sm line-clamp-2">
+                          <p className="text-gray-600 text-sm line-clamp-2">
                             {articleExcerpt}
                           </p>
                         )}
-                        <div className="flex items-center gap-2 text-emerald-400 font-medium text-sm pt-1">
+                        <div className="flex items-center gap-2 text-emerald-600 font-medium text-sm pt-1">
                           <span>
                             {locale === "vi" ? "Đọc thêm" : "Read more"}
                           </span>

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function FadeIn({
+export function FadeIn({
   children,
   delay = 0,
   once = true,

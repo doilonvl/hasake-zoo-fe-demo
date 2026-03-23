@@ -86,7 +86,7 @@ export function AboutClient({ locale }: AboutClientProps) {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <Section>
           <section className="relative pt-32 pb-20 overflow-hidden">
@@ -103,13 +103,13 @@ export function AboutClient({ locale }: AboutClientProps) {
                     { label: locale === "vi" ? "Về Chúng Tôi" : "About Us" },
                   ]}
                 />
-                <p className="text-emerald-400 text-lg font-semibold mb-4 tracking-wide">
+                <p className="text-emerald-600 text-lg font-semibold mb-4 tracking-wide">
                   {t("hero.eyebrow")}
                 </p>
-                <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                   {t("hero.title")}
                 </h1>
-                <p className="text-xl text-white/70 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   {t("hero.description")}
                 </p>
               </div>
@@ -119,7 +119,7 @@ export function AboutClient({ locale }: AboutClientProps) {
 
         {/* Stats Section */}
         <Section>
-          <section className="py-16 border-y border-white/10">
+          <section className="py-16 border-y border-gray-200">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 {STATS.map((stat, idx) => (
@@ -127,7 +127,7 @@ export function AboutClient({ locale }: AboutClientProps) {
                     <p className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
                       {stat.value}
                     </p>
-                    <p className="text-white/70 text-lg">{stat.label}</p>
+                    <p className="text-gray-600 text-lg">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -140,13 +140,13 @@ export function AboutClient({ locale }: AboutClientProps) {
           <section className="py-24">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="max-w-4xl mx-auto text-center space-y-8">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
                   {t("whoWeAre.title")}
                 </h2>
-                <p className="text-white/70 text-lg leading-relaxed">
+                <p className="text-gray-600 text-lg leading-relaxed">
                   {t("whoWeAre.description1")}
                 </p>
-                <p className="text-white/70 text-lg leading-relaxed">
+                <p className="text-gray-600 text-lg leading-relaxed">
                   {t("whoWeAre.description2")}
                 </p>
               </div>
@@ -156,47 +156,132 @@ export function AboutClient({ locale }: AboutClientProps) {
 
         {/* History Section */}
         <Section>
-          <section className="py-24 bg-slate-800/30">
+          <section className="py-24 bg-gray-50">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   {t("history.title")}
                 </h2>
-                <p className="text-xl text-white/60 max-w-2xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                   {t("history.subtitle")}
                 </p>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Goatrade */}
-                <div className="bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-400/30 transition-all duration-500">
+                <div className="bg-white rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/30 transition-all duration-500">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-3xl">🐘</span>
-                    <span className="text-emerald-400 font-semibold text-sm tracking-wide">
+                    <span className="text-emerald-600 font-semibold text-sm tracking-wide">
                       {t("history.goatradeYear")}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {t("history.goatradeTitle")}
                   </h3>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {t("history.goatradeDesc")}
                   </p>
                 </div>
                 {/* HKS */}
-                <div className="bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-400/30 transition-all duration-500">
+                <div className="bg-white rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/30 transition-all duration-500">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-3xl">🏗️</span>
-                    <span className="text-emerald-400 font-semibold text-sm tracking-wide">
+                    <span className="text-emerald-600 font-semibold text-sm tracking-wide">
                       {t("history.hksYear")}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {t("history.hksTitle")}
                   </h3>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {t("history.hksDesc")}
                   </p>
                 </div>
+              </div>
+            </div>
+          </section>
+        </Section>
+
+        {/* Milestone Timeline Section */}
+        <Section>
+          <section className="py-24">
+            <div className="container mx-auto px-8 lg:px-16">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  {locale === "vi" ? "Hành Trình Phát Triển" : "Our Journey"}
+                </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  {locale === "vi"
+                    ? "Những cột mốc quan trọng trên chặng đường phát triển"
+                    : "Key milestones along our path of growth"}
+                </p>
+              </div>
+              <div className="relative max-w-4xl mx-auto">
+                {/* Vertical line */}
+                <div className="absolute left-6 lg:left-1/2 top-0 bottom-0 w-0.5 bg-emerald-300 -translate-x-1/2 hidden sm:block" />
+
+                {[
+                  {
+                    year: "2003",
+                    title: locale === "vi" ? "Thành lập Goatrade" : "Goatrade Founded",
+                    desc: locale === "vi"
+                      ? "Bắt đầu hành trình trong lĩnh vực trao đổi động vật"
+                      : "Started the journey in animal exchange",
+                  },
+                  {
+                    year: "2008",
+                    title: locale === "vi" ? "Mở rộng Quốc tế" : "International Expansion",
+                    desc: locale === "vi"
+                      ? "Mở rộng hoạt động sang Đông Nam Á"
+                      : "Expanded operations to Southeast Asia",
+                  },
+                  {
+                    year: "2015",
+                    title: locale === "vi" ? "Thành lập HKS" : "HKS Established",
+                    desc: locale === "vi"
+                      ? "Ra mắt Hasake Zoo & Habitat Solution"
+                      : "Launched Hasake Zoo & Habitat Solution",
+                  },
+                  {
+                    year: "2020",
+                    title: locale === "vi" ? "100+ Dự Án" : "100+ Projects",
+                    desc: locale === "vi"
+                      ? "Cột mốc hoàn thành hơn 100 dự án quốc tế"
+                      : "Milestone of completing over 100 international projects",
+                  },
+                  {
+                    year: "2024",
+                    title: locale === "vi" ? "Tầm Nhìn Mới" : "New Vision",
+                    desc: locale === "vi"
+                      ? "Mở rộng dịch vụ tư vấn thiết kế môi trường sống"
+                      : "Expanding habitat design consulting services",
+                  },
+                ].map((milestone, idx) => (
+                  <div
+                    key={idx}
+                    className={`relative flex items-start gap-6 mb-12 last:mb-0 sm:gap-8 ${
+                      idx % 2 === 0
+                        ? "lg:flex-row"
+                        : "lg:flex-row-reverse"
+                    }`}
+                  >
+                    {/* Year circle */}
+                    <div className="relative z-10 flex-shrink-0 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-emerald-600/30 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+                      {milestone.year}
+                    </div>
+                    {/* Content */}
+                    <div
+                      className={`bg-white rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 transition-all duration-500 flex-1 ${
+                        idx % 2 === 0
+                          ? "lg:mr-[calc(50%+2rem)] lg:text-right"
+                          : "lg:ml-[calc(50%+2rem)] lg:text-left"
+                      }`}
+                    >
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{milestone.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -207,10 +292,10 @@ export function AboutClient({ locale }: AboutClientProps) {
           <section className="py-24">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   {t("expertise.title")}
                 </h2>
-                <p className="text-xl text-white/60 max-w-2xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                   {t("expertise.subtitle")}
                 </p>
               </div>
@@ -218,13 +303,85 @@ export function AboutClient({ locale }: AboutClientProps) {
                 {EXPERTISE.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-400/30 transition-all duration-500 group"
+                    className="bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/30 transition-all duration-500 group"
                   >
                     <span className="text-4xl mb-4 block group-hover:scale-110 transition-transform duration-300">
                       {item.icon}
                     </span>
-                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-white/60 leading-relaxed text-sm">{item.desc}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </Section>
+
+        {/* Team Section */}
+        <Section>
+          <section className="py-24">
+            <div className="container mx-auto px-8 lg:px-16">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  {locale === "vi" ? "Đội Ngũ Của Chúng Tôi" : "Meet Our Team"}
+                </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  {locale === "vi"
+                    ? "Những chuyên gia hàng đầu trong lĩnh vực vườn thú và bảo tồn"
+                    : "Leading experts in zoo management and conservation"}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    initials: "NT",
+                    bg: "bg-emerald-600",
+                    name: "Nguyễn Tuấn",
+                    role: locale === "vi" ? "Nhà sáng lập & CEO" : "Founder & CEO",
+                    desc: locale === "vi"
+                      ? "20+ năm kinh nghiệm trong quản lý vườn thú"
+                      : "20+ years of experience in zoo management",
+                  },
+                  {
+                    initials: "LH",
+                    bg: "bg-teal-600",
+                    name: "Lê Hương",
+                    role: locale === "vi" ? "Trưởng phòng Thú y" : "Head of Veterinary",
+                    desc: locale === "vi"
+                      ? "Bác sĩ thú y chuyên về động vật hoang dã"
+                      : "Veterinarian specializing in wildlife",
+                  },
+                  {
+                    initials: "PT",
+                    bg: "bg-cyan-600",
+                    name: "Phạm Thắng",
+                    role: locale === "vi" ? "Kiến trúc sư trưởng" : "Chief Architect",
+                    desc: locale === "vi"
+                      ? "Chuyên gia thiết kế chuồng trại quốc tế"
+                      : "International enclosure design specialist",
+                  },
+                  {
+                    initials: "DM",
+                    bg: "bg-emerald-600",
+                    name: "David Morrison",
+                    role: locale === "vi" ? "Cố vấn Quốc tế" : "International Advisor",
+                    desc: locale === "vi"
+                      ? "Cựu giám đốc chương trình WAZA"
+                      : "Former WAZA program director",
+                  },
+                ].map((member, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl border border-gray-200 p-8 text-center hover:border-emerald-400/30 hover:-translate-y-1 transition-all duration-500 group"
+                  >
+                    <div
+                      className={`w-20 h-20 ${member.bg} rounded-full flex items-center justify-center mx-auto mb-6`}
+                    >
+                      <span className="text-white text-2xl font-bold">{member.initials}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
+                    <p className="text-emerald-600 font-semibold text-sm mb-3">{member.role}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed">{member.desc}</p>
                   </div>
                 ))}
               </div>
@@ -234,10 +391,10 @@ export function AboutClient({ locale }: AboutClientProps) {
 
         {/* Approach Section */}
         <Section>
-          <section className="py-24 bg-slate-800/30">
+          <section className="py-24 bg-gray-50">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   {t("approach.title")}
                 </h2>
               </div>
@@ -245,12 +402,12 @@ export function AboutClient({ locale }: AboutClientProps) {
                 {APPROACH.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex gap-6 bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-400/30 transition-all duration-500"
+                    className="flex gap-6 bg-white rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/30 transition-all duration-500"
                   >
                     <span className="text-4xl flex-shrink-0">{item.icon}</span>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                      <p className="text-white/60 leading-relaxed text-sm">{item.desc}</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -264,31 +421,31 @@ export function AboutClient({ locale }: AboutClientProps) {
           <section className="py-24">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   {t("globalReach.title")}
                 </h2>
-                <p className="text-xl text-white/60 max-w-2xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                   {t("globalReach.subtitle")}
                 </p>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Headquarters */}
                 <div className="bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-2xl border border-emerald-400/30 p-8">
-                  <p className="text-emerald-400 font-semibold text-sm tracking-wide mb-2">
+                  <p className="text-emerald-600 font-semibold text-sm tracking-wide mb-2">
                     {t("globalReach.headquartersLabel")}
                   </p>
-                  <p className="text-white text-xl font-bold">
+                  <p className="text-gray-900 text-xl font-bold">
                     {t("globalReach.headquarters")}
                   </p>
                 </div>
                 {/* Regional Offices */}
-                <div className="bg-white/5 rounded-2xl border border-white/10 p-8">
-                  <p className="text-emerald-400 font-semibold text-sm tracking-wide mb-4">
+                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+                  <p className="text-emerald-600 font-semibold text-sm tracking-wide mb-4">
                     {t("globalReach.officesLabel")}
                   </p>
                   <ul className="space-y-2">
                     {OFFICES.map((office, idx) => (
-                      <li key={idx} className="text-white/70 flex items-center gap-2">
+                      <li key={idx} className="text-gray-600 flex items-center gap-2">
                         <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0" />
                         {office}
                       </li>
@@ -296,13 +453,13 @@ export function AboutClient({ locale }: AboutClientProps) {
                   </ul>
                 </div>
                 {/* Projects */}
-                <div className="bg-white/5 rounded-2xl border border-white/10 p-8">
-                  <p className="text-emerald-400 font-semibold text-sm tracking-wide mb-4">
+                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+                  <p className="text-emerald-600 font-semibold text-sm tracking-wide mb-4">
                     {t("globalReach.projectsLabel")}
                   </p>
                   <ul className="space-y-2">
                     {PROJECT_COUNTRIES.map((country, idx) => (
-                      <li key={idx} className="text-white/70 text-sm flex items-start gap-2">
+                      <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
                         <span className="w-1.5 h-1.5 bg-teal-400 rounded-full flex-shrink-0 mt-1.5" />
                         {country}
                       </li>
@@ -314,12 +471,33 @@ export function AboutClient({ locale }: AboutClientProps) {
           </section>
         </Section>
 
+        {/* Partners & Affiliations Strip */}
+        <Section>
+          <section className="py-16 bg-emerald-50">
+            <div className="container mx-auto px-8 lg:px-16 text-center">
+              <p className="text-emerald-600 font-semibold text-sm tracking-wide mb-6">
+                {locale === "vi" ? "Đối Tác & Liên Kết" : "Partners & Affiliations"}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+                {["WAZA", "SEAZA", "AZA", "EAZA", "IUCN", "WWF", "CITES"].map((org, idx) => (
+                  <span key={idx} className="flex items-center gap-6">
+                    <span className="text-gray-500 font-semibold text-lg tracking-wide">{org}</span>
+                    {idx < 6 && (
+                      <span className="text-gray-300 hidden sm:inline">&#x2022;</span>
+                    )}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+        </Section>
+
         {/* Commitment Section */}
         <Section>
-          <section className="py-24 bg-slate-800/30">
+          <section className="py-24 bg-gray-50">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   {t("commitment.title")}
                 </h2>
               </div>
@@ -327,10 +505,10 @@ export function AboutClient({ locale }: AboutClientProps) {
                 {COMMITMENTS.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-400/30 transition-all duration-500"
+                    className="bg-white rounded-2xl border border-gray-200 p-8 hover:border-emerald-400/30 transition-all duration-500"
                   >
-                    <h3 className="text-xl font-bold text-emerald-400 mb-3">{item.title}</h3>
-                    <p className="text-white/70 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-xl font-bold text-emerald-600 mb-3">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -345,14 +523,14 @@ export function AboutClient({ locale }: AboutClientProps) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 {/* Why Choose Us */}
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
                     {t("whyChooseUs.title")}
                   </h2>
                   <ul className="space-y-4">
                     {WHY_ITEMS.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-white/70">
+                      <li key={idx} className="flex items-start gap-3 text-gray-600">
                         <svg
-                          className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"
+                          className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -371,17 +549,17 @@ export function AboutClient({ locale }: AboutClientProps) {
 
                   {/* Certifications */}
                   <div className="mt-12">
-                    <h3 className="text-2xl font-bold text-white mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">
                       {t("certifications.title")}
                     </h3>
                     <div className="space-y-3">
                       {CERT_ITEMS.map((item, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-3 bg-white/5 rounded-xl p-4 border border-white/10"
+                          className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200"
                         >
-                          <span className="text-emerald-400">🏅</span>
-                          <span className="text-white/70 text-sm">{item}</span>
+                          <span className="text-emerald-600">🏅</span>
+                          <span className="text-gray-600 text-sm">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -390,19 +568,19 @@ export function AboutClient({ locale }: AboutClientProps) {
 
                 {/* Values */}
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
                     {t("values.title")}
                   </h2>
                   <div className="space-y-6">
                     {VALUES.map((val, idx) => (
                       <div
                         key={idx}
-                        className="flex gap-4 bg-white/5 rounded-2xl border border-white/10 p-6 hover:border-emerald-400/30 transition-all duration-500"
+                        className="flex gap-4 bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:border-emerald-400/30 transition-all duration-500"
                       >
                         <span className="text-3xl flex-shrink-0">{val.icon}</span>
                         <div>
-                          <h3 className="text-lg font-bold text-white mb-1">{val.title}</h3>
-                          <p className="text-white/60 text-sm leading-relaxed">{val.desc}</p>
+                          <h3 className="text-lg font-bold text-gray-900 mb-1">{val.title}</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">{val.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -415,13 +593,13 @@ export function AboutClient({ locale }: AboutClientProps) {
 
         {/* Vision Section */}
         <Section>
-          <section className="py-24 bg-gradient-to-r from-emerald-900/30 to-teal-900/30">
+          <section className="py-24 bg-gradient-to-r from-emerald-50 to-teal-50">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="max-w-4xl mx-auto text-center space-y-8">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
                   {t("vision.title")}
                 </h2>
-                <p className="text-xl text-white/70 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   {t("vision.description")}
                 </p>
               </div>
@@ -431,36 +609,36 @@ export function AboutClient({ locale }: AboutClientProps) {
 
         {/* Contact Info + CTA Section */}
         <Section>
-          <section className="py-24 bg-gradient-to-r from-emerald-900/50 to-teal-900/50 border-y border-white/10">
+          <section className="py-24 bg-gradient-to-r from-emerald-50 to-teal-50 border-y border-gray-200">
             <div className="container mx-auto px-8 lg:px-16">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Contact Info */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
                     {t("contactInfo.title")}
                   </h3>
-                  <div className="space-y-4 text-white/70">
+                  <div className="space-y-4 text-gray-600">
                     <div className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                       <span className="text-sm">{t("contactInfo.address")}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                       <span className="text-sm">Tel: {t("contactInfo.tel")} | Fax: {t("contactInfo.fax")}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                       <span className="text-sm">{t("contactInfo.email1")} | {t("contactInfo.email2")}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                       </svg>
                       <span className="text-sm">{t("contactInfo.website")}</span>
@@ -470,10 +648,10 @@ export function AboutClient({ locale }: AboutClientProps) {
 
                 {/* CTA */}
                 <div className="text-center lg:text-left">
-                  <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                     {t("cta.title")}
                   </h2>
-                  <p className="text-xl text-white/70 mb-10">
+                  <p className="text-xl text-gray-600 mb-10">
                     {t("cta.description")}
                   </p>
                   <Link
